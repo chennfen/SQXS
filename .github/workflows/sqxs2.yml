@@ -1,4 +1,4 @@
-name: sqxs2
+name: 书旗小说2
 on:
   workflow_dispatch:
   watch:
