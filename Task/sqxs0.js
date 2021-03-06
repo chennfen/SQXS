@@ -267,7 +267,7 @@ function vediogoldprize(j) {
         });
     });
 }
-
+/*
 function vediodrawprize(k) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -344,6 +344,8 @@ function draw(k) {
         });
     });
 }
+
+*/
 
 function userinfo() {
     return new Promise((resolve, reject) => {
