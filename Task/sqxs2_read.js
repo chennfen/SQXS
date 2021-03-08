@@ -92,10 +92,10 @@ async function all() {
                 drawgold = 0;
 
                 //看视频奖励抽奖次数
-                await vediodrawprize(0);
+                //await vediodrawprize(0);
                 
                 //看视频奖励金币
-                await vediogoldprize(0);
+                //await vediogoldprize(0);
                 
                 //阅读
                 await readbook();
