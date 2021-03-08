@@ -26,7 +26,8 @@ jobs:
       
       - name: '【书旗小说6】'
         run: |  
-          node Task/sqxs6.js
+          node Task/sqxs6_video.js
+          node Task/sqxs6_read.js
  
 
 
