@@ -101,6 +101,32 @@ async function all() {
                 drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 6 * i].val;
 
+		    
+		    
+		    
+/*	
+
+async function all() {
+    //nodejs运行
+    if ($.isNode()) {
+
+        let sqxsck = require('./sqxsck0.json');
+        let CountNumber = sqxsck.settings[1].val;
+        $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
+        for (let i = 0; i < CountNumber; i++) {
+            if (sqxsck.datas[0 + 6 * i].val) {
+                readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
+                receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
+                vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
+                vediodrawprizeckArr = sqxsck.datas[3 + 6 * i].val.split('&&');
+                drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
+                userinfock = sqxsck.datas[5 + 6 * i].val;
+
+*/			
+		    
+		    
+		    
+		   
                 $.log(`\n============ 【书旗小说${i+1}】=============`);
                 ReadTimes = 0;
                 vediogold = 0;
