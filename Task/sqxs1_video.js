@@ -103,7 +103,7 @@ async function all() {
 
                 //收集阅读金币
                 //if(ReadTimes>0)
-                await receivecoin();
+                //await receivecoin();
 
                 //个人信息
                 await userinfo();
