@@ -85,8 +85,11 @@ let drawgold = 0;
 async function all() {
     //nodejs运行
     if ($.isNode()) {
-
-        let sqxsck = require('./sqxsck0.json');
+		let encrypted=fs.readFileSync('./sqxsck0.txt', 'utf8');	
+		key = process.env.ENCRYPT_KEY;
+		let decrypted = await aesDecrypt(encrypted, key);
+		sqxsck=JSON.parse(decrypted);
+        //let sqxsck = require('./sqxsck.json');
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
