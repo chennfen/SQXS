@@ -26,7 +26,8 @@ jobs:
       
       - name: '【书旗小说2】'
         run: |  
-          node Task/sqxs2.js
+          node Task/sqxs2_video.js
+          node Task/sqxs2_read.js
  
 
 
