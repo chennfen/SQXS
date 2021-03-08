@@ -26,7 +26,8 @@ jobs:
       
       - name: '【书旗小说5】'
         run: |  
-          node Task/sqxs5.js
+          node Task/sqxs5_video.js
+          node Task/sqxs5_read.js
  
 
 
