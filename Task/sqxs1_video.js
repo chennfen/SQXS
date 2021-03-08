@@ -132,11 +132,11 @@ async function all() {
                 vediogold = 0;
                 drawgold = 0;
                 //阅读
-                await readbook();
+                //await readbook();
 
                 //收集阅读金币
                 //if(ReadTimes>0)
-                await receivecoin();
+                //await receivecoin();
 
                 //看视频奖励金币
                 await vediogoldprize(0);
