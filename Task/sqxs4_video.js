@@ -28,7 +28,7 @@ boxjs：https://raw.githubusercontent.com/xiaokxiansheng/js/master/Task/cxk10.bo
 2.点击 我的-去赚钱-一键收取，获得 收集金币ck;
 3.点击 我的-去赚钱-看视频赚2500金币，看一个视频广告获得 视频金币奖励ck;
 4.点击 我的-去赚钱-福利转转转-看视频抽奖，获得 视频抽奖奖励ck 和 抽奖ck;
-5 点击 我的-去赚钱-记录,获得 用户信息url;
+5 点击 我的-去赚钱-记录,获得 用户信息url; 
  */
 
 const jobname = '书旗小说'
