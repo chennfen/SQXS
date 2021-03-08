@@ -55,7 +55,7 @@ const jobname = '书旗小说'
     
     
     
-/*ck解密*/
+/*ck解密
 let fs = require('fs');
 const crypto = require('crypto');
 
@@ -66,7 +66,7 @@ function aesDecrypt(encrypted, key) {
     return decrypted;
 }
     
-    
+*/    
     
     let ReadTimes = 0;
 let vediogold = 0;
@@ -82,6 +82,8 @@ let drawgold = 0;
     $.done();
 })
 
+
+/*
 async function all() {
     //nodejs运行
     if ($.isNode()) {
@@ -101,10 +103,10 @@ async function all() {
                 drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 6 * i].val;
 
+*/			    
 		    
 		    
-		    
-/*	
+	
 
 async function all() {
     //nodejs运行
@@ -122,7 +124,7 @@ async function all() {
                 drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 6 * i].val;
 
-*/			
+		
 		    
 		    
 		    
