@@ -1,5 +1,9 @@
 /*
-测试js
+
+脚本名称："书旗小说多账户号稳定版";
+适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ;（重要事情说三遍）
+作者：caixukun;
+
 
 【注意事项】：
 0.所有js脚本均为本地脚本，非远程目录。
@@ -87,13 +91,13 @@ async function all() {
                 vediogold = 0;
                 drawgold = 0;
 
-		    
+                
                 //看视频奖励抽奖次数
-                await vediodrawprize(0);		    
-		    
-		//看视频奖励金币
-                await vediogoldprize(0);
-		    		    
+                await vediodrawprize(0);
+                
+                //看视频奖励金币
+                //await vediogoldprize(0);
+                
                 //阅读
                 //await readbook();
 
@@ -345,8 +349,6 @@ function draw(k) {
         });
     });
 }
-
-*/
 
 function userinfo() {
     return new Promise((resolve, reject) => {
