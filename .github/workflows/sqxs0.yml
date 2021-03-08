@@ -22,7 +22,7 @@ jobs:
       
       - name: '【测试】'
         run: |  
-          node Task/sqxs0.js
+          node Task/sqxs.js
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
 
