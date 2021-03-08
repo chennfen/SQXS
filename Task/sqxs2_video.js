@@ -24,7 +24,7 @@
 
 
 【QX教程】：
-hostname：ocean.shuqireader.com
+hostname：ocean.shuqireader.com 
 
 [rewrite_local]
 https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery url script-request-body sqxsgetck.js
