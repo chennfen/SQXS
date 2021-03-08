@@ -16,7 +16,7 @@
 
 
 【nodejs教程】：
-打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本； 
+打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本；
 
 
 【QX教程】：
@@ -30,7 +30,7 @@ https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url scri
 https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body sqxsgetck.js
 
 [task_local]
-0 12 * * * sqxs.js, tag=书旗小说, enabled=true 
+0 12 * * * sqxs.js, tag=书旗小说, enabled=true
 
 boxjs：https://raw.githubusercontent.com/xiaokxiansheng/js/master/Task/cxk10.boxjs.json
 
@@ -52,22 +52,6 @@ boxjs：https://raw.githubusercontent.com/xiaokxiansheng/js/master/Task/cxk10.bo
 const jobname = '书旗小说'
     const $ = Env(jobname)
 
-    
-    
-    
-/*ck解密
-let fs = require('fs');
-const crypto = require('crypto');
-
-function aesDecrypt(encrypted, key) {
-    const decipher = crypto.createDecipher('aes192', key);
-    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
-    decrypted += decipher.final('utf8');
-    return decrypted;
-}
-    
-*/    
-    
     let ReadTimes = 0;
 let vediogold = 0;
 let drawgold = 0;
@@ -82,16 +66,11 @@ let drawgold = 0;
     $.done();
 })
 
-
-/*
 async function all() {
     //nodejs运行
     if ($.isNode()) {
-		let encrypted=fs.readFileSync('./sqxsck.txt', 'utf8');	
-		key = process.env.ENCRYPT_KEY;
-		let decrypted = await aesDecrypt(encrypted, key);
-		sqxsck=JSON.parse(decrypted);
-        //let sqxsck = require('./sqxsck.json');
+
+        let sqxsck = require('./sqxsck0.json');
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
@@ -103,49 +82,24 @@ async function all() {
                 drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 6 * i].val;
 
-*/			    
-		    
-		    
-	
-
-async function all() {
-    //nodejs运行
-    if ($.isNode()) {
-
-        let sqxsck = require('./sqxsck.json');
-        let CountNumber = sqxsck.settings[1].val;
-        $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
-        for (let i = 0; i < CountNumber; i++) {
-            if (sqxsck.datas[0 + 6 * i].val) {
-                readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
-                receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
-                vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
-                vediodrawprizeckArr = sqxsck.datas[3 + 6 * i].val.split('&&');
-                drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
-                userinfock = sqxsck.datas[5 + 6 * i].val;
-
-		
-		    
-		    
-		    
-		   
                 $.log(`\n============ 【书旗小说${i+1}】=============`);
                 ReadTimes = 0;
                 vediogold = 0;
                 drawgold = 0;
 
+		    
+                //看视频奖励抽奖次数
+                await vediodrawprize(0);		    
+		    
+		//看视频奖励金币
+                await vediogoldprize(0);
+		    		    
                 //阅读
                 //await readbook();
 
                 //收集阅读金币
                 //if(ReadTimes>0)
                 //await receivecoin();
-
-                //看视频奖励金币
-                //await vediogoldprize(0);
-
-                //看视频奖励抽奖次数
-                await vediodrawprize(0);
 
                 //个人信息
                 await userinfo();
@@ -314,7 +268,7 @@ function vediogoldprize(j) {
         });
     });
 }
-/*
+
 function vediodrawprize(k) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -817,6 +771,10 @@ function Env(t, e) {
     }
     (t, e)
 }
+
+
+
+
 
 
 
