@@ -30,7 +30,7 @@ https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url scri
 https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body sqxsgetck.js
 
 [task_local]
-0 12 * * * sqxs.js, tag=书旗小说, enabled=true
+0 12 * * * sqxs.js, tag=书旗小说, enabled=true 
 
 boxjs：https://raw.githubusercontent.com/xiaokxiansheng/js/master/Task/cxk10.boxjs.json
 
