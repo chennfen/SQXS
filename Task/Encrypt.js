@@ -27,14 +27,14 @@ function aesEncrypt(data, key) {
     crypted += cipher.final('hex');
     return crypted;
 }
-let data = require('./sqxsck0.json');
+let data = require('./sqxsck.json');
 data=JSON.stringify(data);
 
 
 let encrypted = aesEncrypt(data, key);
 
 
-fs.writeFile("./sqxsck0.txt", encrypted, function(err) {
+fs.writeFile("./sqxsck.txt", encrypted, function(err) {
     if(err) {
         return console.log(err);
     }
