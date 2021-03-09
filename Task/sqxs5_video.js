@@ -2,7 +2,7 @@
 醒10,12,13
 脚本名称："书旗小说多账户号稳定版";
 适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ;（重要事情说三遍）
-作者：caixukun;
+作者：caixukun; 
 
 
 【注意事项】：
@@ -29,7 +29,7 @@ hostname：ocean.shuqireader.com
 [rewrite_local]
 https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery url script-request-body sqxsgetck.js
 https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw url script-request-body sqxsgetck.js
-https://ocean.shuqireader.com/api/activity/xapi/gold/record url script-request-body sqxsgetck.js
+https://ocean.shuqireader.com/api/activity/xapi/gold/record url script-request-body sqxsgetck.js 
 https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url script-request-body sqxsgetck.js
 https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body sqxsgetck.js
 
@@ -53,10 +53,21 @@ boxjs：https://raw.githubusercontent.com/xiaokxiansheng/js/master/Task/cxk10.bo
 
  */
 
-const jobname = '书旗小说'
-    const $ = Env(jobname)
+const jobname = '书旗小说';
+const $ = Env(jobname);
 
-    let ReadTimes = 0;
+/*ck解密*/
+let fs = require('fs');
+const crypto = require('crypto');
+
+function aesDecrypt(encrypted, key) {
+    const decipher = crypto.createDecipher('aes192', key);
+    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
+    decrypted += decipher.final('utf8');
+    return decrypted;
+}
+
+let ReadTimes = 0;
 let vediogold = 0;
 let drawgold = 0;
 
@@ -74,7 +85,11 @@ async function all() {
     //nodejs运行
     if ($.isNode()) {
 
-        let sqxsck = require('./sqxsck5.json');
+        let encrypted = fs.readFileSync('./sqxsck5.txt', 'utf8');
+        key = process.env.ENCRYPT_KEY;
+        let decrypted = await aesDecrypt(encrypted, key);
+        sqxsck = JSON.parse(decrypted);
+        //let sqxsck = require('./sqxsck.json');
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
@@ -86,11 +101,13 @@ async function all() {
                 drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 6 * i].val;
 
+
                 $.log(`\n============ 【书旗小说${i+1}】=============`);
                 ReadTimes = 0;
                 vediogold = 0;
                 drawgold = 0;
 
+                
                 //看视频奖励抽奖次数
                 await vediodrawprize(0);
                 
@@ -131,11 +148,11 @@ async function all() {
                 vediogold = 0;
                 drawgold = 0;
                 //阅读
-                await readbook();
+                //await readbook();
 
                 //收集阅读金币
                 //if(ReadTimes>0)
-                await receivecoin();
+                //await receivecoin();
 
                 //看视频奖励金币
                 await vediogoldprize(0);
@@ -164,7 +181,7 @@ function readbook() {
             try {
                 if (error) {
                     $.log("阅读请求失败,再次尝试阅读");
-                    await $.wait(1000);
+                    await $.wait(1500);
                     await readbook();
                 } else {
                     const result = JSON.parse(data)
@@ -172,13 +189,13 @@ function readbook() {
                         if (result.status == 200) {
                             ReadTimes++;
                             $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
-                            await $.wait(1000);
+                            await $.wait(1500);
                             await readbook();
                         } else {
 
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
-                                await $.wait(1000);
+                                await $.wait(1500);
                                 await readbook();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
@@ -207,7 +224,7 @@ function receivecoin() {
             try {
                 if (error) {
                     $.log("收集阅读金币请求失败,再次尝试收集阅读金币");
-                    await $.wait(1000);
+                    await $.wait(1500);
                     await receivecoin();
                 } else {
                     //$.log(data);
@@ -242,21 +259,21 @@ function vediogoldprize(j) {
             try {
                 if (error) {
                     $.log("视频金币请求失败,再次尝试视频金币");
-                    await $.wait(1000);
+                    await $.wait(1500);
                     await vediogoldprize();
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
                             j++;
-                            $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待30s观看下一个视频");
+                            $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待35s观看下一个视频");
                             vediogold += 250;
-                            await $.wait(30000);
+                            await $.wait(35000);
                             await vediogoldprize(j);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
-                                await $.wait(30000);
+                                await $.wait(35000);
                                 await vediogoldprize(j);
                             } else
                                 $.log("【视频金币】观看失败," + result.message);
@@ -285,7 +302,7 @@ function vediodrawprize(k) {
             try {
                 if (error) {
                     $.log("视频抽奖请求失败,再次尝试视频抽奖");
-                    await $.wait(1000);
+                    await $.wait(1500);
                     await vediogoldprize();
                 } else {
                     const result = JSON.parse(data)
@@ -293,12 +310,12 @@ function vediodrawprize(k) {
                         if (result.status == 200) {
                             k++;
                             $.log("【视频抽奖】观看第" + k + "个视频成功，获得一次抽奖机会");
-                            await $.wait(1000);
+                            await $.wait(1500);
                             await draw(k);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【视频抽奖】观看失败，" + result.message + ",再次尝试视频抽奖");
-                                await $.wait(1000);
+                                await $.wait(1500);
                                 await vediodrawprize(k);
                             } else
                                 $.log("【视频抽奖】观看失败," + result.message);
@@ -326,7 +343,7 @@ function draw(k) {
             try {
                 if (error) {
                     $.log("抽奖任务请求失败,再次尝试视频抽奖");
-                    await $.wait(1000);
+                    await $.wait(1500);
                     await draw();
                 } else {
                     const result = JSON.parse(data)
@@ -334,7 +351,7 @@ function draw(k) {
                         if (result.status == 200) {
                             $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
                             drawgold += parseInt(result.data.prizeList[0].prizeName);
-                            await $.wait(1000);
+                            await $.wait(1500);
                             await vediodrawprize(k);
                         } else {
                             $.log("【抽奖任务】抽奖失败," + result.message);
@@ -361,7 +378,7 @@ function userinfo() {
             try {
                 if (error) {
                     $.log("用户信息请求失败,再次尝试用户信息请求");
-                    await $.wait(1000);
+                    await $.wait(1500);
                     await userinfo();
                 } else {
                     //$.log(data);
@@ -772,6 +789,5 @@ function Env(t, e) {
     }
     (t, e)
 }
-
 
 
