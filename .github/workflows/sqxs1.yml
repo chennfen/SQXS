@@ -27,11 +27,12 @@ jobs:
       
       - name: '【书旗小说1-视频】'
         run: |  
-          cd ~/sqxs/Task
-          node sqxs1_video.js
+          cd ~/sqxs
+          node Task/sqxs1_video.js
           
       - name: '【书旗小说1-阅读】'
         run: |  
+          cd ~/sqxs
           node Task/sqxs1_read.js
  
 
