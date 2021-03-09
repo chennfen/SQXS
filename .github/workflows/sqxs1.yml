@@ -13,7 +13,6 @@ jobs:
       
       - name: Checkout
         run: |
-
           git clone https://github.com/chennfen/sqxs.git ~/sqxs
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
@@ -34,9 +33,10 @@ jobs:
           
       - name: '【书旗小说1-阅读】'
         run: |  
-          cd ~/sqxs
-          node Task/sqxs1_read.js
- 
+          cd ~/sqxs/Task
+          node sqxs1_read.js
+        env:
+          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
 
 
 
