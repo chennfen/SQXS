@@ -266,7 +266,7 @@ function vediogoldprize(j) {
                         //$.log(data);
                         if (result.status == 200) {
                             j++;
-                            $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待30s观看下一个视频");
+                            $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待35s观看下一个视频");
                             vediogold += 250;
                             await $.wait(35000);
                             await vediogoldprize(j);
