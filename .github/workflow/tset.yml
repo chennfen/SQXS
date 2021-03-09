@@ -22,10 +22,10 @@ jobs:
       
       - name: '【测试】'
         run: |  
-          node Task/书旗436.js
+          cd ~/sqxs/Task/public
+          node sqxs.js      
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
-
 
 
 
