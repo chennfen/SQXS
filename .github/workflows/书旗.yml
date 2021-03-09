@@ -1,4 +1,4 @@
-name: 书旗小说1
+name: 书旗加密测试
 on:
   workflow_dispatch:
   watch:
