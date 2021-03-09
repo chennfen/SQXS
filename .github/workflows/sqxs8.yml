@@ -1,4 +1,4 @@
-name: 书旗小说1
+name: 书旗小说8
 on:
   workflow_dispatch:
   watch:
