@@ -1,4 +1,4 @@
-# ck已加密，勿fork！
+# Cookie已加密，勿fork！
 
 #原始脚本在public文件夹中
 
