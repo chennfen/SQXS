@@ -1,10 +1,10 @@
-name: 书旗小说2
+name: 书旗小说1
 on:
   workflow_dispatch:
   watch:
     types: started
   schedule:
-    - cron: '0 2,4 * * *'
+    - cron: '0 1,3 * * *'
 jobs:
   build:
     runs-on: ubuntu-latest       
@@ -12,30 +12,28 @@ jobs:
     steps:
       
       - name: Checkout
-        uses: actions/checkout@v2
+        run: |
+          git clone https://github.com/chennfen/sqxs.git ~/sqxs
       - name: Use Node.js 14.x
         uses: actions/setup-node@v1
         with:
           node-version: 14.x
       - name: npm install
         run: |
+          cd ~/sqxs/Task        
           npm install
           npm install cron
           npm install request
           curl ipinfo.io/json
       
-      - name: '【书旗小说2-视频】'
+      - name: '【书旗小说1-视频】'
         run: |  
-          node Task/sqxs2_video.js
+          cd ~/sqxs/Task
+          node sqxs2_video.js
           
-      - name: '【书旗小说2-阅读】'
+      - name: '【书旗小说1-阅读】'
         run: |  
-          node Task/sqxs2_read.js
-
-
-
-
-
-
-
-
+          cd ~/sqxs/Task
+          node sqxs2_read.js
+        env:
+          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
