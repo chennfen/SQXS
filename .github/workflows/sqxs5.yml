@@ -29,6 +29,8 @@ jobs:
         run: |  
           cd ~/sqxs/Task
           node sqxs5_video.js
+        env:
+          ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
           
       - name: '【书旗小说5-阅读】'
         run: |  
