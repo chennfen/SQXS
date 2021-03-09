@@ -1,4 +1,4 @@
-name: 测试
+name: 测试脚本
 on:
   workflow_dispatch:
 jobs:
