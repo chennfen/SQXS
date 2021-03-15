@@ -1,4 +1,4 @@
-hostname =ocean.shuqireader.com,
+hostname =ocean.shuqireader.com
 https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery url script-request-body https://raw.githubusercontent.com/chennfen/sqxs/main/Task/public/sqxsgetck.js
 https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw url script-request-body https://raw.githubusercontent.com/chennfen/sqxs/main/Task/public/sqxsgetck.js
 https://ocean.shuqireader.com/api/activity/xapi/gold/record url script-request-body https://raw.githubusercontent.com/chennfen/sqxs/main/Task/public/sqxsgetck.js
