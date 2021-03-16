@@ -1,4 +1,4 @@
-name: 书旗小说4.5.6
+name: 书旗小说2
 on:
   workflow_dispatch:
   watch:
