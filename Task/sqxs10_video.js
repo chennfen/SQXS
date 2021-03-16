@@ -109,13 +109,13 @@ async function all() {
 
                 
                 //看视频奖励抽奖次数
-                await vediodrawprize(0);
+                //await vediodrawprize(0);
                 
                 //看视频奖励金币
-                await vediogoldprize(0);
+                //await vediogoldprize(0);
                 
                 //阅读
-                //await readbook();
+                await readbook();
 
                 //收集阅读金币
                 //if(ReadTimes>0)
