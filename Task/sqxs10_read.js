@@ -1,5 +1,5 @@
 /*
-
+醒26,27,28
 脚本名称："书旗小说多账户号稳定版";
 适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ; 适用版本：verson 4.3.2 ;（重要事情说三遍）
 作者：caixukun; 
@@ -109,17 +109,17 @@ async function all() {
 
                 
                 //看视频奖励抽奖次数
-                //await vediodrawprize(0);
+                await vediodrawprize(0);
                 
                 //看视频奖励金币
-                //await vediogoldprize(0);
+                await vediogoldprize(0);
                 
                 //阅读
-                await readbook();
+                //await readbook();
 
                 //收集阅读金币
                 //if(ReadTimes>0)
-                await receivecoin();
+                //await receivecoin();
 
                 //个人信息
                 await userinfo();
@@ -147,20 +147,18 @@ async function all() {
                 ReadTimes = 0;
                 vediogold = 0;
                 drawgold = 0;
-                
-                
-                //看视频奖励抽奖次数
-                await vediodrawprize(0);
-                
-                //看视频奖励金币
-                await vediogoldprize(0);                
-                                
                 //阅读
                 await readbook();
 
                 //收集阅读金币
                 //if(ReadTimes>0)
-                await receivecoin();               
+                await receivecoin();
+
+                //看视频奖励金币
+                //await vediogoldprize(0);
+
+                //看视频奖励抽奖次数
+                //await vediodrawprize(0);
 
                 //个人信息
                 await userinfo();
@@ -791,10 +789,6 @@ function Env(t, e) {
     }
     (t, e)
 }
-
-
-
-
 
 
 
