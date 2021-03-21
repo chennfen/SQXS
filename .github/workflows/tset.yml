@@ -1,4 +1,4 @@
-name: 书旗小说7
+name: 测试
 on:
   workflow_dispatch:
   watch:
