@@ -1,7 +1,7 @@
 {
-    "id": "cxk.app.sub",
+    "id": "cxk2.app.sub",
     "name": "书旗完整 脚本订阅",
-    "author": "@caixukun1",
+    "author": "@caixukun2",
     "apps": [{
             "id": "wx",
             "name": "微信code",
@@ -43,7 +43,7 @@
             ],
             "script": "https://raw.githubusercontent.com/"
         }, {
-            "id": "sqxh",
+            "id": "sqxs",
             "name": "书旗小说",
             "keys": [
                 "readck1",
