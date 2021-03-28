@@ -64,9 +64,9 @@ async function all() {
             if (sqxsck.datas[0 + 6 * i].val) {
                 readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
                 receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
-                vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
-                vediodrawprizeckArr = sqxsck.datas[3 + 6 * i].val.split('&&');
-                drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
+                //vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
+                //vediodrawprizeckArr = sqxsck.datas[3 + 6 * i].val.split('&&');
+                //drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 6 * i].val;
 
                 $.log(`\n============ 【书旗小说${i+1}】=============`);
@@ -81,10 +81,10 @@ async function all() {
                 await receivecoin();
 
                 //看视频奖励金币
-                await vediogoldprize(0);
+                //await vediogoldprize(0);
 
                 //看视频奖励抽奖次数
-                await vediodrawprize(0);
+                //await vediodrawprize(0);
 		    
                 //个人信息
                 await userinfo();
@@ -153,13 +153,13 @@ function readbook() {
                         if (result.status == 200) {
                             ReadTimes++;
                             $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
-                            await $.wait(1000);
+                            await $.wait(100);
                             await readbook();
                         } else {
 
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
-                                await $.wait(1000);
+                                await $.wait(500);
                                 await readbook();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
