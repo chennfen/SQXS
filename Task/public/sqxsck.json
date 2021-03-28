@@ -1,3 +1,6 @@
+/*
+多行注释
+*/
 {
 	"id": "sqxh",
 	"name": "书旗小说",
@@ -23,7 +26,6 @@
 	"favIcon": "mdi-star",
 	"favIconColor": "primary",
 	"datas": [
-	//测试
 	   {
 		"key": "readck1",
 		"val": "_public=skinId%3D999%26idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DYEYk3IhNyncDABRPjr8nSGvQ%26user_id%3D2021751788%26sn%3D5A36EFBC755F3B4CA54896B0090ADBC78AF42229%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3DD993EBA0C32DB47ABBF251DF9AE45F0456D09972%26skinVersionPrefix%3D1%26appVer%3D4.3.1.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDIxNzUxNzg4IiwidXRkaWQiOiIiLCJpbWVpIjoiRDk5M0VCQTBDMzJEQjQ3QUJCRjI1MURGOUFFNDVGMDQ1NkQwOTk3MiIsInNuIjoiNUEzNkVGQkM3NTVGM0I0Q0E1NDg5NkIwMDkwQURCQzc4QUY0MjIyOSIsImV4cCI6MTYxNTczNDI2MSwidXNlcklkIjoiMjAyMTc1MTc4OCIsImlhdCI6MTYxNTIxNTg2MSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.0MzU9z7XvffioSowR0nDJtg9D51lLb5W0MjI81dYeOWfzLD6iWnM8K2-GmoidtMaoobBdgMMwvSZ-kG_TDj0rQ%26skinColor%3D23B383%26platform%3DiOS%26ver%3D210111%26mod%3DiPhone8%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utdid%3DYEYk3IhNyncDABRPjr8nSGvQ%26utype%3Dvip%26sdk%3D14.3&deliveryId=707&key=sq_app_ad&miniWua=HHnB_c2lKEe%2BFE7BQ7RdjM2V4QoJzUmBthKPNgNKHLxnsvjhzZuK6KgxMTJKO1iFkfbfbcentxu9SH2a9oBmo4YFTmRRLcEsNZ2XOBwfbcOvebJ8yBmI4qrPewQb4MmqiQj1H&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=62398D3C97B84DEEC44CDE080C470AEB&timestamp=1615219939&userId=2021751788&wua=HIVW_Fl1HiW3WOqlj735xBkOyxVBQba%2BFEO0CGAb2vCDkBBraiUGpKiPTjl6vgzruKNVuQbbDn8KPU8T2jsaKUUI5fGUY1waRFFP7Dh4IKRXv13tnm5cQOkfh0%2BX%2BjTq1PeWs4ITUWW2Y1xhtX1TENo%2BwISfvfdn/W8U2sVkNA1mqnrboCT3JuG/frttUVtTzlhXAmdeqKoaRaJCJQhzDaH8Hy%2BCPUVb%2BE3sSBdYmRgzq3G/6oHYN4LtAUn/PXvPl%2BV42rPzioTajzG7VrTBJ8A7Q4dP4gBaBwVDYMNld1zQQHahOM1bn3cSPLM7NuV8jlYYY8BHuu0FlSlwTOqLJex2T713iv//RpkhaENbGt/1h3ag2Xt99ABhPdSRDt0AS2fWd&&{\"Cookie\":\"isg=BNracW_rbpNMPOI_MB1LQ-SyIYT8C17lISiGPORTq20oV3KRzJru9Am3IaVLnNZ9; cna=3hLNGHhKtAcCAbZxdkYxm6as\",\"Accept\":\"*/*\",\"Connection\":\"keep-alive\",\"Content-Type\":\"application/x-www-form-urlencoded\",\"Accept-Encoding\":\"gzip, deflate, br\",\"Host\":\"ocean.shuqireader.com\",\"User-Agent\":\"shuqireader/4.3.1 (iPhone; iOS 14.3; Scale/2.00)\",\"Content-Length\":\"1784\",\"Accept-Language\":\"zh-Hans-CN;q=1\"}"
