@@ -1,4 +1,7 @@
 /*
+【账号个数判定】：
+个人信息个数决定(userinfock)
+
 【nodejs教程】：
 打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本；
 
