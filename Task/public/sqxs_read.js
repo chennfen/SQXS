@@ -61,7 +61,7 @@ async function all() {
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
-            //if (sqxsck.datas[0 + 6 * i].val) {
+            if (sqxsck.datas[5 + 6 * i].val) {
                 readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
                 receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
                 //vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
@@ -88,7 +88,7 @@ async function all() {
 		    
                 //个人信息
                 await userinfo();
-            //}
+            }
         }
 
     }
