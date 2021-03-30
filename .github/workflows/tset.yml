@@ -1,4 +1,4 @@
-name: 测试
+name: 测试阅读
 on:
   workflow_dispatch:
 jobs:
@@ -21,12 +21,7 @@ jobs:
           npm install cron
           npm install request
           curl ipinfo.io/json
-          
-          
-      - name: '【书旗小说-视频】'
-        run: |  
-          cd ~/sqxs/Task/public
-          node sqxs_video.js      
+            
           
       - name: '【书旗小说-阅读】'
         run: |  
