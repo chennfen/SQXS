@@ -1,6 +1,10 @@
 name: 测试阅读
 on:
   workflow_dispatch:
+  watch:
+    types: started
+  schedule:
+    - cron: '0,5,15,20 */6 * * *'
 jobs:
   build:
     runs-on: macos-latest       
