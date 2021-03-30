@@ -36,8 +36,37 @@ boxjs：https://raw.githubusercontent.com/xiaokxiansheng/js/master/Task/cxk10.bo
 
 5 点击 我的-去赚钱-记录,获得 用户信息url;
 
-
  */
+/*
+非加密替换
+
+const jobname = '书旗小说'
+    const $ = Env(jobname)
+
+    let ReadTimes = 0;
+let vediogold = 0;
+let drawgold = 0;
+
+!(async() => {
+    await all();
+})()
+.catch((e) => {
+    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+})
+.finally(() => {
+    $.done();
+})
+
+async function all() {
+    //nodejs运行
+    if ($.isNode()) {
+
+        let sqxsck = require('./sqxsck.json');
+        let CountNumber = sqxsck.settings[1].val;
+        $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
+
+*/
+
 const jobname = '书旗小说';
 const $ = Env(jobname);
 
