@@ -1,10 +1,10 @@
-name: 测试阅读
+name: 测试视频
 on:
   workflow_dispatch:
   watch:
     types: started
   schedule:
-    - cron: '5 */6 * * *'
+    - cron: '0 0,4 * * *'
 jobs:
   build:
     runs-on: macos-latest       
@@ -27,9 +27,11 @@ jobs:
           curl ipinfo.io/json
           
           
-      - name: '【书旗小说-阅读】'
+      - name: '【书旗小说-视频】'
         run: |  
           cd ~/sqxs/Task
           node sqxs_read.js    
         env:
           ENCRYPT_KEY: ${{ secrets.ENCRYPT_KEY }}
+
+
