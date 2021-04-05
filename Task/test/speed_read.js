@@ -66,22 +66,10 @@ async function all() {
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
 */
+const jobname = '书旗小说'
+    const $ = Env(jobname)
 
-const jobname = '书旗小说';
-const $ = Env(jobname);
-
-/*ck解密*/
-let fs = require('fs');
-const crypto = require('crypto');
-
-function aesDecrypt(encrypted, key) {
-    const decipher = crypto.createDecipher('aes192', key);
-    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
-    decrypted += decipher.final('utf8');
-    return decrypted;
-}
-
-let ReadTimes = 0;
+    let ReadTimes = 0;
 let vediogold = 0;
 let drawgold = 0;
 
@@ -97,25 +85,11 @@ let drawgold = 0;
 
 async function all() {
     //nodejs运行
-if ($.isNode()) {
+    if ($.isNode()) {
 
-        let encrypted = fs.readFileSync('./sqxsck.txt', 'utf8');
-        key = process.env.ENCRYPT_KEY;
-        let decrypted = await aesDecrypt(encrypted, key);
-        sqxsck = JSON.parse(decrypted);
-        //let sqxsck = require('./sqxsck.json');
+        let sqxsck = require('./sqxsck.json');
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
-        for (let i = 0; i < CountNumber; i++) {
-            if (sqxsck.datas[5 + 6 * i].val) {
-                readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
-                receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
-                //vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
-                //vediodrawprizeckArr = sqxsck.datas[3 + 6 * i].val.split('&&');
-                //drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
-                userinfock = sqxsck.datas[5 + 6 * i].val;
-
-                $.log(`\n============ 【书旗小说${i+1}】=============`);
                 ReadTimes = 0;
                 vediogold = 0;
                 drawgold = 0;
@@ -147,7 +121,7 @@ if ($.isNode()) {
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
         for (let i = 1; i <= CountNumber; i++) {
-            if ($.getdata(`readck2${i}`)) {
+            if ($.getdata(`read2ck${i}`)) {
                 //readckArr = $.getdata(`readck${i}`).split('&&');
                 read2ckArr = $.getdata(`read2ck${i}`).split('&&');              
                 //receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
