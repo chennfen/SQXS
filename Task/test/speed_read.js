@@ -149,7 +149,7 @@ if ($.isNode()) {
         for (let i = 1; i <= CountNumber; i++) {
             if ($.getdata(`readck2${i}`)) {
                 //readckArr = $.getdata(`readck${i}`).split('&&');
-                readck2Arr = $.getdata(`readck2${i}`).split('&&');              
+                read2ckArr = $.getdata(`read2ck${i}`).split('&&');              
                 //receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
                 //vediogoldprizeckArr = $.getdata(`vediogoldprizeck${i}`).split('&&');
                 //vediodrawprizeckArr = $.getdata(`vediodrawprizeck${i}`).split('&&');
@@ -163,7 +163,7 @@ if ($.isNode()) {
                 await readbook();
               
                 //极速版阅读
-                await readbook2();
+                await read2book();
               
                 //收集阅读金币
                 //await receivecoin();
@@ -228,21 +228,21 @@ function readbook() {
 
 
 //极速版阅读
-function readbook2() {
+function read2book() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/activity/v1/api/activity/pendant/lottery";
 
         const request = {
             url: url,
-            headers: JSON.parse(readck2Arr[1]),
-            body: readck2Arr[0]
+            headers: JSON.parse(read2ckArr[1]),
+            body: read2ckArr[0]
         };
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
                     $.log("阅读请求失败,再次尝试阅读");
                     await $.wait(500);
-                    await readbook2();
+                    await read2book();
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
@@ -250,13 +250,13 @@ function readbook2() {
                             ReadTimes++;
                             $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
                             await $.wait(100);
-                            await readbook2();
+                            await read2book();
                         } else {
 
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
                                 await $.wait(200);
-                                await readbook2();
+                                await read2book();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
 
