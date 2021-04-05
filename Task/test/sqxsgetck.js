@@ -29,8 +29,8 @@ if（url.indexOf（'/ api / acticity / v1 / acticity / pendant / lottery'）！=
 	{
 		$ .msg（'书旗小说'+ $ .idx，'获取极速版阅读ck成功（共2个ck）'）;
 
-		让readck2 = body +'&&'+ JSON.stringify（headers）;
-		$ .setdata（readck2，'readck2'+ $ .idx）	
+		让read2ck = body +'&&'+ JSON.stringify（headers）;
+		$ .setdata（read2ck，'read2ck'+ $ .idx）	
 	}		
 }
 
