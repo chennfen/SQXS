@@ -21,7 +21,7 @@ if（url.indexOf（'/ ad / v1 / api / prize / readpage / pendant / lottery'）�
 
 
 
-if（url.indexOf（'/ api / jbookmark / v1 / readmark / sync'）！=-1）
+if（url.indexOf（'/ api / acticity / v1 / acticity / pendant / lottery'）！=-1）
 {
 	var body = $ request.body;
 	var headers = $ request.headers;
