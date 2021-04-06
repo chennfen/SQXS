@@ -19,7 +19,10 @@ https://ocean.shuqireader.com/api/activity/xapi/gold/record url script-request-b
 https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url script-request-body sqxsgetck.js
 #阅读
 https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body sqxsgetck.js
-
+#极速版阅读
+https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
+#极速版视频
+https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 [task_local]
 0 12 * * * sqxs.js, tag=书旗小说, enabled=true
 
