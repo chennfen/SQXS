@@ -46,15 +46,15 @@
             "id": "sqxs2",
             "name": "书旗小说及极速完整",
             "keys": [
-                "readck1",
-                "read2ck1",
+                "readck1",                
                 "receivecoinck1",
                 "vediogoldprizeck1",
-                "vediogold2prizeck1",
                 "vediodrawprizeck1",
                 "drawck1",
                 "userinfock1",
-
+		"read2ck1",
+                "vediogold2prizeck1",
+		    		   
                 "readck2",
                 "receivecoinck2",
                 "vediogoldprizeck2",
