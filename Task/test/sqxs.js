@@ -258,7 +258,6 @@ function read2book() {
                             if (ReadTimes != 360) {
                                 $.log("【阅读任务】阅读失败,已达上限");
                                 await $.wait(500);
-                                await read2book();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
 
