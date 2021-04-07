@@ -255,11 +255,11 @@ function read2book() {
                             await read2book();
                         } else {
 
-                            if (result.data == {"awardStatus":null,"awardMessage":null,"chanceMaxCnt":360,"chanceCurrentCnt":360,"todayBizCoinAmount":null,"prizeInfo":null,"toast":null,"jumpType":null,"jumpParam":null}) {
-                                $.log("【阅读任务】阅读失败,已达上限");
+                            if (result.data.chanceCurrentCnt != 360) {
+                                $.log("【阅读任务】阅读失败,再次尝试");
                                 await $.wait(500);
                             } else
-                                $.log("【阅读任务】阅读失败，" + result.message);
+                                $.log("【阅读任务】阅读失败，已达上限");
 
                             //$.log(data);
                         }
