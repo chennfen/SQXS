@@ -96,8 +96,7 @@ async function all() {
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
-            //以极速版阅读ck个数判断账号个数
-            if (sqxsck.datas[6 + 8 * i].val) {
+            if (sqxsck.datas[7 + 8 * i].val) {
                 readckArr = sqxsck.datas[0 + 8 * i].val.split('&&');
                 receivecoinckArr = sqxsck.datas[1 + 8 * i].val.split('&&');
                 vediogoldprizeckArr = sqxsck.datas[2 + 8 * i].val.split('&&');
@@ -255,9 +254,15 @@ function read2book() {
                             await $.wait(100);
                             await read2book();
                         } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.chanceCurrentCnt == 360) {
+                            $.log("【阅读任务】阅读360次，已达到上限");
+                            await $.wait(100);
+                        } else {
 
-                            if (result.message != '领取达到每日上限，请明天再来') {
-                                $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
+                            if (result.chanceCurrentCnt == 360) {
+                                $.log("【阅读任务】阅读已达上限，请明天再来");
                                 await $.wait(500);
                                 await read2book();
                             } else
