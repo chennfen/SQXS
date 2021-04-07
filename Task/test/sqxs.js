@@ -28,7 +28,7 @@ https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery* url script-request-bo
 [task_local]
 0 12 * * * sqxs.js, tag=书旗小说, enabled=true
 
-共8个ck
+共8个ck,若ck未抓齐，注释相应函数即可(185-205行)
 打开书旗小说
 1.4.3.1版本书旗小说 点击 我的-去赚钱-去看书，随便阅读一本书，金币转一圈获得 阅读ck;
 
