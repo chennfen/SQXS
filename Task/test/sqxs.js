@@ -21,9 +21,9 @@ https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url scri
 #阅读
 https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 #极速版阅读
-https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery - script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
+https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 #极速版视频
-https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery* - script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
+https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery* url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 
 [task_local]
 0 12 * * * sqxs.js, tag=书旗小说, enabled=true
