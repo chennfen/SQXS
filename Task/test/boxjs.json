@@ -1,9 +1,9 @@
 {
-	"id": "cxk2.app.sub",
-	"name": "书旗完整 脚本订阅",
-	"author": "@caixukun2",
+	"id": "cxk3.app.sub",
+	"name": "书旗及极速完整 脚本订阅",
+	"author": "@caixukun3",
 	"apps": [{
-		"id": "sqxs2",
+		"id": "sqxs3",
 		"name": "书旗小说及极速完整",
 		"keys": [
 			"readck1",
@@ -295,7 +295,7 @@
 			"vediogold2prizeck32"
 
 		],
-		"author": "@caixukun1",
+		"author": "@caixukun3",
 		"settings": [{
 			"id": "sqxs",
 			"name": "当前账号",
