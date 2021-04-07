@@ -246,6 +246,12 @@ function read2book() {
                     await $.wait(1000);
                     await read2book();
                 } else {
+
+                            if (ReadTimes == 360) {
+                                $.log("【阅读任务】阅读失败,已达上限");
+                                await $.wait(500);
+                                await read2book();
+                            } else {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
@@ -253,13 +259,7 @@ function read2book() {
                             $.log("【阅读任务】第" + ReadTimes + "次阅读成功");
                             await $.wait(100);
                             await read2book();
-                        } else {
-
-                            if (ReadTimes == 360) {
-                                $.log("【阅读任务】阅读失败,已达上限");
-                                await $.wait(500);
-                                await read2book();
-                            } else
+                        } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
 
                             //$.log(data);
