@@ -3,7 +3,8 @@
 个人信息个数决定(userinfock)
 
 【nodejs教程】：
-打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本；
+打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,加密json生成txt文件，与本脚本放同一目录下，用nodejs即可运行本脚本；
+注释中含非加密替换代码，替换相应部分即可
 
 
 【QX教程】：
