@@ -247,22 +247,20 @@ function read2book() {
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
-                        //$.log(data);
+                    if (result.chanceCurrentCnt != 360) {
+                        $.log("【阅读任务】阅读失败,领取达到每日上限，请明天再来");
+                        await $.wait(500);
+                    } else {
+                        const result = JSON.parse(data)
+                            //$.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
                             $.log("【阅读任务】第" + ReadTimes + "次阅读成功");
                             await $.wait(100);
                             await read2book();
-                        } else {
-
-                            if (result.data.chanceCurrentCnt != 360) {
-                                $.log("【阅读任务】阅读失败,再次尝试");
-                                await $.wait(500);
-                            } else
-                                $.log("【阅读任务】阅读失败，已达上限");
-
-                            //$.log(data);
                         }
+                        //$.log(data);
+                    }
                 }
             } catch (e) {
                 $.log(e)
@@ -271,7 +269,6 @@ function read2book() {
         });
     });
 }
-
 
 function receivecoin() {
     return new Promise((resolve, reject) => {
