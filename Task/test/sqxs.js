@@ -10,7 +10,7 @@
 hostname：ocean.shuqireader.com
 
 [rewrite_local]
-#视频
+#视频&抽奖视频&极速视频
 https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 #抽奖
 https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
@@ -22,8 +22,7 @@ https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url scri
 https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 #极速版阅读
 https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-#极速版视频
-https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery* url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
+
 
 [task_local]
 0 12 * * * sqxs.js, tag=书旗小说, enabled=true
