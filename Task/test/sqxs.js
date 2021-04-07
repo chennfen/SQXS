@@ -254,12 +254,6 @@ function read2book() {
                             await $.wait(100);
                             await read2book();
                         } else {
-                    const result = JSON.parse(data)
-                        //$.log(data);
-                        if (result.chanceCurrentCnt == 360) {
-                            $.log("【阅读任务】阅读360次，已达到上限");
-                            await $.wait(100);
-                        } else {
 
                             if (result.chanceCurrentCnt == 360) {
                                 $.log("【阅读任务】阅读已达上限，请明天再来");
