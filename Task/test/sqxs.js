@@ -146,14 +146,13 @@ async function all() {
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
         for (let i = 1; i <= CountNumber; i++) {
-            //以极速版阅读ck个数判断账号个数
-            if ($.getdata(`read2ck${i}`)) {
-                //readckArr = $.getdata(`readck${i}`).split('&&');
-                //receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
-                //vediogoldprizeckArr = $.getdata(`vediogoldprizeck${i}`).split('&&');
-                //vediodrawprizeckArr = $.getdata(`vediodrawprizeck${i}`).split('&&');
-                //drawckArr = $.getdata(`drawck${i}`).split('&&');
-                //userinfock = $.getdata(`userinfock${i}`);
+            if ($.getdata(`vediogold2prizeck${i}`)) {
+                readckArr = $.getdata(`readck${i}`).split('&&');
+                receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
+                vediogoldprizeckArr = $.getdata(`vediogoldprizeck${i}`).split('&&');
+                vediodrawprizeckArr = $.getdata(`vediodrawprizeck${i}`).split('&&');
+                drawckArr = $.getdata(`drawck${i}`).split('&&');
+                userinfock = $.getdata(`userinfock${i}`);
                 read2ckArr = $.getdata(`read2ck${i}`).split('&&');
                 vediogold2prizeckArr = $.getdata(`vediogold2prizeck${i}`).split('&&');
               
@@ -245,14 +244,14 @@ function read2book() {
             try {
                 if (error) {
                     $.log("阅读请求失败,再次尝试阅读");
-                    await $.wait(500);
+                    await $.wait(1000);
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
-                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
+                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功");
                             await $.wait(100);
                             await read2book();
                         } else {
@@ -262,7 +261,7 @@ function read2book() {
                                 await $.wait(500);
                                 await read2book();
                             } else
-                                $.log("【阅读任务】阅读失败，" + result.message);
+                                $.log(result.message);
 
                             //$.log(data);
                         }
@@ -377,7 +376,7 @@ function vediogold2prize(n) {
                         if (result.status == 200) {
                             n++;
                             $.log("【视频金币】观看第" + n + "个视频成功，获得100金币，等待3s观看下一个视频");
-                            vediogold2 += 100;
+                            vediogold += 100;
                             await $.wait(3000);
                             await vediogold2prize(n);
                         } else {
