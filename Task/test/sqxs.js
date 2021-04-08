@@ -167,7 +167,8 @@ if ($.isNode()) {
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
         for (let i = 1; i <= CountNumber; i++) {
-            if ($.getdata(`userinfock${i}`)) {
+            //以极速阅读ck为准
+            if ($.getdata(`read2ck${i}`)) {
                 readckArr = $.getdata(`readck${i}`).split('&&');
                 receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
                 vediogoldprizeckArr = $.getdata(`vediogoldprizeck${i}`).split('&&');
@@ -269,19 +270,18 @@ function read2book() {
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
-                    if (result.chanceCurrentCnt != 360) {
+                    if (result.data.chanceCurrentCnt == 360) {
                         $.log("【极速阅读任务】阅读失败,领取达到每日上限，请明天再来");
-                        await $.wait(500);
+                        await $.wait(1000);
                     } else {
-                        const result = JSON.parse(data)
-                            //$.log(data);
+                            $.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
                             $.log("【极速阅读任务】第" + ReadTimes + "次阅读成功");
-                            await $.wait(100);
+                            await $.wait(500);
                             await read2book();
                         }
-                        //$.log(data);
+                        $.log(data);
                     }
                 }
             } catch (e) {
