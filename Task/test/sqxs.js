@@ -184,25 +184,25 @@ if ($.isNode()) {
                 drawgold = 0;
               
                 //阅读
-                await readbook();
+                //await readbook();
               
                 //极速版阅读
                 await read2book();              
 
                 //收集阅读金币
-                await receivecoin();
+                //await receivecoin();
 
                 //看视频奖励金币
-                await vediogoldprize(0);
+                //await vediogoldprize(0);
                             
                 //极速版看视频奖励金币
-                await vediogold2prize(0);
+                //await vediogold2prize(0);
 
                 //看视频奖励抽奖次数
-                await vediodrawprize(0);
+                //await vediodrawprize(0);
 		    
                 //个人信息
-                await userinfo();
+                //await userinfo();
             }
         }
 
