@@ -19,7 +19,7 @@ if(url.indexOf('/ad/v1/api/prize/readpage/pendant/lottery')!=-1)
 		$.setdata(readck ,'readck'+ $.idx)	
 	}		
 }
-
+/*
 //极速版阅读
 if(url.indexOf('/api/activity/v1/activity/pendant/lottery')!=-1)
 {
@@ -36,6 +36,25 @@ if(url.indexOf('/api/activity/v1/activity/pendant/lottery')!=-1)
 		$.setdata(read2ck ,'read2ck'+ $.idx)	
 	}		
 }
+*/
+//http://activity-center-web.shuqireader.com/v1/activity/pendant/lottery
+//极速版阅读2
+if(url.indexOf('/v1/activity/pendant/lottery')!=-1)
+{
+	
+	
+	var body = $request.body;
+	var headers = $request.headers;
+	if(body&&headers)
+	{
+
+		$.msg('书旗小说极速版'+ $.idx,'获取阅读ck成功(共2个ck)');
+
+		let read2ck=body+'&&'+JSON.stringify(headers);
+		$.setdata(read2ck ,'read2ck'+ $.idx)	
+	}		
+}
+
 
 
 if(url.indexOf('/prizecenter/xapi/prize/manual/receive')!=-1)
