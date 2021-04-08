@@ -3,32 +3,12 @@
 个人信息个数决定(userinfock)
 
 【nodejs教程】：
-打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,加密json生成txt文件，与本脚本放同一目录下，用nodejs即可运行本脚本；
-注释中含非加密替换代码，替换相应部分即可
+打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本；
+
 
 【QX教程】：
-hostname：ocean.shuqireader.com
 
-[rewrite_local]
-#视频&抽奖视频&极速视频
-https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-#抽奖
-https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-#记录
-https://ocean.shuqireader.com/api/activity/xapi/gold/record url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-#收取
-https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-#阅读
-https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-#极速版阅读
-https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
-
-
-[task_local]
-0 12 * * * sqxs.js, tag=书旗小说, enabled=true
-
-共8个ck,若ck未抓齐，注释相应函数即可(185-205行)
-打开书旗小说
+共6个ck，打开书旗小说
 1.4.3.1版本书旗小说 点击 我的-去赚钱-去看书，随便阅读一本书，金币转一圈获得 阅读ck;
 
 2.点击 我的-去赚钱-一键收取，获得 收集金币ck;
@@ -39,14 +19,7 @@ https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery url scrip
 
 5 点击 我的-去赚钱-记录,获得 用户信息url;
 
-打开书旗小说极速版
-7.点击 我的-去赚钱-去看书，随便阅读一本书，金币转一圈获得 阅读ck;
-
-8.点击 我的-去赚钱-看视频赚1000金币，看一个视频广告获得 视频金币奖励ck;
-
  */
-
-
 /*
 非加密替换
 
@@ -78,21 +51,10 @@ async function all() {
 */
 
 
-const jobname = '书旗小说';
-const $ = Env(jobname);
+const jobname = '书旗小说'
+    const $ = Env(jobname)
 
-/*ck解密*/
-let fs = require('fs');
-const crypto = require('crypto');
-
-function aesDecrypt(encrypted, key) {
-    const decipher = crypto.createDecipher('aes192', key);
-    let decrypted = decipher.update(encrypted, 'hex', 'utf8');
-    decrypted += decipher.final('utf8');
-    return decrypted;
-}
-
-let ReadTimes = 0;
+    let ReadTimes = 0;
 let vediogold = 0;
 let drawgold = 0;
 
@@ -108,24 +70,20 @@ let drawgold = 0;
 
 async function all() {
     //nodejs运行
-if ($.isNode()) {
+    if ($.isNode()) {
 
-        let encrypted = fs.readFileSync('./sqxsck.txt', 'utf8');
-        key = process.env.ENCRYPT_KEY;
-        let decrypted = await aesDecrypt(encrypted, key);
-        sqxsck = JSON.parse(decrypted);
-        //let sqxsck = require('./sqxsck.json');
+        let sqxsck = require('./sqxsck.json');
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
-            if (sqxsck.datas[5 + 8 * i].val) {
+            if (sqxsck.datas[7 + 8 * i].val) {
                 readckArr = sqxsck.datas[0 + 8 * i].val.split('&&');
                 receivecoinckArr = sqxsck.datas[1 + 8 * i].val.split('&&');
                 vediogoldprizeckArr = sqxsck.datas[2 + 8 * i].val.split('&&');
                 vediodrawprizeckArr = sqxsck.datas[3 + 8 * i].val.split('&&');
                 drawckArr = sqxsck.datas[4 + 8 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 8 * i].val;
-                read2ckArr = sqxsck.datas[6 + 8 * i].val.split('&&');
+                //read2ckArr = sqxsck.datas[6 + 8 * i].val.split('&&');
                 vediogold2prizeckArr = sqxsck.datas[7 + 8 * i].val.split('&&');              
               
 
@@ -135,10 +93,7 @@ if ($.isNode()) {
                 drawgold = 0;
 
                 //阅读
-                await readbook();
-              
-                //极速版阅读
-                await read2book();              
+                await readbook();         
 
                 //收集阅读金币
                 await receivecoin();
@@ -167,15 +122,13 @@ if ($.isNode()) {
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
         for (let i = 1; i <= CountNumber; i++) {
-            //以极速阅读ck为准
-            if ($.getdata(`read2ck${i}`)) {
+            if ($.getdata(`vediogold2prizeck${i}`)) {
                 readckArr = $.getdata(`readck${i}`).split('&&');
                 receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
                 vediogoldprizeckArr = $.getdata(`vediogoldprizeck${i}`).split('&&');
                 vediodrawprizeckArr = $.getdata(`vediodrawprizeck${i}`).split('&&');
                 drawckArr = $.getdata(`drawck${i}`).split('&&');
                 userinfock = $.getdata(`userinfock${i}`);
-                read2ckArr = $.getdata(`read2ck${i}`).split('&&');
                 vediogold2prizeckArr = $.getdata(`vediogold2prizeck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】=============');
@@ -184,10 +137,7 @@ if ($.isNode()) {
                 drawgold = 0;
               
                 //阅读
-                //await readbook();
-              
-                //极速版阅读
-                await read2book();              
+                //await readbook();                        
 
                 //收集阅读金币
                 //await receivecoin();
@@ -196,7 +146,7 @@ if ($.isNode()) {
                 //await vediogoldprize(0);
                             
                 //极速版看视频奖励金币
-                //await vediogold2prize(0);
+                await vediogold2prize(0);
 
                 //看视频奖励抽奖次数
                 //await vediodrawprize(0);
@@ -217,14 +167,10 @@ function readbook() {
             url: url,
             headers: JSON.parse(readckArr[1]),
             body: readckArr[0]
-                        };
+        };
         $.post(request, async(error, request, data) => {
-            
-		
-		
-		try {
-                if (error) 
-		{
+            try {
+                if (error) {
                     $.log("阅读请求失败,再次尝试阅读");
                     await $.wait(1000);
                     await readbook();
@@ -233,70 +179,29 @@ function readbook() {
                         //$.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
-                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
+                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得金币");
                             await $.wait(100);
                             await readbook();
-                               			  } else {
+                        } else {
+
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
                                 await $.wait(500);
                                 await readbook();
-                                                                                  } else
+                            } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
 
                             //$.log(data);
-                                                         }
-                         }						
-                     } catch (e) {
-                             $.log(e)
-                                 }
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
             resolve();
         });
     });
 }
 
-//极速版阅读
-function read2book() {
-    return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
-
-        const request = {
-            url: url,
-            headers: JSON.parse(read2ckArr[1]),
-            body: read2ckArr[0]
-        };
-        $.post(request, async(error, request, data) => {
-		
-            try {		    
-                  if (error) {
-                    $.log("阅读请求失败,再次尝试阅读");
-                    await $.wait(1000);
-                    await read2book();
-                              } else {
-                    const result = JSON.parse(data)		    
-                    // if (result.data.chanceCurrentCnt == 360) {
-		       if (ReadTimes == 360) {
-                        $.log("【极速阅读任务】阅读失败,领取达到每日上限，请明天再来");
-                        await $.wait(1000);
-                                                             } else {
-                            $.log(data);
-                        if (result.status == 200) {
-                            ReadTimes++;
-                            $.log("【极速阅读任务】第" + ReadTimes + "次阅读成功");
-                            await $.wait(500);
-                            await read2book();
-                                                  }
-                            $.log(data);
-                                                                    }                       
-                                     } 	
-	        }
-		    catch (e) {
-                        $.log(e)
-                              }
-                    resolve();
-        });
-    });
-}
 
 function receivecoin() {
     return new Promise((resolve, reject) => {
@@ -378,7 +283,7 @@ function vediogoldprize(j) {
 
 
 
-//极速版视频
+//极速版看视频
 function vediogold2prize(n) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -398,17 +303,17 @@ function vediogold2prize(n) {
                         //$.log(data);
                         if (result.status == 200) {
                             n++;
-                            $.log("【极速视频金币】观看第" + n + "个视频成功，获得100金币，等待3s观看下一个视频");
+                            $.log("【视频金币】观看第" + n + "个视频成功，获得100金币，等待3s观看下一个视频");
                             vediogold += 100;
                             await $.wait(3000);
                             await vediogold2prize(n);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
-                                $.log("【极速视频金币】观看失败，" + result.message + ",再次尝试视频金币");
+                                $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
                                 await $.wait(3000);
                                 await vediogold2prize(n);
                             } else
-                                $.log("【极速视频金币】观看失败," + result.message);
+                                $.log("【极速版视频金币】观看失败," + result.message);
                             //$.log(data);
 
                         }
