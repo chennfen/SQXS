@@ -274,7 +274,8 @@ function read2book() {
                     await read2book();
                               } else {
                     const result = JSON.parse(data)		    
-                    if (result.data.chanceCurrentCnt == 360) {
+                    // if (result.data.chanceCurrentCnt == 360) {
+		       if (ReadTimes == 360) {
                         $.log("【极速阅读任务】阅读失败,领取达到每日上限，请明天再来");
                         await $.wait(1000);
                                                              } else {
