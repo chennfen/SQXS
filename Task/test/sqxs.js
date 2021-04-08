@@ -217,10 +217,14 @@ function readbook() {
             url: url,
             headers: JSON.parse(readckArr[1]),
             body: readckArr[0]
-        };
+                        };
         $.post(request, async(error, request, data) => {
-            try {
-                if (error) {
+            
+		
+		
+		try {
+                if (error) 
+		{
                     $.log("阅读请求失败,再次尝试阅读");
                     await $.wait(1000);
                     await readbook();
@@ -232,21 +236,20 @@ function readbook() {
                             $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
                             await $.wait(100);
                             await readbook();
-                        } else {
-
+                               			  } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
                                 await $.wait(500);
                                 await readbook();
-                            } else
+                                                                                  } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
 
                             //$.log(data);
-                        }
-                }
-            } catch (e) {
-                $.log(e)
-            }
+                                                         }
+                         }						
+                     } catch (e) {
+                             $.log(e)
+                                 }
             resolve();
         });
     });
@@ -263,31 +266,33 @@ function read2book() {
             body: read2ckArr[0]
         };
         $.post(request, async(error, request, data) => {
-            try {
-                if (error) {
+		
+            try {		    
+                  if (error) {
                     $.log("阅读请求失败,再次尝试阅读");
                     await $.wait(1000);
                     await read2book();
-                } else {
-                    const result = JSON.parse(data)
+                              } else {
+                    const result = JSON.parse(data)		    
                     if (result.data.chanceCurrentCnt == 360) {
                         $.log("【极速阅读任务】阅读失败,领取达到每日上限，请明天再来");
                         await $.wait(1000);
-                    } else {
+                                                             } else {
                             $.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
                             $.log("【极速阅读任务】第" + ReadTimes + "次阅读成功");
                             await $.wait(500);
                             await read2book();
-                        }
-                        $.log(data);
-                    }
-                }
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
+                                                  }
+                            $.log(data);
+                                                                    }                       
+                                     } 	
+	        }
+		    catch (e) {
+                        $.log(e)
+                              }
+                    resolve();
         });
     });
 }
