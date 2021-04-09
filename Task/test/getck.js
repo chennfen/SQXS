@@ -76,7 +76,10 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 		let vediogoldprizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(vediogoldprizeck ,'vediogoldprizeck'+ $.idx)	
 	}			
-} if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
+} 
+
+
+if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
 {
 	var body = $request.body;
 	var headers = $request.headers;
