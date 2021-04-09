@@ -75,6 +75,12 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 		$.msg('书旗小说'+ $.idx,'获取视频金币奖励ck成功(共6个ck)');
 		let vediogoldprizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(vediogoldprizeck ,'vediogoldprizeck'+ $.idx)	
+	}	
+        if(body.indexOf('deliveryId=857')!=-1&&headers)
+	{
+		$.msg('书旗小说'+ $.idx,'获取视频金币奖励ck成功(共6个ck)');
+		let vediogoldprizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogoldprizeck ,'vediogoldprizeck'+ $.idx)	
 	}			
 } 
 
