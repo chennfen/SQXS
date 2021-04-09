@@ -76,10 +76,7 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 		let vediogoldprizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(vediogoldprizeck ,'vediogoldprizeck'+ $.idx)	
 	}			
-}
-
-//极速版视频
-if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
+} if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
 {
 	var body = $request.body;
 	var headers = $request.headers;
@@ -89,6 +86,20 @@ if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
 		let vediogold2prizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(vediogold2prizeck ,'vediogold2prizeck'+ $.idx)	
 	}	
+
+}
+
+//视频250+1豆
+if(url.indexOf('/api/ad/adserver/v1/api/getAdInfo')!=-1)
+{
+	var body = $request.body;
+	var headers = $request.headers;
+	if(body.indexOf('deliveryId=807')!=-1&&headers)
+	{
+		$.msg('书旗小说'+ $.idx,'获取视频金币奖励ck成功(共6个ck)');
+		let vediogoldprizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogoldprizeck ,'vediogoldprizeck'+ $.idx)	
+	}			
 
 }
 
