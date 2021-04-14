@@ -82,7 +82,7 @@ if ($.isNode()) {
         for (let i = 0; i < CountNumber; i++) {
             if (sqxsck.datas[5 + 6 * i].val) {
                 //readckArr = sqxsck.datas[0 + 6 * i].val.split('&&');
-                //receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
+                receivecoinckArr = sqxsck.datas[1 + 6 * i].val.split('&&');
                 vediogoldprizeckArr = sqxsck.datas[2 + 6 * i].val.split('&&');
                 vediodrawprizeckArr = sqxsck.datas[3 + 6 * i].val.split('&&');
                 drawckArr = sqxsck.datas[4 + 6 * i].val.split('&&');
