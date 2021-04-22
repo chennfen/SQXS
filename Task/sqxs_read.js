@@ -199,13 +199,13 @@ function readbook() {
                         if (result.status == 200) {
                             ReadTimes++;
                             //$.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
-                            //await $.wait(100);
+                            await $.wait(200);
                             await readbook();
                         } else {
 
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
-                                //await $.wait(500);
+                                await $.wait(500);
                                 await readbook();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
