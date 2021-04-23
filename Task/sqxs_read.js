@@ -198,8 +198,8 @@ function readbook() {
                         //$.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
-                            //$.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
-                            await $.wait(200);
+                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
+                            await $.wait(100);
                             await readbook();
                         } else {
 
@@ -800,3 +800,5 @@ function Env(t, e) {
     }
     (t, e)
 }
+
+
