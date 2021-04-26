@@ -6,18 +6,6 @@
 打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本；
 
 
-【QX教程】：
-
-共6个ck，打开书旗小说
-1.4.3.1版本书旗小说 点击 我的-去赚钱-去看书，随便阅读一本书，金币转一圈获得 阅读ck;
-
-2.点击 我的-去赚钱-一键收取，获得 收集金币ck;
-
-3.点击 我的-去赚钱-看视频赚2500金币，看一个视频广告获得 视频金币奖励ck;
-
-4.点击 我的-去赚钱-福利转转转-看视频抽奖，获得 视频抽奖奖励ck 和 抽奖ck;
-
-5 点击 我的-去赚钱-记录,获得 用户信息url;
 
  */
 /*
@@ -129,15 +117,21 @@ async function all() {
                 vediodrawprizeckArr = $.getdata(`vediodrawprizeck${i}`).split('&&');
                 drawckArr = $.getdata(`drawck${i}`).split('&&');
                 userinfock = $.getdata(`userinfock${i}`);
+		read2ckArr = $.getdata(`read2ck${i}`).split('&&');		 
                 vediogold2prizeckArr = $.getdata(`vediogold2prizeck${i}`).split('&&');
+	        vediogold3prizeckArr = $.getdata(`vediogold3prizeck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】=============');
-                ReadTimes = 0;
-                vediogold = 0;
-                drawgold = 0;
+                ReadTimes = 0;//书旗阅读次数统计
+		Read2Times = 0;//极速阅读次数统计
+                vediogold = 0;//书旗视频金币统计
+                drawgold = 0;//抽奖金币统计
               
                 //阅读
-                //await readbook();                        
+                //await readbook();  
+		    
+		//极速阅读  
+		//await read2book();   
 
                 //收集阅读金币
                 //await receivecoin();
@@ -146,7 +140,10 @@ async function all() {
                 //await vediogoldprize(0);
                             
                 //极速版看视频奖励金币
-                await vediogold2prize(0);
+                //await vediogold2prize(0);
+		    
+                //极速版看视频奖励金币
+                //await vediogold3prize(0);		   
 
                 //看视频奖励抽奖次数
                 //await vediodrawprize(0);
@@ -159,6 +156,7 @@ async function all() {
     }
 }
 
+//阅读
 function readbook() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
@@ -172,21 +170,20 @@ function readbook() {
             try {
                 if (error) {
                     $.log("阅读请求失败,再次尝试阅读");
-                    await $.wait(1000);
+                    //await $.wait(1000);
                     await readbook();
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
                             ReadTimes++;
-                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得金币");
-                            await $.wait(100);
+                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
+                            //await $.wait(100);
                             await readbook();
                         } else {
-
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
-                                await $.wait(500);
+                                //await $.wait(500);
                                 await readbook();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
@@ -203,6 +200,61 @@ function readbook() {
 }
 
 
+//极速版阅读
+function read2book() {
+    return new Promise((resolve, reject) => {
+        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
+
+        const request = {
+            url: url,
+            headers: JSON.parse(read2ckArr[1]),
+            body: read2ckArr[0]
+        };
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log("阅读请求失败,再次尝试阅读");
+                    //await $.wait(1000);
+                    await read2book();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.status == 200) {
+                            Read2Times++;
+                            $.log("【阅读任务】第" + Read2Times + "次阅读成功，获得金币");
+                            //await $.wait(100);
+                            await read2book();
+                        } else {
+
+                            if (result.data != {
+    "awardStatus": null,
+    "awardMessage": null,
+    "chanceMaxCnt": 360,
+    "chanceCurrentCnt": 360,
+    "todayBizCoinAmount": null,
+    "prizeInfo": null,
+    "toast": null,
+    "jumpType": null,
+    "jumpParam": null
+  } ) {
+                                $.log("【阅读任务】阅读失败，极速版再次尝试阅读");
+                                //await $.wait(500);
+                                await read2book();
+                            } else
+                                $.log("【阅读任务】阅读失败，极速版阅读已达上限");
+
+                            //$.log(data);
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
+//收金币
 function receivecoin() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive";
@@ -216,7 +268,7 @@ function receivecoin() {
             try {
                 if (error) {
                     $.log("收集阅读金币请求失败,再次尝试收集阅读金币");
-                    await $.wait(1000);
+                    //await $.wait(1000);
                     await receivecoin();
                 } else {
                     //$.log(data);
@@ -224,6 +276,7 @@ function receivecoin() {
                     if (result.status == 200) {
 
                         $.log("【收集金币】收集阅读金币成功，共获得" + ReadTimes * 3 + "金币");
+			$.log("【收集金币】收集阅读金币成功，共获得" + Read2Times * 8 + "金币");
 
                     } else {
                         $.log("【收集金币】收集阅读金币失败," + result.message);
@@ -239,6 +292,7 @@ function receivecoin() {
     });
 }
 
+//看视频
 function vediogoldprize(j) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -251,21 +305,21 @@ function vediogoldprize(j) {
             try {
                 if (error) {
                     $.log("视频金币请求失败,再次尝试视频金币");
-                    await $.wait(1000);
+                    //await $.wait(1000);
                     await vediogoldprize();
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
                             j++;
-                            $.log("【视频金币】观看第" + j + "个视频成功，获得250金币，等待3s观看下一个视频");
-                            vediogold += 250;
-                            await $.wait(3000);
+                            $.log("【视频金币】观看第" + j + "个视频成功，获得200金币，等待1s观看下一个视频");
+                            vediogold += 200;
+                            await $.wait(1000);
                             await vediogoldprize(j);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
-                                await $.wait(3000);
+                                await $.wait(1000);
                                 await vediogoldprize(j);
                             } else
                                 $.log("【视频金币】观看失败," + result.message);
@@ -303,14 +357,14 @@ function vediogold2prize(n) {
                         //$.log(data);
                         if (result.status == 200) {
                             n++;
-                            $.log("【视频金币】观看第" + n + "个视频成功，获得100金币，等待3s观看下一个视频");
+                            $.log("【视频金币】观看第" + n + "个视频成功，获得100金币，等待1s观看下一个视频");
                             vediogold += 100;
-                            await $.wait(3000);
+                            await $.wait(1000);
                             await vediogold2prize(n);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
                                 $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
-                                await $.wait(3000);
+                                await $.wait(1000);
                                 await vediogold2prize(n);
                             } else
                                 $.log("【极速版视频金币】观看失败," + result.message);
@@ -326,6 +380,51 @@ function vediogold2prize(n) {
     });
 }
 
+//极速版签到看视频
+function vediogold3prize(m) {
+    return new Promise((resolve, reject) => {
+        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
+        const request = {
+            url: url,
+            headers: JSON.parse(vediogold3prizeckArr[1]),
+            body: vediogold3prizeckArr[0]
+        };
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log("视频金币请求失败,再次尝试视频金币");
+                    await $.wait(1000);
+                    await vediogold3prize();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.status == 200) {
+                            m++;
+                            $.log("【视频金币】观看第" + m + "个视频成功，获得100金币，等待1s观看下一个视频");
+                            vediogold += 100;
+                            //await $.wait(1000);
+                            await vediogold3prize(m);
+                        } else {
+                            if (result.message != '领取达到每日上限，请明天再来') {				    
+                                $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
+                                //await $.wait(1000);
+                                await vediogold3prize(m);
+                            } else
+                                $.log("【极速版签到视频金币】观看失败," + result.message);
+                            //$.log(data);
+
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
+
+//视频抽奖机会
 function vediodrawprize(k) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -423,6 +522,7 @@ function userinfo() {
                     const result = JSON.parse(data);
                     if (result.status == 200) {
                         $.log("【阅读任务】本次共获得" + ReadTimes * 3 + "金币");
+			$.log("【阅读任务】本次共获得" + Read2Times * 8 + "金币");
                         $.log("【视频任务】本次共获得" + vediogold + "金币");
                         $.log("【抽奖任务】本次共获得" + drawgold + "金币");
                         $.log("【金币总数】" + result.data.gold);
