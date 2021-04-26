@@ -6,7 +6,6 @@
 打开boxjs，复制会话，新建文件，粘贴，改文件名为 sqxsck.json,与本脚本放同一目录下，用nodejs即可运行本脚本；
 
 
-
  */
 /*
 非加密替换
@@ -71,9 +70,8 @@ async function all() {
                 vediodrawprizeckArr = sqxsck.datas[3 + 8 * i].val.split('&&');
                 drawckArr = sqxsck.datas[4 + 8 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 8 * i].val;
-                //read2ckArr = sqxsck.datas[6 + 8 * i].val.split('&&');
-                vediogold2prizeckArr = sqxsck.datas[7 + 8 * i].val.split('&&');              
-              
+                read2ckArr = sqxsck.datas[6 + 8 * i].val.split('&&');
+                vediogold2prizeckArr = sqxsck.datas[7 + 8 * i].val.split('&&');                           
 
                 $.log(`\n============ 【书旗小说${i+1}】=============`);
                 ReadTimes = 0;
