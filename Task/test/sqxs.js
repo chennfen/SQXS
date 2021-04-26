@@ -199,7 +199,7 @@ function readbook() {
     });
 }
 
-/**/
+/*
 //极速版阅读
 function read2book() {
     return new Promise((resolve, reject) => {
