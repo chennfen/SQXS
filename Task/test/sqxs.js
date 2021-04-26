@@ -131,7 +131,7 @@ async function all() {
                 await readbook();  
 		    
 		//极速阅读  
-		await read2book();   
+		//await read2book();   
 
                 //收集阅读金币
                 await receivecoin();
