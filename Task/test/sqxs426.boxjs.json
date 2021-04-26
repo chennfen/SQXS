@@ -316,7 +316,7 @@
 			"vediogold2prizeck31",
       "vediogold3prizeck31",
 
-			"readck32",
+		"readck32",
 			"receivecoinck32",
 			"vediogoldprizeck32",
 			"vediodrawprizeck32",
@@ -324,7 +324,17 @@
 			"userinfock32",
 			"read2ck32",
 			"vediogold2prizeck32",
-      "vediogold3prizeck32"
+      "vediogold3prizeck32" 
+           
+                        "readck33",
+			"receivecoinck33",
+			"vediogoldprizeck33",
+			"vediodrawprizeck33",
+			"drawck33",
+			"userinfock33",
+			"read2ck33",
+			"vediogold2prizeck33",
+      "vediogold3prizeck33"
 
 		],
 		"author": "@caixukun4",
