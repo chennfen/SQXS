@@ -219,16 +219,16 @@ function read2book() {
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
-                        if (result.status == 200) {
+                       if (result.status == 200) {
                             Read2Times++;
                             $.log("【阅读任务】第" + Read2Times + "次阅读成功，获得金币");
-                           if (Read2Times == 365）{
-                            $.log("【阅读任务】阅读已足够360次");
-                            resolve();
-                                         }
+                    
                             //await $.wait(100);
                             await read2book();
-
+} else if (Read2Times == 365）{
+                            $.log("【阅读任务】阅读已足够360次");
+              
+                                         
                             //$.log(data);
                         }
                 }
