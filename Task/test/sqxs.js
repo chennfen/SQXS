@@ -138,16 +138,16 @@ async function all() {
                 await receivecoin();
 
                 //看视频奖励金币
-                await vediogoldprize(0);
+               // await vediogoldprize(0);
                             
                 //极速版看视频奖励金币
-                await vediogold2prize(0);
+                //await vediogold2prize(0);
 		    
-                //极速版看视频奖励金币
-                await vediogold3prize(0);		   
+                //极速版签到奖励金币
+                //await vediogold3prize(0);		   
 
                 //看视频奖励抽奖次数
-                await vediodrawprize(0);
+                //await vediodrawprize(0);
 		    
                 //个人信息
                 await userinfo();
@@ -368,7 +368,7 @@ function vediogold2prize(n) {
 }
 
 //极速版签到看视频
-function vediogold3prize(m) {
+function vediogold3prize(n) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
         const request = {
@@ -386,16 +386,16 @@ function vediogold3prize(m) {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
-                            m++;
-                            $.log("【视频金币】观看第" + m + "个视频成功，获得100金币，等待1s观看下一个视频");
+                            n++;
+                            $.log("【视频金币】观看第" + n + "个视频成功，获得100金币，等待1s观看下一个视频");
                             vediogold += 100;
                             //await $.wait(1000);
-                            await vediogold3prize(m);
+                            await vediogold3prize(n);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {				    
                                 $.log("【视频金币】观看失败，" + result.message + ",再次尝试视频金币");
                                 //await $.wait(1000);
-                                await vediogold3prize(m);
+                                await vediogold3prize(n);
                             } else
                                 $.log("【极速版签到视频金币】观看失败," + result.message);
                             //$.log(data);
