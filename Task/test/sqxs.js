@@ -222,14 +222,12 @@ function read2book() {
                         if (result.status == 200) {
                             Read2Times++;
                             $.log("【阅读任务】第" + Read2Times + "次阅读成功，获得金币");
-                          if (Read2Times == 365) {
-                            $.log("【阅读任务】阅读失败，极速版阅读已达上限");
-                            resolve();   }
-
+                           if (Read2Times == 365）{
+                            $.log("【阅读任务】阅读已足够360次");
+                            resolve();
+                                         }
                             //await $.wait(100);
                             await read2book();
-                        }  else
-                                $.log("【阅读任务】阅读失败，极速版阅读已达上限");
 
                             //$.log(data);
                         }
