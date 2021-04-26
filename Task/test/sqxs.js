@@ -14,6 +14,7 @@ const jobname = '书旗小说'
     const $ = Env(jobname)
 
     let ReadTimes = 0;
+let Read2Times = 0;
 let vediogold = 0;
 let drawgold = 0;
 
@@ -42,6 +43,7 @@ const jobname = '书旗小说'
     const $ = Env(jobname)
 
     let ReadTimes = 0;
+let Read2Times = 0;
 let vediogold = 0;
 let drawgold = 0;
 
@@ -126,28 +128,28 @@ async function all() {
                 drawgold = 0;//抽奖金币统计
               
                 //阅读
-                //await readbook();  
+                await readbook();  
 		    
 		//极速阅读  
-		//await read2book();   
+		await read2book();   
 
                 //收集阅读金币
-                //await receivecoin();
+                await receivecoin();
 
                 //看视频奖励金币
-                //await vediogoldprize(0);
+                await vediogoldprize(0);
                             
                 //极速版看视频奖励金币
-                //await vediogold2prize(0);
+                await vediogold2prize(0);
 		    
                 //极速版看视频奖励金币
-                //await vediogold3prize(0);		   
+                await vediogold3prize(0);		   
 
                 //看视频奖励抽奖次数
-                //await vediodrawprize(0);
+                await vediodrawprize(0);
 		    
                 //个人信息
-                //await userinfo();
+                await userinfo();
             }
         }
 
