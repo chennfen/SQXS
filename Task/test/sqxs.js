@@ -222,25 +222,13 @@ function read2book() {
                         if (result.status == 200) {
                             Read2Times++;
                             $.log("【阅读任务】第" + Read2Times + "次阅读成功，获得金币");
+                          if (Read2Times == 365) {
+                            $.log("【阅读任务】阅读失败，极速版阅读已达上限");
+                            resolve();   }
+
                             //await $.wait(100);
                             await read2book();
-                        } else {
-
-                            if (result.data != {
-    "awardStatus": null,
-    "awardMessage": null,
-    "chanceMaxCnt": 360,
-    "chanceCurrentCnt": 360,
-    "todayBizCoinAmount": null,
-    "prizeInfo": null,
-    "toast": null,
-    "jumpType": null,
-    "jumpParam": null
-  } ) {
-                                $.log("【阅读任务】阅读失败，极速版再次尝试阅读");
-                                //await $.wait(500);
-                                await read2book();
-                            } else
+                        }  else
                                 $.log("【阅读任务】阅读失败，极速版阅读已达上限");
 
                             //$.log(data);
