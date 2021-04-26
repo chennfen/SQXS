@@ -81,10 +81,29 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 		$.msg('书旗小说'+ $.idx,'获取视频金币奖励ck成功(共6个ck)');
 		let vediogoldprizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(vediogoldprizeck ,'vediogoldprizeck'+ $.idx)	
+	}
+        if(body.indexOf('deliveryId=897')!=-1&&headers)
+	{
+		$.msg('书旗小说极速版'+ $.idx,'获取视频金币奖励ck成功(共3个ck)');
+		let vediogold2prizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogold2prizeck ,'vediogold2prizeck'+ $.idx)	
+	}
+	if(body.indexOf('deliveryId=894')!=-1&&headers)
+	{
+		$.msg('书旗小说极速版'+ $.idx,'获取签到金币奖励ck成功(共3个ck)');
+		let vediogold3prizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogold3prizeck ,'vediogold3prizeck'+ $.idx)	
+	}
+	if(body.indexOf('deliveryId=980')!=-1&&headers)
+	{
+		$.msg('书旗小说极速版'+ $.idx,'获取签到金币奖励ck成功(共3个ck)');
+		let vediogold3prizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogold3prizeck ,'vediogold3prizeck'+ $.idx)	
 	}			
 } 
 
 //极速版视频
+/*
 if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
 {
 	var body = $request.body;
@@ -109,6 +128,8 @@ if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
 	}
 
 }
+*/
+
 
 //视频250+1豆
 if(url.indexOf('/api/ad/adserver/v1/api/getAdInfo')!=-1)
