@@ -520,7 +520,12 @@ function userinfo() {
                     const result = JSON.parse(data);
                     if (result.status == 200) {
                         $.log("【  阅读  】本次共获得" + ReadTimes * 3 + "金币");
+			    
+			if(result.data.chanceCurrentCnt == null ){
+			$.log("【极速阅读】本次共获得0金币");
+			                                         }else{   
 			$.log("【极速阅读】本次共获得" + result.data.chanceCurrentCnt + "金币");
+			                                              }
                         $.log("【  视频  】本次共获得" + videogold + "金币");
 			$.log("【极速视频】本次共获得" + video2gold + "金币");
                         $.log("【  抽奖  】本次共获得" + drawgold + "金币");
