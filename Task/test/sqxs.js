@@ -250,7 +250,7 @@ function read2book() {
   }) {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
                                 await $.wait(500);
-                                await read2book();
+                                //await read2book();
                             } else
                                 $.log("【阅读任务】阅读失败，" + result.message);
 
