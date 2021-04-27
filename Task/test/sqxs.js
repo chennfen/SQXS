@@ -231,28 +231,18 @@ function read2book() {
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
-                        if (result.status == 200 && Read2Times <= 10) {
+                        if (result.status == 200 && Read2Times <= 5) {
                             Read2Times++;
                             $.log("【阅读任务】第" + Read2Times + "次阅读成功");
                             await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.data == {
-    "awardStatus": null,
-    "awardMessage": null,
-    "chanceMaxCnt": 360,
-    "chanceCurrentCnt": 360,
-    "todayBizCoinAmount": null,
-    "prizeInfo": null,
-    "toast": null,
-    "jumpType": null,
-    "jumpParam": null
-  }) {
-                                $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
+                            if (result.data == {"awardStatus": null,"awardMessage": null,"chanceMaxCnt": 360,"chanceCurrentCnt": 360,"todayBizCoinAmount": null,"prizeInfo": null,"toast": null,"jumpType": null,"jumpParam": null}) {
+                                $.log("【阅读任务】阅读失败，未识别");
                                 await $.wait(500);
                                 //await read2book();
                             } else
-                                $.log("【阅读任务】阅读失败，" + result.message);
+                                $.log("【阅读任务】阅读失败，识别到");
 
                             $.log(data);
                         }
