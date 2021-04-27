@@ -143,7 +143,7 @@ async function all() {
                 //await readbook();  
 		    
 		//极速阅读  
-		//await read2book();   
+		await read2book();   
 
                 //收金币
                 //await receivecoin();
@@ -155,7 +155,7 @@ async function all() {
                 //await videogold2prize(0);
 		    
                 //极速签到
-                await videogold3prize(0);		   
+                //await videogold3prize(0);		   
 
                 //抽奖次数
                 //await videodrawprize(0);
@@ -211,7 +211,7 @@ function readbook() {
     });
 }
 
-/*
+
 //极速阅读
 function read2book() {
 	return new Promise((resolve, reject) = >{
@@ -264,7 +264,7 @@ function read2book() {
 		});
 	});
 }
-*/
+
 
 //收金币
 function receivecoin() {
