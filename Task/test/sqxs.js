@@ -231,40 +231,28 @@ function read2book() {
 				} else {
 					const result = JSON.parse(data) $.log(data);
 					if (result.status == 200) {
-						Read2Times++;
-						$.log("【极速阅读】第" + Read2Times + "次阅读成功");
-						//await $.wait(100);
-						await readbook();
-					} else {
+                            Read2Times++;
+                            $.log("【阅读任务】第" + Read2Times + "次阅读成功，获得6金币");
+                            //await $.wait(100);
+                            await read2book();
+                        } else {
+                            if (Read2Times == 360) {
+                                $.log("【阅读任务】阅读上限");
+                                //await $.wait(500);
+                                //await read2book();
+                            } else
+                                $.log("【阅读任务】阅读失败");
 
-						if (result.data == {
-							"awardStatus": null,
-							"awardMessage": null,
-							"chanceMaxCnt": 360,
-							"chanceCurrentCnt": 360,
-							"todayBizCoinAmount": null,
-							"prizeInfo": null,
-							"toast": null,
-							"jumpType": null,
-							"jumpParam": null
-						}) {
-							$.log("【极速阅读】上限");
-							//await $.wait(500);
-						        $.log(data);							
-						}
-
-
-					}
-
-				}
-			} catch(e) {
-				$.log(e)
-			}
-			resolve();
-		});
-	});
+                            //$.log(data);
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
 }
-
 
 //收金币
 function receivecoin() {
