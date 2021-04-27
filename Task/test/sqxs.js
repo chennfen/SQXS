@@ -215,7 +215,7 @@ function readbook() {
 //极速阅读
 function read2book() {
     return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery*";
+        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
 
         const request = {
             url: url,
@@ -237,7 +237,7 @@ function read2book() {
                             await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.message != '领取达到每日上限，请明天再来') {
+                            if (result.message == '领取达到每日上限，请明天再来') {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
                                 await $.wait(500);
                                 await read2book();
