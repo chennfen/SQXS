@@ -237,12 +237,12 @@ function read2book() {
                             await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.data == {"awardStatus": null,"awardMessage": null,"chanceMaxCnt": 360,"chanceCurrentCnt": 360,"todayBizCoinAmount": null,"prizeInfo": null,"toast": null,"jumpType": null,"jumpParam": null}) {
-                                $.log("【阅读任务】阅读失败，未识别");
+                            if (result.data == '{"awardStatus": null,"awardMessage": null,"chanceMaxCnt": 360,"chanceCurrentCnt": 360,"todayBizCoinAmount": null,"prizeInfo": null,"toast": null,"jumpType": null,"jumpParam": null}') {
+                                $.log("【阅读任务】阅读失败，识别");
                                 await $.wait(500);
                                 //await read2book();
                             } else
-                                $.log("【阅读任务】阅读失败，识别到");
+                                $.log("【阅读任务】阅读失败，未识别");
 
                             $.log(data);
                         }
