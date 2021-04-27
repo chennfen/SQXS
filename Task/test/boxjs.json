@@ -14,6 +14,7 @@
 			"userinfock1",
 			"read2ck1",
 			"vediogold2prizeck1",
+			"vediogold3prizeck1",
 
 			"readck2",
 			"receivecoinck2",
@@ -23,6 +24,7 @@
 			"userinfock2",
 			"read2ck2",
 			"vediogold2prizeck2",
+			"vediogold3prizeck2",
 
 			"readck3",
 			"receivecoinck3",
@@ -32,6 +34,7 @@
 			"userinfock3",
 			"read2ck3",
 			"vediogold2prizeck3",
+			"vediogold3prizeck3",
 
 			"readck4",
 			"receivecoinck4",
@@ -41,6 +44,7 @@
 			"userinfock4",
 			"read2ck4",
 			"vediogold2prizeck4",
+			"vediogold3prizeck4",
 
 			"readck5",
 			"receivecoinck5",
@@ -50,6 +54,7 @@
 			"userinfock5",
 			"read2ck5",
 			"vediogold2prizeck5",
+			"vediogold3prizeck5",
 
 			"readck6",
 			"receivecoinck6",
@@ -59,6 +64,7 @@
 			"userinfock6",
 			"read2ck6",
 			"vediogold2prizeck6",
+			"vediogold3prizeck6",
 
 			"readck7",
 			"receivecoinck7",
@@ -68,6 +74,7 @@
 			"userinfock7",
 			"read2ck7",
 			"vediogold2prizeck7",
+			"vediogold3prizeck7",
 
 			"readck8",
 			"receivecoinck8",
@@ -77,6 +84,7 @@
 			"userinfock8",
 			"read2ck8",
 			"vediogold2prizeck8",
+			"vediogold3prizeck8",
 
 			"readck9",
 			"receivecoinck9",
@@ -86,6 +94,7 @@
 			"userinfock9",
 			"read2ck9",
 			"vediogold2prizeck9",
+			"vediogold3prizeck9",
 
 			"readck10",
 			"receivecoinck10",
@@ -95,6 +104,7 @@
 			"userinfock10",
 			"read2ck10",
 			"vediogold2prizeck10",
+			"vediogold3prizeck10",
 
 			"readck11",
 			"receivecoinck11",
@@ -104,6 +114,7 @@
 			"userinfock11",
 			"read2ck11",
 			"vediogold2prizeck11",
+			"vediogold3prizeck11",
 
 			"readck12",
 			"receivecoinck12",
@@ -113,6 +124,7 @@
 			"userinfock12",
 			"read2ck12",
 			"vediogold2prizeck12",
+			"vediogold3prizeck12",
 
 			"readck13",
 			"receivecoinck13",
@@ -122,6 +134,7 @@
 			"userinfock13",
 			"read2ck13",
 			"vediogold2prizeck13",
+			"vediogold3prizeck13",
 
 			"readck14",
 			"receivecoinck14",
@@ -131,6 +144,7 @@
 			"userinfock14",
 			"read2ck14",
 			"vediogold2prizeck14",
+			"vediogold3prizeck14",
 
 			"readck15",
 			"receivecoinck15",
@@ -140,6 +154,7 @@
 			"userinfock15",
 			"read2ck15",
 			"vediogold2prizeck15",
+			"vediogold3prizeck15",
 
 			"readck16",
 			"receivecoinck16",
@@ -149,6 +164,7 @@
 			"userinfock16",
 			"read2ck16",
 			"vediogold2prizeck16",
+			"vediogold3prizeck16",
 
 			"readck17",
 			"receivecoinck17",
@@ -158,6 +174,7 @@
 			"userinfock17",
 			"read2ck17",
 			"vediogold2prizeck17",
+			"vediogold3prizeck17",
 
 			"readck18",
 			"receivecoinck18",
@@ -167,6 +184,7 @@
 			"userinfock18",
 			"read2ck18",
 			"vediogold2prizeck18",
+			"vediogold3prizeck18",
 
 			"readck19",
 			"receivecoinck19",
@@ -176,6 +194,7 @@
 			"userinfock19",
 			"read2ck19",
 			"vediogold2prizeck19",
+			"vediogold3prizeck19",
 
 			"readck20",
 			"receivecoinck20",
@@ -185,6 +204,7 @@
 			"userinfock20",
 			"read2ck20",
 			"vediogold2prizeck20",
+			"vediogold3prizeck20",
 
 			"readck21",
 			"receivecoinck21",
@@ -194,6 +214,7 @@
 			"userinfock21",
 			"read2ck21",
 			"vediogold2prizeck21",
+			"vediogold3prizeck21",
 
 			"readck22",
 			"receivecoinck22",
@@ -203,6 +224,7 @@
 			"userinfock22",
 			"read2ck22",
 			"vediogold2prizeck22",
+			"vediogold3prizeck22",
 
 			"readck23",
 			"receivecoinck23",
@@ -212,7 +234,8 @@
 			"userinfock23",
 			"read2ck23",
 			"vediogold2prizeck23",
-
+			"vediogold3prizeck23",
+			
 			"readck24",
 			"receivecoinck24",
 			"vediogoldprizeck24",
@@ -221,7 +244,8 @@
 			"userinfock24",
 			"read2ck24",
 			"vediogold2prizeck24",
-
+			"vediogold3prizeck24",
+			
 			"readck25",
 			"receivecoinck25",
 			"vediogoldprizeck25",
@@ -230,7 +254,8 @@
 			"userinfock25",
 			"read2ck25",
 			"vediogold2prizeck25",
-
+			"vediogold3prizeck25",
+			
 			"readck26",
 			"receivecoinck26",
 			"vediogoldprizeck26",
@@ -239,6 +264,7 @@
 			"userinfock26",
 			"read2ck26",
 			"vediogold2prizeck26",
+			"vediogold3prizeck26",
 
 			"readck27",
 			"receivecoinck27",
@@ -248,6 +274,7 @@
 			"userinfock27",
 			"read2ck27",
 			"vediogold2prizeck27",
+			"vediogold3prizeck27",
 
 			"readck28",
 			"receivecoinck28",
@@ -257,6 +284,7 @@
 			"userinfock28",
 			"read2ck28",
 			"vediogold2prizeck28",
+			"vediogold3prizeck28",
 
 			"readck29",
 			"receivecoinck29",
@@ -266,6 +294,7 @@
 			"userinfock29",
 			"read2ck29",
 			"vediogold2prizeck29",
+			"vediogold3prizeck29",
 
 			"readck30",
 			"receivecoinck30",
@@ -275,6 +304,7 @@
 			"userinfock30",
 			"read2ck30",
 			"vediogold2prizeck30",
+			"vediogold3prizeck30",
 
 			"readck31",
 			"receivecoinck31",
@@ -284,6 +314,7 @@
 			"userinfock31",
 			"read2ck31",
 			"vediogold2prizeck31",
+			"vediogold3prizeck31",
 
 			"readck32",
 			"receivecoinck32",
@@ -292,7 +323,18 @@
 			"drawck32",
 			"userinfock32",
 			"read2ck32",
-			"vediogold2prizeck32"
+			"vediogold2prizeck32",
+			"vediogold3prizeck32",
+			
+			"readck33",
+			"receivecoinck33",
+			"vediogoldprizeck33",
+			"vediodrawprizeck33",
+			"drawck33",
+			"userinfock33",
+			"read2ck33",
+			"vediogold2prizeck33",
+			"vediogold3prizeck33"		
 
 		],
 		"author": "@caixukun3",
