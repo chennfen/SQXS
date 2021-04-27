@@ -409,7 +409,7 @@ function vediogold3prize(n) {
                     await vediogold3prize();
                 } else {
                     const result = JSON.parse(data)
-                        $.log(data);
+                        //$.log(data);
                         if (result.status == 200) {
                             n++;
                             $.log("【极速签到】第" + n + "个视频成功，获得100金币，等待1s观看下一个视频");
@@ -419,7 +419,7 @@ function vediogold3prize(n) {
                         } else {
                             if (result.status == 900202) {
                                 $.log("【极速签到】" + result.message);
-                                $.log(data);
+                                //$.log(data);
                             } 
                         }
                 }
@@ -464,7 +464,7 @@ function vediodrawprize(k) {
                                 await vediodrawprize(k);
                             } else
                                 $.log("【视频抽奖】观看失败," + result.message);
-                            //$.log(data);
+                                //$.log(data);
                         }
                 }
             } catch (e) {
