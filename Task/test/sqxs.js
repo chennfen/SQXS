@@ -230,7 +230,7 @@ function read2book() {
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
-                        //$.log(data);
+                        $.log(data);
                         if (result.status == 200) {
                             Read2Times++;
                             $.log("【阅读任务】第" + Read2Times + "次阅读成功，获得3金币");
@@ -281,7 +281,7 @@ function receivecoin() {
 
                     } else {
                         $.log("【收集金币】收集阅读金币失败," + result.message);
-                        //$.log(data);
+                        $.log(data);
                     }
                 }
 
