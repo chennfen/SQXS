@@ -519,10 +519,11 @@ function userinfo() {
                     //$.log(data);
                     const result = JSON.parse(data);
                     if (result.status == 200) {
-                        $.log("【阅读任务】本次共获得" + ReadTimes * 3 + "金币");
-			$.log("【阅读任务】本次共获得" + Read2Times * 8 + "金币");
-                        $.log("【视频任务】本次共获得" + videogold + "金币");
-                        $.log("【抽奖任务】本次共获得" + drawgold + "金币");
+                        $.log("【  阅读  】本次共获得" + ReadTimes * 3 + "金币");
+			$.log("【极速阅读】本次共获得" + result.data.chanceCurrentCnt + "金币");
+                        $.log("【  视频  】本次共获得" + videogold + "金币");
+			$.log("【极速视频】本次共获得" + video2gold + "金币");
+                        $.log("【  抽奖  】本次共获得" + drawgold + "金币");
                         $.log("【金币总数】" + result.data.gold);
                         $.log("【总计收益】" + result.data.income + "元");
                     } else {
