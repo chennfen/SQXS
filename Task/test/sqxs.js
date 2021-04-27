@@ -45,6 +45,7 @@ const jobname = '书旗小说'
 let ReadTimes = 0;
 let Read2Times = 0;
 let vediogold = 0;
+let vedio2gold = 0;
 let drawgold = 0;
 
 !(async() => {
