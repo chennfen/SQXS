@@ -233,16 +233,16 @@ function read2book() {
                         //$.log(data);
                         if (result.status == 200 && result.data.chanceCurrentCnt < 360) {
                             Read2Times++;
-                            $.log("【阅读任务】第" + Read2Times + "次阅读成功");
+                            $.log("【极速阅读】第" + Read2Times + "次阅读成功");
                             await $.wait(100);
                             await read2book();
                         } else {
                             if (result.data.chanceCurrentCnt == 360 ) {
-                                $.log("【阅读任务】阅读失败，识别");
+                                $.log("【极速阅读】阅读次数已达上限");
                                 await $.wait(500);
                                 //await read2book();
                             } else
-                                $.log("【阅读任务】阅读失败，未识别");
+                                $.log("【极速阅读】阅读失败，ck有问题，用爱新机抓极速阅读");
 
                               //$.log(data);
                         }
