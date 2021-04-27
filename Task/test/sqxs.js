@@ -424,7 +424,7 @@ function vediogold3prize(n) {
                         }
                 }
             } catch (e) {
-                $.log(e)
+                //$.log(e)
             }
             resolve();
         });
