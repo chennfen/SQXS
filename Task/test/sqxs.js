@@ -237,7 +237,17 @@ function read2book() {
                             await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.message == '领取达到每日上限，请明天再来') {
+                            if (result.data == {
+    "awardStatus": null,
+    "awardMessage": null,
+    "chanceMaxCnt": 360,
+    "chanceCurrentCnt": 360,
+    "todayBizCoinAmount": null,
+    "prizeInfo": null,
+    "toast": null,
+    "jumpType": null,
+    "jumpParam": null
+  }) {
                                 $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
                                 await $.wait(500);
                                 await read2book();
