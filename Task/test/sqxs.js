@@ -231,7 +231,7 @@ function read2book() {
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);
-                        if (result.status == 200 && result.data.chanceCurrentCnt <= 360) {
+                        if (result.status == 200 && result.data.chanceCurrentCnt < 360) {
                             Read2Times++;
                             $.log("【阅读任务】第" + Read2Times + "次阅读成功");
                             await $.wait(100);
