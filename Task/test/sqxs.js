@@ -210,7 +210,7 @@ function readbook() {
     });
 }
 
-
+/*
 //极速阅读
 function read2book() {
 	return new Promise((resolve, reject) = >{
@@ -263,7 +263,7 @@ function read2book() {
 		});
 	});
 }
-
+*/
 
 //收金币
 function receivecoin() {
