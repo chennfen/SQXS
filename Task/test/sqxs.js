@@ -20,8 +20,6 @@
 
  */
 
-非加密替换
-
 const jobname = '书旗小说'
     const $ = Env(jobname)
 
