@@ -256,7 +256,7 @@ function read2book() {
                             //await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.data.chanceCurrentCnt == 360 ) {
+                            if (result.data.chanceCurrentCnt == 360 || result.data.chanceCurrentCnt == null ) {
                                 $.log("【极速阅读】阅读次数已达上限");
                                 await $.wait(500);
                                 //await read2book();
