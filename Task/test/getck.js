@@ -138,8 +138,21 @@ if(url.indexOf('activity/activity/v1/lottery/draw')!=-1)
 }
 
 
-
+/*
 if(url.indexOf('activity/xapi/gold/record')!=-1)
+{
+	var url = $request.url;
+	
+	if(url)
+	{
+		$.msg('书旗'+ $.idx,'用户信息url(共6个)');
+		let userinfock=url;
+		$.setdata(userinfock ,'userinfock'+ $.idx)	
+	}		
+}
+*/
+//
+if(url.indexOf('api/activity/xapi/gold/amount')!=-1)
 {
 	var url = $request.url;
 	
