@@ -1,8 +1,8 @@
 /*
-【账号个数判定】：
-个人信息个数决定(userinfock)
+账号个数由个人信息个数决定(userinfock)
 
-【圈x教程】：
+9个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的userinfock
+
 书旗小说6个ck
 阅读在431抓
 其余在436抓
@@ -13,7 +13,7 @@
 极速版阅读url可能不通用
 可自行替换自己的
 
-node未适配
+
 
 
  */
@@ -23,9 +23,10 @@ node未适配
 const jobname = '书旗小说'
     const $ = Env(jobname)
 
-    let ReadTimes = 0;
+let ReadTimes = 0;
 let Read2Times = 0;
 let videogold = 0;
+let video2gold = 0;
 let drawgold = 0;
 
 !(async() => {
