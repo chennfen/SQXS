@@ -19,7 +19,7 @@
 
 
  */
-/*
+
 非加密替换
 
 const jobname = '书旗小说'
@@ -49,9 +49,9 @@ async function all() {
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
-*/
 
-
+//加密替换
+/*
 const jobname = '书旗小说'
     const $ = Env(jobname)
 
@@ -80,6 +80,9 @@ async function all() {
         let sqxsck = require('./sqxsck.json');
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
+	
+*/	
+
         for (let i = 0; i < CountNumber; i++) {
             if (sqxsck.datas[5 + 9 * i].val) {
                 readckArr = sqxsck.datas[0 + 9 * i].val.split('&&');
