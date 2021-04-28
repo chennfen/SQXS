@@ -212,11 +212,11 @@ function readbook() {
                             await readbook();
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
-                                $.log("【阅读任务】阅读失败，" + result.message + ",再次尝试阅读");
+                                $.log("【书旗阅读】" + result.message + ",再次尝试阅读");
                                 //await $.wait(500);
                                 await readbook();
                             } else
-                                $.log("【阅读任务】阅读失败，" + result.message);
+                                $.log("【书旗阅读】" + result.message);
 
                             //$.log(data);
                         }
@@ -257,7 +257,8 @@ function read2book() {
                             await read2book();
                         } else {
                             if (result.data.chanceCurrentCnt == 360) {
-                                $.log("【极速阅读】阅读次数已达上限");
+                                $.log("【极速阅读】领取达到每日上限，请明天再来");
+				$.log("----------------------------------------");
                                 //await $.wait(500);
                                 //await read2book();
                             } else
@@ -287,7 +288,7 @@ function receivecoin() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("收集阅读金币请求失败,再次尝试收集阅读金币");
+                    $.log("收集失败,再次尝试");
                     //await $.wait(1000);
                     await receivecoin();
                 } else {
@@ -295,11 +296,12 @@ function receivecoin() {
                     const result = JSON.parse(data);
                     if (result.status == 200 ) {
 
-                        $.log("【收集金币】收集阅读金币成功，共获得" + ReadTimes * 3 + "金币");
-			$.log("【收集金币】收集阅读金币成功，共获得" + Read2Times * 3 + "金币");
+                        $.log("【收集金币】书旗收集成功，共获得" + ReadTimes * 3 + "金币");
+			$.log("【收集金币】极速收集成功，共获得" + Read2Times * 3 + "金币");
+			$.log("----------------------------------------");
 
                     } else {
-                        $.log("【收集金币】收集阅读金币失败," + result.message);
+                        $.log("【收集金币】收集失败," + result.message);
                         $.log(data);
                     }
                 }
@@ -332,17 +334,17 @@ function videogoldprize(j) {
                         //$.log(data);
                         if (result.status == 200) {
                             j++;
-                            $.log("【视频】第" + j + "个视频成功，获得200金币，等待1s观看下一个视频");
+                            $.log("【书旗视频】第" + j + "个视频成功，获得200金币，等待1s观看下一个视频");
                             videogold += 200;
                             //await $.wait(1000);
                             await videogoldprize(j);
                         } else {
                             if (result.message != '领取达到每日上限，请明天再来') {
-                                $.log("【视频】失败，" + result.message + ",再次尝试视频金币");
+                                $.log("【书旗视频】失败，" + result.message + ",再次尝试视频金币");
                                 //await $.wait(1000);
                                 await videogoldprize(j);
-                            } else
-                                $.log("【视频】" + result.message);
+                            } else				
+                                $.log("【书旗视频】" + result.message);
                             //$.log(data);
 
                         }
@@ -471,7 +473,7 @@ function videodrawprize(k) {
                                 //await $.wait(1000);
                                 await videodrawprize(k);
                             } else
-                                $.log("【视频抽奖】观看失败," + result.message);
+                                $.log("【视频抽奖】" + result.message);
                                 //$.log(data);
                         }
                 }
@@ -538,6 +540,7 @@ function userinfo() {
                     //$.log(data);
                     const result = JSON.parse(data);
                     if (result.status == 200) {
+			$.log("----------------------------------------");
                         $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
 			    
 			if(result.data.chanceCurrentCnt == null ){
