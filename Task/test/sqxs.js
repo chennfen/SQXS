@@ -249,16 +249,16 @@ function read2book() {
                 } else {
                     const result = JSON.parse(data)
                         //$.log(data);	  
-                        if (result.status == 200 && result.data.chanceCurrentCnt != null && result.data.chanceCurrentCnt < 360) {
+                        if (result.status == 200 && result.data.chanceCurrentCnt < 360) {
                             Read2Times++;
 		            //阅读成功显示/关闭，注释下一行即可
                             //$.log("【极速阅读】第" + Read2Times + "次阅读成功");
                             //await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.data.chanceCurrentCnt == 360 || result.data.chanceCurrentCnt == null ) {
+                            if (result.data.chanceCurrentCnt == 360) {
                                 $.log("【极速阅读】阅读次数已达上限");
-                                await $.wait(500);
+                                //await $.wait(500);
                                 //await read2book();
                             } else
                                 $.log("【极速阅读】阅读失败，ck可能有问题，成功获得金币的阅读ck才有效");
@@ -293,10 +293,10 @@ function receivecoin() {
                 } else {
                     //$.log(data);
                     const result = JSON.parse(data);
-                    if (result.status == 200) {
+                    if (result.status == 200 ) {
 
                         $.log("【收集金币】收集阅读金币成功，共获得" + ReadTimes * 3 + "金币");
-			$.log("【收集金币】收集阅读金币成功，共获得" + result.data.chanceCurrentCnt + "金币");
+			$.log("【收集金币】收集阅读金币成功，共获得" + Read2Times * 3 + "金币");
 
                     } else {
                         $.log("【收集金币】收集阅读金币失败," + result.message);
