@@ -78,7 +78,7 @@ async function all() {
         let CountNumber = sqxsck.settings[1].val;
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
         for (let i = 0; i < CountNumber; i++) {
-            if (sqxsck.datas[7 + 9 * i].val) {
+            if (sqxsck.datas[5 + 9 * i].val) {
                 readckArr = sqxsck.datas[0 + 9 * i].val.split('&&');
                 receivecoinckArr = sqxsck.datas[1 + 9 * i].val.split('&&');
                 videogoldprizeckArr = sqxsck.datas[2 + 9 * i].val.split('&&');
@@ -134,16 +134,16 @@ async function all() {
         $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
 
         for (let i = 1; i <= CountNumber; i++) {
-            if ($.getdata(`readck${i}`) ) {
+            if ($.getdata(`userinfock${i}`) ) {
                readckArr = $.getdata(`readck${i}`).split('&&');
                receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
                videogoldprizeckArr = $.getdata(`videogoldprizeck${i}`).split('&&');
                videodrawprizeckArr = $.getdata(`videodrawprizeck${i}`).split('&&');
                drawckArr = $.getdata(`drawck${i}`).split('&&');
                userinfock = $.getdata(`userinfock${i}`);
-	       //read2ckArr = $.getdata(`read2ck${i}`).split('&&');
-               //videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
-	       //videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
+	       read2ckArr = $.getdata(`read2ck${i}`).split('&&');
+               videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
+	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】=============');
                 ReadTimes = 0;//阅读次数统计
