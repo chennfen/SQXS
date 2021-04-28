@@ -548,13 +548,8 @@ function userinfo() {
                         $.log("【书旗视频】本次共获得" + videogold + "金币");
 			$.log("【极速视频】本次共获得" + video2gold + "金币");
                         $.log("【书旗抽奖】本次共获得" + drawgold + "金币");
-                        //$.log("【金币总数】" + result.data.gold);
-			    
-			$.log("【金币总数】" + result.data.balanceCoin);  
-			$.log("【今日收益】" + result.data.todayCoin); 
-			    
-			    
-                        //$.log("【总计收益】" + result.data.income + "元");
+                        $.log("【金币总数】" + result.data.gold);   			    
+                        $.log("【总计收益】" + result.data.income + "元");
                     } else {
                         $.log("【金币总数】数据异常," + result.message);
                         //$.log(data);
