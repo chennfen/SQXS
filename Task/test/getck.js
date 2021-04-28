@@ -81,28 +81,34 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 		$.msg('书旗'+ $.idx,'视频ck(共6个)');
 		let videogoldprizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(videogoldprizeck ,'videogoldprizeck'+ $.idx)	
-	}
-        if(body.indexOf('deliveryId=897')!=-1&&headers)
-	{
-		$.msg('极速'+ $.idx,'视频ck(共3个)');
-		let videogold2prizeck=body+'&&'+JSON.stringify(headers);
-		$.setdata(videogold2prizeck ,'videogold2prizeck'+ $.idx)	
-	}
-	if(body.indexOf('deliveryId=894')!=-1&&headers)
-	{
-		$.msg('极速'+ $.idx,'签到ck(共3个)');
-		let videogold3prizeck=body+'&&'+JSON.stringify(headers);
-		$.setdata(videogold3prizeck ,'videogold3prizeck'+ $.idx)	
-	}
-	if(body.indexOf('deliveryId=980')!=-1&&headers)
-	{
-		$.msg('极速'+ $.idx,'签到ck(共3个)');
-		let videogold3prizeck=body+'&&'+JSON.stringify(headers);
-		$.setdata(videogold3prizeck ,'videogold3prizeck'+ $.idx)	
 	}			
 } 
 
 
+
+if(url.indexOf('/api/ad/v1/api/prize/lottery')!=-1)
+{
+	var body = $request.body;
+	var headers = $request.headers;
+	if(body.indexOf('deliveryId=897')!=-1&&headers)
+	{
+		$.msg('极速'+ $.idx,'视频ck(共3个)');
+		let vediogold2prizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogold2prizeck ,'vediogold2prizeck'+ $.idx)	
+	}
+	if(body.indexOf('deliveryId=894')!=-1&&headers)
+	{
+		$.msg('极速'+ $.idx,'签到ck(共3个)');
+		let vediogold3prizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogold3prizeck ,'vediogold3prizeck'+ $.idx)	
+	}
+	if(body.indexOf('deliveryId=980')!=-1&&headers)
+	{
+		$.msg('极速'+ $.idx,'签到ck(共3个)');
+		let vediogold3prizeck=body+'&&'+JSON.stringify(headers);
+		$.setdata(vediogold3prizeck ,'vediogold3prizeck'+ $.idx)	
+	}
+}
 
 //视频250+1豆
 if(url.indexOf('/api/ad/adserver/v1/api/getAdInfo')!=-1)
