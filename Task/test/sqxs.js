@@ -206,7 +206,7 @@ function readbook() {
                         if (result.status == 200) {
                             ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
-                            $.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
+                            //$.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
                             //await $.wait(100);
                             await readbook();
                         } else {
@@ -251,7 +251,7 @@ function read2book() {
                         if (result.status == 200 && result.data.chanceCurrentCnt != null && result.data.chanceCurrentCnt < 360) {
                             Read2Times++;
 		            //阅读成功显示/关闭，注释下一行即可
-                            $.log("【极速阅读】第" + Read2Times + "次阅读成功");
+                            //$.log("【极速阅读】第" + Read2Times + "次阅读成功");
                             //await $.wait(100);
                             await read2book();
                         } else {
