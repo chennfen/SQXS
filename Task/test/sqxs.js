@@ -148,7 +148,7 @@ async function all() {
               
                 $.log('\n============ 【书旗小说' + i + '】=============');
                 ReadTimes = 0;//阅读次数统计
-		Read2Times = 0;//极速阅读次数统计
+		//Read2Times = 0;//极速阅读次数统计
                 videogold = 0;//书旗视频金币统计
 		video2gold = 0;//极速视频金币统计
                 drawgold = 0;//抽奖金币统计
@@ -296,7 +296,7 @@ function receivecoin() {
                     if (result.status == 200 ) {
 
                         $.log("【收集金币】书旗收集成功，共获得" + ReadTimes * 3 + "金币");
-			$.log("【收集金币】极速收集成功，共获得" + Read2Times * 3 + "金币");
+			//$.log("【收集金币】极速收集成功，共获得" + Read2Times * 3 + "金币");
 			$.log("----------------------------------------");
 
                     } else {
@@ -542,11 +542,13 @@ function userinfo() {
 			$.log("----------------------------------------");
                         $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
 			    
+/*
 			if(result.data.chanceCurrentCnt == null ){
 			$.log("【极速阅读】本次共获得0金币");
 			                                         }else{   
 			$.log("【极速阅读】本次共获得" + result.data.chanceCurrentCnt + "金币");
 			                                              }
+*/
                         $.log("【书旗视频】本次共获得" + videogold + "金币");
 			$.log("【极速视频】本次共获得" + video2gold + "金币");
                         $.log("【书旗抽奖】本次共获得" + drawgold + "金币");
