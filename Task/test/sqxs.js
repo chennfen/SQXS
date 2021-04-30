@@ -255,7 +255,7 @@ function read2book() {
                         } else {
                             if (result.data.chanceCurrentCnt == 360) {
                                 $.log("【极速阅读】领取达到每日上限，请明天再来");
-				$.log("----------------------------------------");
+				$.log("---------------------------------");
                                 //await $.wait(500);
                                 //await read2book();
                             } else
@@ -297,7 +297,7 @@ function receivecoin() {
 
                         $.log("【收集金币】书旗收集成功，共获得" + ReadTimes * 3 + "金币");
 			//$.log("【收集金币】极速收集成功，共获得" + Read2Times * 3 + "金币");
-			$.log("----------------------------------------");
+			$.log("---------------------------------");
 
                     } else {
                         $.log("【收集金币】收集失败," + result.message);
@@ -539,7 +539,7 @@ function userinfo() {
                     //$.log(data);
                     const result = JSON.parse(data);
                     if (result.status == 200) {
-			$.log("----------------------------------------");
+			$.log("---------------------------------");
                         $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
 			    
 /*
