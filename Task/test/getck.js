@@ -83,7 +83,7 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 	}
         if(body.indexOf('deliveryId=897')!=-1&&headers)
 	{
-		$.msg('极速'+ $.idx,'视频ck(共3个)');
+		$.msg('极速'+ $.idx,'视频ck(共2个)');
 		let videogold2prizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(videogold2prizeck ,'videogold2prizeck'+ $.idx)	
 	}
