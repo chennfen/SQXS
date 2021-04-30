@@ -8,15 +8,9 @@
 阅读在431抓
 其余在436抓
 
-书旗极速3个ck
-依次是极速阅读、极速视频、极速签到视频
-极速阅读ck建议多抓几次，因为转第一圈得到的ck可能不好使
+书旗极速2个ck
+依次是极速视频、极速签到视频
 建议用爱新机一键新机
-任意版本可抓
-极速版阅读url可能不通用
-可自行替换自己的
-
-极速版阅读ck好像过一天就不行了
 
 
 
@@ -92,7 +86,7 @@ async function all() {
                 videodrawprizeckArr = sqxsck.datas[3 + 9 * i].val.split('&&');
                 drawckArr = sqxsck.datas[4 + 9 * i].val.split('&&');
                 userinfock = sqxsck.datas[5 + 9 * i].val;
-                read2ckArr = sqxsck.datas[6 + 9 * i].val.split('&&');
+                //read2ckArr = sqxsck.datas[6 + 9 * i].val.split('&&');
                 videogold2prizeckArr = sqxsck.datas[7 + 9 * i].val.split('&&');
 		videogold3prizeckArr = sqxsck.datas[8 + 9 * i].val.split('&&');    
 
@@ -107,7 +101,7 @@ async function all() {
                 await readbook();
 		    
 		//极速版阅读
-		await read2book();
+		//await read2book();
 
                 //收集阅读金币
                 await receivecoin();
@@ -148,7 +142,7 @@ async function all() {
                videodrawprizeckArr = $.getdata(`videodrawprizeck${i}`).split('&&');
                drawckArr = $.getdata(`drawck${i}`).split('&&');
                userinfock = $.getdata(`userinfock${i}`);
-	       read2ckArr = $.getdata(`read2ck${i}`).split('&&');
+	       //read2ckArr = $.getdata(`read2ck${i}`).split('&&');
                videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
 	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
               
@@ -163,7 +157,7 @@ async function all() {
                 await readbook();  
 		    
 		//极速阅读  
-		await read2book();   
+		//await read2book();   
 
                 //收金币
                 await receivecoin();
@@ -232,7 +226,7 @@ function readbook() {
     });
 }
 
-
+/*
 //极速阅读
 function read2book() {
     return new Promise((resolve, reject) => {
@@ -277,6 +271,8 @@ function read2book() {
         });
     });
 }
+*/
+
 
 //收金币
 function receivecoin() {
