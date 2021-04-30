@@ -19,7 +19,7 @@ if(url.indexOf('/ad/v1/api/prize/readpage/pendant/lottery')!=-1)
 		$.setdata(readck ,'readck'+ $.idx)	
 	}		
 }
-
+/*
 //极速版阅读
 if(url.indexOf('/api/activity/v1/activity/pendant/lottery')!=-1)
 {
@@ -36,8 +36,7 @@ if(url.indexOf('/api/activity/v1/activity/pendant/lottery')!=-1)
 		$.setdata(read2ck ,'read2ck'+ $.idx)	
 	}		
 }
-
-
+*/
 
 
 if(url.indexOf('/prizecenter/xapi/prize/manual/receive')!=-1)
@@ -90,13 +89,13 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 	}
 	if(body.indexOf('deliveryId=894')!=-1&&headers)
 	{
-		$.msg('极速'+ $.idx,'签到ck(共3个)');
+		$.msg('极速'+ $.idx,'签到ck(共2个)');
 		let videogold3prizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(videogold3prizeck ,'videogold3prizeck'+ $.idx)	
 	}
 	if(body.indexOf('deliveryId=980')!=-1&&headers)
 	{
-		$.msg('极速'+ $.idx,'签到ck(共3个)');
+		$.msg('极速'+ $.idx,'签到ck(共2个)');
 		let videogold3prizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(videogold3prizeck ,'videogold3prizeck'+ $.idx)	
 	}			
