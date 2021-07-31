@@ -1,6 +1,6 @@
 {
     "id": "cxk2.app.sub",
-    "name": "书旗完整 脚本订阅",
+    "name": "书旗错误 脚本订阅",
     "author": "@caixukun2",
     "apps": [{
             "id": "wx",
@@ -44,7 +44,7 @@
             "script": "https://raw.githubusercontent.com/"
         }, {
             "id": "sqxs",
-            "name": "书旗小说错误",
+            "name": "书旗错误",
             "keys": [
                 "readck1",
                 "receivecoinck1",
