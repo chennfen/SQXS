@@ -507,7 +507,7 @@ function draw(k) {
                             $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
                             drawgold += parseInt(result.data.prizeList[0].prizeName);
                             //await $.wait(1000);
-                            await draw(k);
+                            await videodrawprize(k);
                         } else {
                             $.log("【抽奖任务】抽奖失败," + result.message);
                             //$.log(data);
