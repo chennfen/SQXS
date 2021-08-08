@@ -18,27 +18,6 @@ videogold3prizeck 极速签到看视频
 */
 
 
-
-/*
-//极速版阅读
-if(url.indexOf('/api/activity/v1/activity/pendant/lottery')!=-1)
-{
-	
-	
-	var body = $request.body;
-	var headers = $request.headers;
-	if(body&&headers)
-	{
-
-		$.msg('极速'+ $.idx,'阅读ck(共3个)');
-
-		let read2ck=body+'&&'+JSON.stringify(headers);
-		$.setdata(read2ck ,'read2ck'+ $.idx)	
-	}		
-}
-*/
-
-
 //阅读
 if(url.indexOf('/ad/v1/api/prize/readpage/pendant/lottery')!=-1)
 {
@@ -165,6 +144,21 @@ if(url.indexOf('activity/xapi/gold/record')!=-1)
 		$.setdata(userinfock ,'userinfock'+ $.idx)	
 	}		
 }
+
+
+//每日统计
+if(url.indexOf('activity/xapi/gold/amount')!=-1)
+{
+	var url = $request.url;
+	
+	if(url)
+	{
+		$.msg('书旗'+ $.idx,'每日统计url(新添加)');
+		let user2infock=url;
+		$.setdata(user2infock ,'user2infock'+ $.idx)	
+	}		
+}
+
 
 
 $.done();  
