@@ -12,8 +12,14 @@
 依次是极速视频、极速签到视频
 建议用爱新机一键新机
 
-
-
+userinfock 金币记录
+readck 阅读
+receivecoinck 收取金币
+videogoldprizeck 看视频
+videodrawprizeck 看抽奖视频
+drawck 抽奖
+videogold2prizeck 极速看视频
+videogold3prizeck 极速签到看视频
 
  */
 
@@ -37,97 +43,6 @@ let drawgold = 0;
 })
 
 async function all() {
-    //nodejs运行
-    if ($.isNode()) {
-
-        let sqxsck = require('./sqxsck.json');
-        let CountNumber = sqxsck.settings[1].val;
-        $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
-
-
-//加密替换
-/*
-const jobname = '书旗小说'
-    const $ = Env(jobname)
-
-let ReadTimes = 0;
-let Read2Times = 0;
-let videogold = 0;
-let video2gold = 0;
-let drawgold = 0;
-
-!(async() => {
-    await all();
-})()
-.catch((e) => {
-    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-})
-.finally(() => {
-    $.done();
-})
-
-async function all() {
-	
-	
-    //nodejs运行
-    if ($.isNode()) {
-
-        let sqxsck = require('./sqxsck.json');
-        let CountNumber = sqxsck.settings[1].val;
-        $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
-	
-*/	
-
-        for (let i = 0; i < CountNumber; i++) {
-            if (sqxsck.datas[5 + 9 * i].val) {
-                readckArr = sqxsck.datas[0 + 9 * i].val.split('&&');
-                receivecoinckArr = sqxsck.datas[1 + 9 * i].val.split('&&');
-                videogoldprizeckArr = sqxsck.datas[2 + 9 * i].val.split('&&');
-                videodrawprizeckArr = sqxsck.datas[3 + 9 * i].val.split('&&');
-                drawckArr = sqxsck.datas[4 + 9 * i].val.split('&&');
-                userinfock = sqxsck.datas[5 + 9 * i].val;
-                //read2ckArr = sqxsck.datas[6 + 9 * i].val.split('&&');
-                videogold2prizeckArr = sqxsck.datas[7 + 9 * i].val.split('&&');
-		videogold3prizeckArr = sqxsck.datas[8 + 9 * i].val.split('&&');    
-
-                $.log(`\n============ 【书旗小说${i+1}】=============`);
-                ReadTimes = 0;
-		Read2Times = 0;
-                videogold = 0;
-		video2gold = 0;
-                drawgold = 0;
-
-                //阅读
-                await readbook();
-		    
-		//极速版阅读
-		//await read2book();
-
-                //收集阅读金币
-                await receivecoin();
-
-                //看视频奖励金币
-                await videogoldprize(0);
-                            
-                //极速版看视频奖励金币
-                await videogold2prize(0);
-		    
-		//极速版签到奖励金币
-                await videogold3prize(0);
-
-                //看视频奖励抽奖次数
-                await videodrawprize(0);
-		    
-                //个人信息
-                await userinfo();
-            }
-        }
-
-    }	
-	
-	
-    //QX运行
-    else {
 
         let CountNumber = $.getval('CountNumber');
         if (typeof CountNumber === 'undefined')
@@ -177,12 +92,10 @@ async function all() {
                 //个人信息
                 await userinfo();
             }
-        }
-
-    }
+           }
 }
 
-//阅读
+//书旗阅读
 function readbook() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
@@ -214,8 +127,7 @@ function readbook() {
                                 await readbook();
                             } else
                                 $.log("【书旗阅读】" + result.message);
-
-                            //$.log(data);
+                                //$.log(data);
                         }
                 }
             } catch (e) {
@@ -274,7 +186,7 @@ function read2book() {
 */
 
 
-//收金币
+//收取金币
 function receivecoin() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive";
@@ -313,7 +225,8 @@ function receivecoin() {
     });
 }
 
-//视频
+
+//书旗视频
 function videogoldprize(j) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -333,8 +246,8 @@ function videogoldprize(j) {
                         //$.log(data);
                         if (result.status == 200) {
                             j++;
-                            $.log("【书旗视频】第" + j + "个视频成功，获得200金币，等待1s观看下一个视频");
-                            videogold += 200;
+                            $.log("【书旗视频】第" + j + "个视频成功，获得100金币");
+                            videogold += 100;
                             //await $.wait(1000);
                             await videogoldprize(j);
                         } else {
@@ -344,7 +257,7 @@ function videogoldprize(j) {
                                 await videogoldprize(j);
                             } else				
                                 $.log("【书旗视频】" + result.message);
-                            //$.log(data);
+                                //$.log(data);
 
                         }
                 }
@@ -355,7 +268,6 @@ function videogoldprize(j) {
         });
     });
 }
-
 
 
 //极速视频
@@ -378,7 +290,7 @@ function videogold2prize(n) {
                         //$.log(data);
                         if (result.status == 200) {
                             n++;
-                            $.log("【极速视频】第" + n + "个视频成功，获得100金币，等待1s观看下一个视频");
+                            $.log("【极速视频】第" + n + "个视频成功，获得100金币");
                             video2gold += 100;
                             //await $.wait(1000);
                             await videogold2prize(n);
@@ -389,7 +301,7 @@ function videogold2prize(n) {
                                 await videogold2prize(n);
                             } else
                                 $.log("【极速视频】" + result.message);
-                            //$.log(data);
+                                //$.log(data);
 
                         }
                 }
@@ -401,7 +313,8 @@ function videogold2prize(n) {
     });
 }
 
-//极速签到
+
+//极速签到视频
 function videogold3prize(n) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
@@ -439,7 +352,6 @@ function videogold3prize(n) {
         });
     });
 }
-
 
 
 //视频抽奖
@@ -484,6 +396,8 @@ function videodrawprize(k) {
     });
 }
 
+
+//书旗抽奖
 function draw(k) {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
@@ -503,7 +417,7 @@ function draw(k) {
                     const result = JSON.parse(data)
                         //$.log(data);
                         if (result.status == 200) {
-							k++;
+			    k++;
                             $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
                             drawgold += parseInt(result.data.prizeList[0].prizeName);
                             //await $.wait(1000);
@@ -521,6 +435,8 @@ function draw(k) {
     });
 }
 
+
+//用户信息
 function userinfo() {
     return new Promise((resolve, reject) => {
         const request = {
