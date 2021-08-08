@@ -50,14 +50,14 @@ async function all() {
 
         for (let i = 1; i <= CountNumber; i++) {
             if ($.getdata(`user2infock${i}`) ) {
-               readckArr = $.getdata(`readck${i}`).split('&&');
-               receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
-               videogoldprizeckArr = $.getdata(`videogoldprizeck${i}`).split('&&');
-               videodrawprizeckArr = $.getdata(`videodrawprizeck${i}`).split('&&');
-               drawckArr = $.getdata(`drawck${i}`).split('&&');
-               userinfock = $.getdata(`userinfock${i}`);
-               videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
-	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
+               //readckArr = $.getdata(`readck${i}`).split('&&');
+               //receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
+               //videogoldprizeckArr = $.getdata(`videogoldprizeck${i}`).split('&&');
+               //videodrawprizeckArr = $.getdata(`videodrawprizeck${i}`).split('&&');
+               //drawckArr = $.getdata(`drawck${i}`).split('&&');
+               //userinfock = $.getdata(`userinfock${i}`);
+               //videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
+	       //videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
                user2infock = $.getdata(`user2infock${i}`);
               
                 $.log('\n============ 【书旗小说' + i + '】 =============');
