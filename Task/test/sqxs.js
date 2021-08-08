@@ -46,7 +46,7 @@ async function all() {
         let CountNumber = $.getval('CountNumber');
         if (typeof CountNumber === 'undefined')
             CountNumber = 1;
-        $.log(`============ 共 ${CountNumber} 个${jobname}账号=============`);
+        $.log(`共 ${CountNumber} 个${jobname}账号`);
 
         for (let i = 1; i <= CountNumber; i++) {
             if ($.getdata(`userinfock${i}`) ) {
@@ -59,11 +59,7 @@ async function all() {
                videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
 	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
               
-                $.log('\n============ 【书旗小说' + i + '】=============');
-                //ReadTimes = 0;//阅读次数统计
-                //videogold = 0;//书旗视频金币统计
-		//video2gold = 0;//极速视频金币统计
-                //drawgold = 0;//抽奖金币统计
+                $.log('\n============ 【书旗小说' + i + '】 =============');
               
                 //阅读
                 await readbook();
