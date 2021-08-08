@@ -13,7 +13,7 @@ https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery url s
 #签到（不好使）
 https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 #每日统计
-https://ocean.shuqireader.com/api/activity/xapi/gold/amount url script-request-body https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
+https://ocean.shuqireader.com/api/activity/xapi/gold/amount url script-request-header https://raw.githubusercontent.com/zsl119/3/main/Task/test/getck.js
 
 
 
