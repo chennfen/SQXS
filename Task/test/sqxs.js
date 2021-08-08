@@ -84,7 +84,7 @@ async function all() {
                 await userinfo();
 		    
                 //每日统计
-                await user2info();		    
+                //await user2info();		    
             }
            }
 }
