@@ -440,7 +440,7 @@ function user2info() {
                     //await $.wait(1000);
                     await user2info();
                 } else {
-                    $.log(data);
+                    //$.log(data);
                     const result = JSON.parse(data);
                     if (result.status == 200) {
 			$.log("---------------------------------");
@@ -448,7 +448,7 @@ function user2info() {
                         $.log("【余额统计】" + result.data.blanceCoin);   			    
                     } else {
                         $.log("【金币总数】数据异常," + result.message);
-                        $.log(data);
+                        //$.log(data);
                     }
                 }
             } catch (e) {
