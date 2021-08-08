@@ -90,14 +90,14 @@ if(url.indexOf('/ad/v1/api/prize/lottery')!=-1)
 	
 	if(body.indexOf('deliveryId=894')!=-1&&headers)
 	{
-		$.msg('极速'+ $.idx,'签到ck(共2个)');
+		$.msg('极速'+ $.idx,'签到视频ck(共2个)');
 		let videogold3prizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(videogold3prizeck ,'videogold3prizeck'+ $.idx)	
 	}
 	
 	if(body.indexOf('deliveryId=980')!=-1&&headers)
 	{
-		$.msg('极速'+ $.idx,'签到ck(共2个)');
+		$.msg('极速'+ $.idx,'签到视频ck(共2个)');
 		let videogold3prizeck=body+'&&'+JSON.stringify(headers);
 		$.setdata(videogold3prizeck ,'videogold3prizeck'+ $.idx)	
 	}
