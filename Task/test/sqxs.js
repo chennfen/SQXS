@@ -27,7 +27,6 @@ const jobname = '书旗小说'
     const $ = Env(jobname)
 
 let ReadTimes = 0;
-let Read2Times = 0;
 let videogold = 0;
 let video2gold = 0;
 let drawgold = 0;
@@ -57,23 +56,18 @@ async function all() {
                videodrawprizeckArr = $.getdata(`videodrawprizeck${i}`).split('&&');
                drawckArr = $.getdata(`drawck${i}`).split('&&');
                userinfock = $.getdata(`userinfock${i}`);
-	       //read2ckArr = $.getdata(`read2ck${i}`).split('&&');
                videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
 	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】=============');
-                ReadTimes = 0;//阅读次数统计
-		//Read2Times = 0;//极速阅读次数统计
-                videogold = 0;//书旗视频金币统计
-		video2gold = 0;//极速视频金币统计
-                drawgold = 0;//抽奖金币统计
+                //ReadTimes = 0;//阅读次数统计
+                //videogold = 0;//书旗视频金币统计
+		//video2gold = 0;//极速视频金币统计
+                //drawgold = 0;//抽奖金币统计
               
                 //阅读
-                await readbook();  
+                await readbook();
 		    
-		//极速阅读  
-		//await read2book();   
-
                 //收金币
                 await receivecoin();
 
@@ -94,6 +88,7 @@ async function all() {
             }
            }
 }
+
 
 //书旗阅读
 function readbook() {
@@ -137,53 +132,6 @@ function readbook() {
         });
     });
 }
-
-/*
-//极速阅读
-function read2book() {
-    return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=13.5.1&ustatus=1&umidtoken=qtdLlydLOolz%2BDV5EeT6MWW8pZ9Aqf%2Fg&net_env=4g&placeid=111111&user_id=2037477678&sn=AFC2FC2BDA2AA02607637ADB3169BFE103E8AAB5&msv=10.0.0&brand=Apple&imei=7F094022E577ABC368581DF63E4389210DC1F0F1&appVer=1.0.3.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDM3NDc3Njc4IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF83RjA5NDAyMkU1NzdBQkMzNjg1ODFERjYzRTQzODkyMTBEQzFGMEYxIiwic24iOiJmYXN0X0FGQzJGQzJCREEyQUEwMjYwNzYzN0FEQjMxNjlCRkUxMDNFOEFBQjUiLCJleHAiOjE2MjAwMTcxNjgsInVzZXJJZCI6IjIwMzc0Nzc2NzgiLCJpYXQiOjE2MTk0OTg3NjgsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.nPSozquTN-qIMEBUyGXgGgax-fs6ei2BUxl-1ujrIAhe1cQvT79yTO6P-cCXNqgEntRQKNyBHVMRT7apqeCYUQ&statusBarHeight=20.000000&platform=116&ver=210223&mod=iPhoneX&wh=750x1334&utype=vip&utdid=YIeW7z9cmPwDAJi0DI71zF4W&idfa=58218D1A-B0F9-47FF-9B59-73D63C65B748";
-
-        const request = {
-            url: url,
-            headers: JSON.parse(read2ckArr[1]),
-            body: read2ckArr[0]
-        };
-        $.post(request, async(error, request, data) => {
-            try {
-                if (error) {
-                    $.log("阅读请求失败,再次尝试阅读");
-                    //await $.wait(1000);
-                    await read2book();
-                } else {
-                    const result = JSON.parse(data)
-                        //$.log(data);	  
-                        if (result.status == 200 && result.data.chanceCurrentCnt < 360) {
-                            Read2Times++;
-		            //阅读成功显示/关闭，注释下一行即可
-                            //$.log("【极速阅读】第" + Read2Times + "次阅读成功");
-                            //await $.wait(100);
-                            await read2book();
-                        } else {
-                            if (result.data.chanceCurrentCnt == 360) {
-                                $.log("【极速阅读】领取达到每日上限，请明天再来");
-				$.log("---------------------------------");
-                                //await $.wait(500);
-                                //await read2book();
-                            } else
-                                $.log("【极速阅读】阅读失败，ck可能有问题，成功获得金币的阅读ck才有效");
-
-                              //$.log(data);
-                        }
-                }
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        });
-    });
-}
-*/
 
 
 //收取金币
@@ -456,15 +404,7 @@ function userinfo() {
                     const result = JSON.parse(data);
                     if (result.status == 200) {
 			$.log("---------------------------------");
-                        $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
-			    
-/*
-			if(result.data.chanceCurrentCnt == null ){
-			$.log("【极速阅读】本次共获得0金币");
-			                                         }else{   
-			$.log("【极速阅读】本次共获得" + result.data.chanceCurrentCnt + "金币");
-			                                              }
-*/
+                        $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");			    
                         $.log("【书旗视频】本次共获得" + videogold + "金币");
 			$.log("【极速视频】本次共获得" + video2gold + "金币");
                         $.log("【书旗抽奖】本次共获得" + drawgold + "金币");
