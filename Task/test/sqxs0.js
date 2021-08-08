@@ -57,7 +57,7 @@ async function all() {
                drawckArr = $.getdata(`drawck${i}`).split('&&');
                userinfock = $.getdata(`userinfock${i}`);
                videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
-	             videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
+	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
                user2infock = $.getdata(`user2infock${i}`);
               
                 $.log('\n============ 【书旗小说' + i + '】 =============');
