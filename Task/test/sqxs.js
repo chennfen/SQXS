@@ -58,6 +58,7 @@ async function all() {
                userinfock = $.getdata(`userinfock${i}`);
                videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
 	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
+               user2infock = $.getdata(`user2infock${i}`);
               
                 $.log('\n============ 【书旗小说' + i + '】 =============');
               
@@ -81,6 +82,9 @@ async function all() {
 		    
                 //个人信息
                 await userinfo();
+		    
+                //每日统计
+                await user2info();		    
             }
            }
 }
@@ -418,6 +422,46 @@ function userinfo() {
         });
     });
 }
+
+
+//每日统计
+function user2info() {
+    return new Promise((resolve, reject) => {
+        const request = {
+            url: user2infock,
+            headers: {},
+            body: ""
+        };
+
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log("用户信息请求失败,再次尝试用户信息请求");
+                    //await $.wait(1000);
+                    await user2info();
+                } else {
+                    $.log(data);
+                    const result = JSON.parse(data);
+                    if (result.status == 200) {
+			$.log("---------------------------------");
+			$.log("【每日统计】" + result.data.todayCoin); 
+                        $.log("【余额统计】" + result.data.blanceCoin);   			    
+                    } else {
+                        $.log("【金币总数】数据异常," + result.message);
+                        $.log(data);
+                    }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
+
+
+
 
 function Env(t, e) {
     class s {
