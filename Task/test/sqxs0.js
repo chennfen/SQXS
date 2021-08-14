@@ -18,6 +18,7 @@ receivecoinck 收取金币
 videogoldprizeck 看视频
 videodrawprizeck 看抽奖视频
 drawck 抽奖
+read2ck 极速阅读
 videogold2prizeck 极速看视频
 videogold3prizeck 极速签到看视频
 
@@ -49,7 +50,7 @@ async function all() {
         $.log(`共 ${CountNumber} 个${jobname}账号`);
 
         for (let i = 1; i <= CountNumber; i++) {
-            if ($.getdata(`user2infock${i}`) ) {
+            if ($.getdata(`read2ck${i}`) ) {
                //readckArr = $.getdata(`readck${i}`).split('&&');
                //receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
                //videogoldprizeckArr = $.getdata(`videogoldprizeck${i}`).split('&&');
@@ -58,7 +59,8 @@ async function all() {
                //userinfock = $.getdata(`userinfock${i}`);
                //videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
 	       //videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
-               user2infock = $.getdata(`user2infock${i}`);
+               //user2infock = $.getdata(`user2infock${i}`);
+               read2ckArr = $.getdata(`read2ck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】 =============');
               
@@ -84,11 +86,13 @@ async function all() {
                 //await userinfo();
 		    
                 //每日统计
-                await user2info();		    
+                //await user2info();
+
+                //极速阅读
+                //await read2book();		    
             }
       }
 }
-
 
 //书旗阅读
 function readbook() {
@@ -132,6 +136,46 @@ function readbook() {
         });
     });
 }
+
+
+//极速阅读
+function read2book() {
+    return new Promise((resolve, reject) => {
+        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
+
+        const request = {
+            url: url,
+            headers: JSON.parse(read2ckArr[1]),
+            body: read2ckArr[0]
+        };
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log("阅读请求失败,再次尝试阅读");
+                    //await $.wait(1000);
+                    await read2book();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.data.chanceCurrentCnt < 50) {
+                            ReadTimes++;
+		            //阅读成功显示/关闭，注释下一行即可
+                            //$.log("【阅读任务】第" + ReadTimes + "次阅读成功");
+                            //await $.wait(100);
+                            await read2book();
+                        } else
+                                $.log("【极速阅读】领取达到每日上限，请明天再来");
+                                //$.log(data);
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
 
 
 //收取金币
