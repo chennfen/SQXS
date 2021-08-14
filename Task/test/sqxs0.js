@@ -156,11 +156,11 @@ function read2book() {
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
-                        //$.log(data);
+                        $.log(data);
                         if (result.data.chanceCurrentCnt < 50) {
                             ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
-                            //$.log("【阅读任务】第" + ReadTimes + "次阅读成功");
+                            $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
                             //await $.wait(100);
                             await read2book();
                         } else
