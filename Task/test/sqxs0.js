@@ -151,8 +151,9 @@ function read2book() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
+                    $.log(data);
                     $.log("阅读请求失败,再次尝试阅读");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
