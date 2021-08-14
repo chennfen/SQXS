@@ -89,7 +89,7 @@ async function all() {
                 //await user2info();
 
                 //极速阅读
-                /await read2book();		    
+                await read2book();		    
             }
       }
 }
