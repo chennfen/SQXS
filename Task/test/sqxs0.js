@@ -156,15 +156,20 @@ function read2book() {
                     await read2book();
                 } else {
                     const result = JSON.parse(data)
-                        $.log(data);
-                        if (result.data.chanceCurrentCnt < 50) {
+                        //$.log(data);
+                        if (result.status == 200) {
                             ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
                             $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
                             //await $.wait(100);
                             await read2book();
-                        } else
-                                $.log("【极速阅读】领取达到每日上限，请明天再来");
+                        } else {
+                            if (result.message != '领取达到每日上限，请明天再来') {
+                                $.log("【极速阅读】" + result.message + ",再次尝试阅读");
+                                //await $.wait(500);
+                                await read2book();
+                            } else
+                                $.log("【极速阅读】" + result.message);
                                 //$.log(data);
                         }
                 }
@@ -175,7 +180,6 @@ function read2book() {
         });
     });
 }
-
 
 
 //收取金币
