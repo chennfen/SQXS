@@ -33,6 +33,22 @@ if(url.indexOf('/ad/v1/api/prize/readpage/pendant/lottery')!=-1)
 }
 
 
+//极速阅读
+if(url.indexOf('/api/activity/v1/activity/pendant/lottery')!=-1)
+{
+	var body = $request.body;
+	var headers = $request.headers;
+	if(body&&headers)
+	{
+		$.msg('极速'+ $.idx,'阅读ck(新添加)');
+
+		let read2ck=body+'&&'+JSON.stringify(headers);
+		$.setdata(read2ck ,'read2ck'+ $.idx)	
+	}		
+}
+
+
+
 //收金币
 if(url.indexOf('/prizecenter/xapi/prize/manual/receive')!=-1)
 {
