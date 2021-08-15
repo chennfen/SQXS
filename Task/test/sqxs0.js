@@ -141,7 +141,7 @@ function readbook() {
 //极速阅读
 function read2book() {
     return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
+        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
 
         const request = {
             url: url,
