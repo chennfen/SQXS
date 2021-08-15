@@ -468,8 +468,8 @@ function userinfo() {
 			$.log("---------------------------------");
                         $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
                         $.log("【书旗抽奖】本次共获得" + drawgold + "金币");
-                        $.log("【书旗视频】本次共获得" + videogold + "金币\n");
-			$.log("【极速视频】本次共获得" + video2gold + "金币\n");
+                        $.log("【书旗视频】本次共获得" + videogold + "金币");
+			$.log("【极速视频】本次共获得" + video2gold + "金币");
                         $.log("【金币总数】" + result.data.gold);   			    
                         $.log("【总计收益】" + result.data.income + "元");
                     } else {
