@@ -30,6 +30,7 @@ let ReadTimes = 0;
 let videogold = 0;
 let video2gold = 0;
 let drawgold = 0;
+let Read2Times = 0;
 
 !(async() => {
     await all();
@@ -59,6 +60,7 @@ async function all() {
                videogold2prizeckArr = $.getdata(`videogold2prizeck${i}`).split('&&');
 	       videogold3prizeckArr = $.getdata(`videogold3prizeck${i}`).split('&&');
                user2infock = $.getdata(`user2infock${i}`);
+               read2ckArr = $.getdata(`read2ck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】 =============');
               
@@ -84,7 +86,10 @@ async function all() {
                 await userinfo();
 		    
                 //每日统计
-                //await user2info();		    
+                //await user2info();
+
+                //阅读
+                await read2book();	    
             }
            }
 }
@@ -124,6 +129,61 @@ function readbook() {
                                 $.log("【书旗阅读】" + result.message);
                                 //$.log(data);
                         }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
+
+//极速阅读
+function read2book() {
+    return new Promise((resolve, reject) => {
+        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
+
+        const request = {
+            url: url,
+            headers: JSON.parse(read2ckArr[1]),
+            body: read2ckArr[0]
+        };
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log(data);
+                    $.log("阅读请求失败，稍后再试");
+                    await $.wait(1000);
+                    //await read2book();
+                } else {
+                    const result = JSON.parse(data)
+                    if(result.status==200)
+                    {
+                        $.log(data);
+                        if (result.data.chanceCurrentCnt <= 359) {
+                            Read2Times++;
+		            //阅读成功显示/关闭，注释下一行即可
+                            $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
+                            await $.wait(100);
+                            await read2book();
+                        } else {
+                            if (result.message == '领取达到每日上限，请明天再来') {
+                                $.log(data);
+                                $.log("【极速阅读】" + result.message);
+                                //await $.wait(500);
+                                //await read2book();
+                            } else
+                                $.log("【极速阅读】" + result.message);
+                                $.log(data);
+                        }
+                        
+                    }
+                    else
+                        //再次尝试
+                        $.log("【极速阅读】再次尝试" + result.message);
+                        await read2book();
+
                 }
             } catch (e) {
                 $.log(e)
