@@ -128,7 +128,7 @@ function readbook() {
             try {
                 if (error) {
                     $.log("【书旗阅读】阅读请求失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await readbook();
                 } else {
                     const result = JSON.parse(data)
@@ -221,7 +221,7 @@ function receivecoin() {
             try {
                 if (error) {
                     $.log("【收集金币】收集失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await receivecoin();
                 } else {
                     //$.log(data);
@@ -260,7 +260,7 @@ function videogoldprize(j) {
             try {
                 if (error) {
                     $.log("【书旗视频】视频失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await videogoldprize();
                 } else {
                     const result = JSON.parse(data)
@@ -306,7 +306,7 @@ function videodrawprize(k) {
             try {
                 if (error) {
                     $.log("【视频抽奖】抽奖请求失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await videodrawprize();
                 } else {
                     const result = JSON.parse(data)
@@ -349,7 +349,7 @@ function draw(k) {
             try {
                 if (error) {
                     $.log("【书旗抽奖】抽奖请求失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await draw();
                 } else {
                     const result = JSON.parse(data)
@@ -388,7 +388,7 @@ function videogold2prize(n) {
             try {
                 if (error) {
                     $.log("【极速视频】极速视频失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await videogold2prize();
                 } else {
                     const result = JSON.parse(data)
@@ -432,7 +432,7 @@ function videogold3prize(n) {
             try {
                 if (error) {
                     $.log("【极速签到】极速签到失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await videogold3prize();
                 } else {
                     const result = JSON.parse(data)
@@ -472,7 +472,7 @@ function userinfo() {
             try {
                 if (error) {
                     $.log("【用户信息】信息请求失败,再次尝试");
-                    //await $.wait(1000);
+                    await $.wait(1000);
                     await userinfo();
                 } else {
                     //$.log(data);
@@ -511,9 +511,9 @@ function user2info() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("【每日统计】统计请求失败,再次尝试");
-                    //await $.wait(1000);
-                    await user2info();
+                    $.log("【每日统计】统计请求失败,稍后再试");
+                    await $.wait(1000);
+                    //await user2info();
                 } else {
                     //$.log(data);
                     const result = JSON.parse(data);
