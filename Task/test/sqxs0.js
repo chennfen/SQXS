@@ -139,7 +139,7 @@ function readbook() {
 
 
 
-//极速阅读by坤坤
+//极速阅读
 function read2book() {
     return new Promise((resolve, reject) => {
         const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
