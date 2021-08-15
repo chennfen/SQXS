@@ -114,7 +114,7 @@ function readbook() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("阅读请求失败,再次尝试阅读");
+                    $.log("【书旗阅读】阅读请求失败,再次尝试");
                     //await $.wait(1000);
                     await readbook();
                 } else {
@@ -207,7 +207,7 @@ function receivecoin() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("收集失败,再次尝试");
+                    $.log("【收集金币】收集失败,再次尝试");
                     //await $.wait(1000);
                     await receivecoin();
                 } else {
@@ -246,7 +246,7 @@ function videogoldprize(j) {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("视频失败,再次尝试");
+                    $.log("【书旗视频】视频失败,再次尝试");
                     //await $.wait(1000);
                     await videogoldprize();
                 } else {
@@ -290,7 +290,7 @@ function videogold2prize(n) {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("极速签到失败,再次尝试");
+                    $.log("【极速视频】极速视频失败,再次尝试");
                     //await $.wait(1000);
                     await videogold2prize();
                 } else {
@@ -334,7 +334,7 @@ function videogold3prize(n) {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("极速签到失败,再次尝试");
+                    $.log("【极速签到】极速签到失败,再次尝试");
                     //await $.wait(1000);
                     await videogold3prize();
                 } else {
@@ -375,7 +375,7 @@ function videodrawprize(k) {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("视频抽奖请求失败,再次尝试视频抽奖");
+                    $.log("【视频抽奖】抽奖请求失败,再次尝试");
                     //await $.wait(1000);
                     await videodrawprize();
                 } else {
@@ -418,7 +418,7 @@ function draw(k) {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("抽奖任务请求失败,再次尝试视频抽奖");
+                    $.log("【书旗抽奖】抽奖请求失败,再次尝试");
                     //await $.wait(1000);
                     await draw();
                 } else {
@@ -426,12 +426,12 @@ function draw(k) {
                         //$.log(data);
                         if (result.status == 200) {
 			    k++;
-                            $.log("【抽奖任务】抽奖成功，获得" + result.data.prizeList[0].prizeName);
+                            $.log("【书旗抽奖】抽奖成功，获得" + result.data.prizeList[0].prizeName);
                             drawgold += parseInt(result.data.prizeList[0].prizeName);
                             //await $.wait(1000);
                             await videodrawprize(k);
                         } else {
-                            $.log("【抽奖任务】抽奖失败," + result.message);
+                            $.log("【书旗抽奖】抽奖失败," + result.message);
                             //$.log(data);
                         }
                 }
@@ -456,7 +456,7 @@ function userinfo() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("用户信息请求失败,再次尝试用户信息请求");
+                    $.log("【用户信息】信息请求失败,再次尝试");
                     //await $.wait(1000);
                     await userinfo();
                 } else {
@@ -496,7 +496,7 @@ function user2info() {
         $.post(request, async(error, request, data) => {
             try {
                 if (error) {
-                    $.log("用户信息请求失败,再次尝试用户信息请求");
+                    $.log("【每日统计】统计请求失败,再次尝试");
                     //await $.wait(1000);
                     await user2info();
                 } else {
@@ -505,7 +505,7 @@ function user2info() {
                     if (result.status == 200) {
 			$.log("---------------------------------");
 			$.log("【每日统计】" + result.data.todayCoin); 
-                        //$.log("【余额统计】" + result.data.blanceCoin);   			    
+                        $.log("【余额统计】" + result.data.balanceCoin);   			    
                     } else {
                         $.log("【金币总数】数据异常," + result.message);
                         //$.log(data);
