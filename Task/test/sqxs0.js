@@ -154,21 +154,22 @@ function read2book() {
                     $.log(data);
                     $.log("阅读请求失败,再次尝试阅读");
                     await $.wait(1000);
-                    await read2book();
+                    //await read2book();
                 } else {
-                    const result = JSON.parse(data)
-                        //$.log(data);
-                        if (result.status == 200) {
+                    //const result = JSON.parse(data)
+                        $.log(data);
+                        if (result.data.chanceCurrentCnt < 200) {
                             ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
                             $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
                             //await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.message != '领取达到每日上限，请明天再来') {
-                                $.log("【极速阅读】" + result.message + ",再次尝试阅读");
+                            if (result.message == '领取达到每日上限，请明天再来') {
+                                $.log(data);
+                                $.log("【极速阅读】" + result.message);
                                 //await $.wait(500);
-                                await read2book();
+                                //await read2book();
                             } else
                                 $.log("【极速阅读】" + result.message);
                                 //$.log(data);
