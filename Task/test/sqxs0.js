@@ -162,7 +162,7 @@ function read2book() {
                             ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
                             $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
-                            //await $.wait(100);
+                            await $.wait(100);
                             await read2book();
                         } else {
                             if (result.message == '领取达到每日上限，请明天再来') {
