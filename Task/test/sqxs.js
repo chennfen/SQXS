@@ -33,7 +33,6 @@ let ReadTimes = 0;
 let videogold = 0;
 let video2gold = 0;
 let drawgold = 0;
-let Read2Times = 0;
 
 !(async() => {
     await all();
@@ -166,7 +165,7 @@ function read2book() {
                     {
                         //$.log(data);
                         if (result.data.chanceCurrentCnt <= 359) {
-                            ReadTimes++;
+                            //ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
                             $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
                             //await $.wait(100);
