@@ -1,18 +1,21 @@
 /*
 账号个数由个人信息个数决定(userinfock)
+一天跑一次就够了
 
-10个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的个人信息ck
+10个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的个人信息ck(userinfock)
 
 书旗共10个ck
 
 书旗小说7个ck
-阅读在431版本抓
-其余在436版本抓
+阅读在431版本抓，其他版本抓不到
+其余在新版本抓，建议不要在431抓
 
 书旗极速3个ck
 任意版本抓
+极速看视频和极速阅读抓不到正常
+大概率是号的问题，或者开了去广告
 
-抓不到的ck就注释相关代码
+实在抓不到的ck就注释相关代码
 
 userinfock 个人信息
 user2infock 每日统计
@@ -25,6 +28,7 @@ drawck 抽奖
 read2ck 极速阅读
 videogold2prizeck 极速看视频
 videogold3prizeck 极速签到看视频
+
 
  */
 
@@ -56,6 +60,11 @@ async function all() {
 
         for (let i = 1; i <= CountNumber; i++) {
             if ($.getdata(`userinfock${i}`) ) {
+		    
+//抓不到就注释相关函数
+//抓不到就注释相关函数
+//抓不到就注释相关函数
+		    
                readckArr = $.getdata(`readck${i}`).split('&&');
                receivecoinckArr = $.getdata(`receivecoinck${i}`).split('&&');
                videogoldprizeckArr = $.getdata(`videogoldprizeck${i}`).split('&&');
@@ -68,7 +77,11 @@ async function all() {
                read2ckArr = $.getdata(`read2ck${i}`).split('&&');
               
                 $.log('\n============ 【书旗小说' + i + '】 =============');
-              
+		    		    
+//抓不到就注释相关函数
+//抓不到就注释相关函数
+//抓不到就注释相关函数		    
+		    
                 //阅读
                 await readbook();
 
