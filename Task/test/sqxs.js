@@ -174,8 +174,8 @@ function read2book() {
                                 //await $.wait(500);
                                 //await read2book();
                             } else
-                                $.log("【极速阅读】" + result.message);
-                                $.log(data);
+                                $.log("【极速阅读】达到每日上限");
+                                //$.log(data);
                         }
                         
                     }
