@@ -1,15 +1,17 @@
 /*
 账号个数由个人信息个数决定(userinfock)
 
-10个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的个人信息(也即收益记录)ck
+10个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的个人信息ck
+
+书旗共10个ck
 
 书旗小说7个ck
-依次是阅读、收取、视频、抽奖视频、抽奖、个人信息、每日统计
 阅读在431版本抓
 其余在436版本抓
 
-书旗极速2个ck
-依次是极速视频、极速签到视频
+书旗极速3个ck
+任意版本抓
+
 抓不到的ck就注释相关代码
 
 userinfock 个人信息
@@ -30,6 +32,7 @@ const jobname = '书旗小说'
     const $ = Env(jobname)
 
 let ReadTimes = 0;
+let Read2Times = 0;
 let videogold = 0;
 let video2gold = 0;
 let drawgold = 0;
@@ -120,7 +123,7 @@ function readbook() {
                         if (result.status == 200) {
                             ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
-                            //$.log("【阅读任务】第" + ReadTimes + "次阅读成功，获得3金币");
+                            $.log("【书旗阅读】第" + ReadTimes + "次阅读成功");
                             //await $.wait(100);
                             await readbook();
                         } else {
@@ -156,7 +159,7 @@ function read2book() {
             try {
                 if (error) {
                     $.log(data);
-                    $.log("阅读请求失败,再次尝试阅读");
+                    $.log("【极速阅读】阅读请求失败,稍后再试");
                     await $.wait(1000);
                     //await read2book();
                 } else {
@@ -165,9 +168,9 @@ function read2book() {
                     {
                         //$.log(data);
                         if (result.data.chanceCurrentCnt <= 359) {
-                            //ReadTimes++;
+                            Read2Times++;
 		            //阅读成功显示/关闭，注释下一行即可
-                            $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
+                            $.log("【极速阅读】第" + Read2Times + "次阅读成功");
                             //await $.wait(100);
                             await read2book();
                         } else {
@@ -179,7 +182,6 @@ function read2book() {
                     else
                         //再次尝试
                         await read2book();
-                        //$.log(data);
                         //$.log("【极速阅读】再次尝试");
 
                 }
