@@ -88,7 +88,7 @@ async function all() {
                 //每日统计
                 //await user2info();
 
-                //极速阅读
+                //极速阅读（用不了）
                 await read2book();		    
             }
       }
