@@ -215,7 +215,7 @@ function receivecoin() {
                     const result = JSON.parse(data);
                     if (result.status == 200 ) {
 
-                        $.log("【收集金币】书旗收集成功，共获得" + ReadTimes * 3 + "金币");
+                        //$.log("【收集金币】书旗收集成功，共获得" + ReadTimes * 3 + "金币");
 			//$.log("【收集金币】极速收集成功，共获得" + Read2Times * 3 + "金币");
 			$.log("---------------------------------");
 
@@ -464,7 +464,7 @@ function userinfo() {
                     const result = JSON.parse(data);
                     if (result.status == 200) {
 			$.log("---------------------------------");
-                        $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");			    
+                        $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
                         $.log("【书旗视频】本次共获得" + videogold + "金币");
 			$.log("【极速视频】本次共获得" + video2gold + "金币");
                         $.log("【书旗抽奖】本次共获得" + drawgold + "金币");
