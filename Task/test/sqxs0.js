@@ -181,7 +181,7 @@ function read2book() {
                     }
                     else
                     //再次尝试
-                        $.log(data);
+                        $.log("【极速阅读】再次尝试" + result.message);
                         await read2book();
 
                 }
