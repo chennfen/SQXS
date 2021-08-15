@@ -156,7 +156,7 @@ function read2book() {
                     await $.wait(1000);
                     //await read2book();
                 } else {
-                    //const result = JSON.parse(data)
+                    const result = JSON.parse(data)
                         $.log(data);
                         if (result.data.chanceCurrentCnt <= 359) {
                             ReadTimes++;
