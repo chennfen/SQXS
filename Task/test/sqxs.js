@@ -80,15 +80,15 @@ async function all() {
 
                 //看视频
                 await videogoldprize(0);
+
+                //抽奖
+                await videodrawprize(0);
                             
                 //极速视频
                 await videogold2prize(0);
 		    
                 //极速签到
                 await videogold3prize(0);
-
-                //抽奖次数
-                await videodrawprize(0);
 		    
                 //个人信息
                 await userinfo();
