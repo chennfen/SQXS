@@ -12,6 +12,7 @@ receivecoinck 收取金币
 videogoldprizeck 看视频
 videodrawprizeck 看抽奖视频
 drawck 抽奖
+user2infock 每日统计
 
 read2ck 极速阅读
 videogold2prizeck 极速看视频
