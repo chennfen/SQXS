@@ -1,23 +1,26 @@
 /*
 账号个数由个人信息个数决定(userinfock)
 
-9个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的个人信息(也即收益记录)ck
+10个ck抓齐才能跑，抓不齐自行注释脚本 或者删除没抓齐账户的个人信息(也即收益记录)ck
 
-书旗小说6个ck
-依次是阅读、收取、视频、抽奖视频、抽奖、收益记录
-阅读在431抓
-其余在436抓
+书旗小说7个ck
+依次是阅读、收取、视频、抽奖视频、抽奖、个人信息、每日统计
+阅读在431版本抓
+其余在436版本抓
 
 书旗极速2个ck
 依次是极速视频、极速签到视频
 抓不到的ck就注释相关代码
 
-userinfock 金币记录
+userinfock 个人信息
+user2infock 每日统计
 readck 阅读
 receivecoinck 收取金币
 videogoldprizeck 看视频
 videodrawprizeck 看抽奖视频
 drawck 抽奖
+
+read2ck 极速阅读
 videogold2prizeck 极速看视频
 videogold3prizeck 极速签到看视频
 
@@ -66,6 +69,9 @@ async function all() {
               
                 //阅读
                 await readbook();
+
+                //极速阅读
+                await read2book();	    
 		    
                 //收金币
                 await receivecoin();
@@ -77,7 +83,7 @@ async function all() {
                 await videogold2prize(0);
 		    
                 //极速签到
-                await videogold3prize(0);		   
+                await videogold3prize(0);
 
                 //抽奖次数
                 await videodrawprize(0);
@@ -88,8 +94,6 @@ async function all() {
                 //每日统计
                 await user2info();
 
-                //阅读
-                await read2book();	    
             }
            }
 }
@@ -168,7 +172,7 @@ function read2book() {
                             //await $.wait(100);
                             await read2book();
                         } else {
-                                $.log("【极速阅读】达到每日上限");
+                                $.log("【极速阅读】领取达到每日上限，请明天再来");
                                 //$.log(data);
                         }
                         
@@ -176,7 +180,8 @@ function read2book() {
                     else
                         //再次尝试
                         await read2book();
-                        $.log("【极速阅读】再次尝试");
+                        //$.log(data);
+                        //$.log("【极速阅读】再次尝试");
 
                 }
             } catch (e) {
@@ -904,11 +909,3 @@ function Env(t, e) {
     }
     (t, e)
 }
-
-
-
-
-
-
-
-
