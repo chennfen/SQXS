@@ -278,6 +278,90 @@ function videogoldprize(j) {
 }
 
 
+
+//视频抽奖
+function videodrawprize(k) {
+    return new Promise((resolve, reject) => {
+        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
+
+        const request = {
+            url: url,
+            headers: JSON.parse(videodrawprizeckArr[1]),
+            body: videodrawprizeckArr[0]
+        };
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log("【视频抽奖】抽奖请求失败,再次尝试");
+                    //await $.wait(1000);
+                    await videodrawprize();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.status == 200) {
+                            k++;
+                            $.log("【视频抽奖】观看第" + k + "个视频成功，获得一次抽奖机会");
+                            //await $.wait(1000);
+                            await draw(k);
+                        } else {
+                            if (result.message != '领取达到每日上限，请明天再来') {
+                                $.log("【视频抽奖】观看失败，" + result.message + ",再次尝试视频抽奖");
+                                //await $.wait(1000);
+                                await videodrawprize(k);
+                            } else
+                                $.log("【视频抽奖】" + result.message);
+                                //$.log(data);
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
+
+//书旗抽奖
+function draw(k) {
+    return new Promise((resolve, reject) => {
+        const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
+
+        const request = {
+            url: url,
+            headers: JSON.parse(drawckArr[1]),
+            body: drawckArr[0]
+        };
+        $.post(request, async(error, request, data) => {
+            try {
+                if (error) {
+                    $.log("【书旗抽奖】抽奖请求失败,再次尝试");
+                    //await $.wait(1000);
+                    await draw();
+                } else {
+                    const result = JSON.parse(data)
+                        //$.log(data);
+                        if (result.status == 200) {
+			    k++;
+                            $.log("【书旗抽奖】抽奖成功，获得" + result.data.prizeList[0].prizeName);
+                            drawgold += parseInt(result.data.prizeList[0].prizeName);
+                            //await $.wait(1000);
+                            await videodrawprize(k);
+                        } else {
+                            $.log("【书旗抽奖】抽奖失败," + result.message);
+                            //$.log(data);
+                        }
+                }
+            } catch (e) {
+                $.log(e)
+            }
+            resolve();
+        });
+    });
+}
+
+
+
 //极速视频
 function videogold2prize(n) {
     return new Promise((resolve, reject) => {
@@ -362,88 +446,6 @@ function videogold3prize(n) {
 }
 
 
-//视频抽奖
-function videodrawprize(k) {
-    return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
-
-        const request = {
-            url: url,
-            headers: JSON.parse(videodrawprizeckArr[1]),
-            body: videodrawprizeckArr[0]
-        };
-        $.post(request, async(error, request, data) => {
-            try {
-                if (error) {
-                    $.log("【视频抽奖】抽奖请求失败,再次尝试");
-                    //await $.wait(1000);
-                    await videodrawprize();
-                } else {
-                    const result = JSON.parse(data)
-                        //$.log(data);
-                        if (result.status == 200) {
-                            k++;
-                            $.log("【视频抽奖】观看第" + k + "个视频成功，获得一次抽奖机会");
-                            //await $.wait(1000);
-                            await draw(k);
-                        } else {
-                            if (result.message != '领取达到每日上限，请明天再来') {
-                                $.log("【视频抽奖】观看失败，" + result.message + ",再次尝试视频抽奖");
-                                //await $.wait(1000);
-                                await videodrawprize(k);
-                            } else
-                                $.log("【视频抽奖】" + result.message);
-                                //$.log(data);
-                        }
-                }
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        });
-    });
-}
-
-
-//书旗抽奖
-function draw(k) {
-    return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
-
-        const request = {
-            url: url,
-            headers: JSON.parse(drawckArr[1]),
-            body: drawckArr[0]
-        };
-        $.post(request, async(error, request, data) => {
-            try {
-                if (error) {
-                    $.log("【书旗抽奖】抽奖请求失败,再次尝试");
-                    //await $.wait(1000);
-                    await draw();
-                } else {
-                    const result = JSON.parse(data)
-                        //$.log(data);
-                        if (result.status == 200) {
-			    k++;
-                            $.log("【书旗抽奖】抽奖成功，获得" + result.data.prizeList[0].prizeName);
-                            drawgold += parseInt(result.data.prizeList[0].prizeName);
-                            //await $.wait(1000);
-                            await videodrawprize(k);
-                        } else {
-                            $.log("【书旗抽奖】抽奖失败," + result.message);
-                            //$.log(data);
-                        }
-                }
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        });
-    });
-}
-
-
 //用户信息
 function userinfo() {
     return new Promise((resolve, reject) => {
@@ -465,8 +467,8 @@ function userinfo() {
                     if (result.status == 200) {
 			$.log("---------------------------------");
                         $.log("【书旗阅读】本次共获得" + ReadTimes * 3 + "金币");
-                        $.log("【书旗抽奖】本次共获得" + drawgold + "金币\n");
-                        $.log("【书旗视频】本次共获得" + videogold + "金币");
+                        $.log("【书旗抽奖】本次共获得" + drawgold + "金币");
+                        $.log("【书旗视频】本次共获得" + videogold + "金币\n");
 			$.log("【极速视频】本次共获得" + video2gold + "金币\n");
                         $.log("【金币总数】" + result.data.gold);   			    
                         $.log("【总计收益】" + result.data.income + "元");
