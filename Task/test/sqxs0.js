@@ -141,7 +141,7 @@ function readbook() {
 //极速阅读
 function read2book() {
     return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.7.1&ustatus=1&umidtoken=RpNLrRRLOv0MjjV7Q7slTFZ%2F1ncCJrm%2B&net_env=4g&placeid=111111&user_id=2032723913&sn=AFE9C91ED75521969ABE58EA863D21D1C9ACBFBF&msv=10.0.0&brand=Apple&imei=6BFEA0C2625A79493D4C20748B660015A6586151&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF82QkZFQTBDMjYyNUE3OTQ5M0Q0QzIwNzQ4QjY2MDAxNUE2NTg2MTUxIiwic24iOiJmYXN0X0FGRTlDOTFFRDc1NTIxOTY5QUJFNThFQTg2M0QyMUQxQzlBQ0JGQkYiLCJleHAiOjE2Mjk0NDkxNTYsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2Mjg5MzA3NTYsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.-4z7uSrqEqUi9eJ9IFBtav5l003hvQg59BKQhR-BWdDb_B6yjQnu_Mq5_cqoNgZCO38tgkivvtsgDGlzgNj8DQ&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhone12&wh=1125x2436&utype=vip&utdid=YReCreyF7XsDAICxkQSoQ51P&idfa=00000000-0000-0000-0000-000000000000";
+        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
 
         const request = {
             url: url,
