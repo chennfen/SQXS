@@ -153,27 +153,21 @@ function read2book() {
             try {
                 if (error) {
                     $.log(data);
-                    $.log("阅读请求失败，稍后再试");
+                    $.log("阅读请求失败,再次尝试阅读");
                     await $.wait(1000);
                     //await read2book();
                 } else {
                     const result = JSON.parse(data)
                     if(result.status==200)
                     {
-                        $.log(data);
+                        //$.log(data);
                         if (result.data.chanceCurrentCnt <= 359) {
-                            Read2Times++;
+                            ReadTimes++;
 		            //阅读成功显示/关闭，注释下一行即可
                             $.log("【极速阅读】第" + ReadTimes + "次阅读成功");
-                            await $.wait(100);
+                            //await $.wait(100);
                             await read2book();
                         } else {
-                            if (result.message == '领取达到每日上限，请明天再来') {
-                                $.log(data);
-                                $.log("【极速阅读】" + result.message);
-                                //await $.wait(500);
-                                //await read2book();
-                            } else
                                 $.log("【极速阅读】达到每日上限");
                                 //$.log(data);
                         }
@@ -181,8 +175,8 @@ function read2book() {
                     }
                     else
                         //再次尝试
-                        $.log("【极速阅读】再次尝试" + result.message);
                         await read2book();
+                        $.log("【极速阅读】再次尝试");
 
                 }
             } catch (e) {
