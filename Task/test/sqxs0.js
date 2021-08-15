@@ -138,10 +138,11 @@ function readbook() {
 }
 
 
-//极速阅读
+
+//极速阅读by坤坤
 function read2book() {
     return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
+        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery";
 
         const request = {
             url: url,
@@ -152,11 +153,13 @@ function read2book() {
             try {
                 if (error) {
                     $.log(data);
-                    $.log("阅读请求失败,再次尝试阅读");
+                    $.log("阅读请求失败，稍后再试");
                     await $.wait(1000);
                     //await read2book();
                 } else {
                     const result = JSON.parse(data)
+                    if(result.status==200)
+                    {
                         $.log(data);
                         if (result.data.chanceCurrentCnt <= 359) {
                             ReadTimes++;
@@ -172,8 +175,15 @@ function read2book() {
                                 //await read2book();
                             } else
                                 $.log("【极速阅读】" + result.message);
-                                //$.log(data);
+                                $.log(data);
                         }
+                        
+                    }
+                    else
+                    //再次尝试
+                        $.log(data);
+                        await read2book();
+
                 }
             } catch (e) {
                 $.log(e)
