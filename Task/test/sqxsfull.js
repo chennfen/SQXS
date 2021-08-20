@@ -20,9 +20,9 @@ async function all()
     //nodejs运行
     await dailysign();
     await $.wait(1000);
-    await vedioreward();
+    await videoreward();
     await $.wait(1000);
-    await vediorewarddraw();
+    await videorewarddraw();
     await $.wait(1000);
     await drawreward();
     await $.wait(1000);
@@ -34,9 +34,9 @@ async function all()
     await $.wait(1000);
     await jsdailysign();
     await $.wait(1000);
-    await jsvedioreward20();
+    await jsvideoreward20();
     await $.wait(1000);
-    await  jsvedioreward10();
+    await  jsvideoreward10();
     await $.wait(1000);
     await  jsshucheng();
     await $.wait(1000);
@@ -46,7 +46,7 @@ async function all()
     await $.wait(1000);
     for(let i=0;i<10;i++)
     {
-        await vedioreward426();
+        await videoreward426();
         await $.wait(1000);
     }
     await $.wait(1000);
@@ -480,7 +480,7 @@ function jsvideoreward10()
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                        await jsvedioreward10();
+                        await jsvideoreward10();
                         await $.wait(500);
                     }
                 }
@@ -529,7 +529,7 @@ function jsvideoreward20()
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                        await jsvedioreward20();
+                        await jsvideoreward20();
                         await $.wait(100);
                     }
                 }
@@ -660,7 +660,7 @@ function videoreward()
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                        await vedioreward();
+                        await videoreward();
                         await $.wait(500);
                     }
                 }
@@ -709,7 +709,7 @@ function videorewarddraw()
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                        await vediorewarddraw();
+                        await videorewarddraw();
                         await $.wait(500);
                     }
                 }
@@ -1305,3 +1305,4 @@ function Env(t, e)
         }
         (t, e)
 }
+
