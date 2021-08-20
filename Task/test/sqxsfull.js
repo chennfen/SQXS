@@ -1,24 +1,27 @@
-
-
 const jobname = 'shuqi'
 const $ = Env(jobname)
 
 
-!(async () => {
-    await all();
-})()
-    .catch((e) => {
+    !(async () =>
+    {
+        await all();
+    })()
+    .catch((e) =>
+    {
         $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
     })
-    .finally(() => {
+    .finally(() =>
+    {
         $.done();
     })
 
-async function all() {
+async function all()
+{
     //nodejs运行
     await dailysign();
     await $.wait(1000);
-    await vedioreward();
+    await
+    reward();
     await $.wait(1000);
     await vediorewarddraw();
     await $.wait(1000);
@@ -34,16 +37,16 @@ async function all() {
     await $.wait(1000);
     await jsvedioreward20();
     await $.wait(1000);
-    await  jsvedioreward10();
+    await jsvedioreward10();
     await $.wait(1000);
-    await  jsshucheng();
+    await jsshucheng();
     await $.wait(1000);
     await jsshare();
     await $.wait(1000);
     await jsread()
     await $.wait(1000);
-    await read426();  
-    for(let i=0;i<10;i++)
+    await read426();
+    for (let i = 0; i < 10; i++)
     {
         await vedioreward426();
         await $.wait(1000);
@@ -54,19 +57,21 @@ async function all() {
 
 
 //426视频
-function videoreward426() {
-    return new Promise((resolve, reject) => {
-         const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
-         const headers = {
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Content-Type": "application/json",
-    "Host": "api-access.pangolin-sdk-toutiao.com",
-    "User-Agent": "Mozilla/5.0 (iPad; CPU OS 13_2_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-    "Content-Length": "4717",
-    "Accept-Language": "zh-Hans-CN;q=1"
-};
+function videoreward426()
+{
+    return new Promise((resolve, reject) =>
+    {
+        const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
+        const headers = {
+            "Accept": "*/*",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Content-Type": "application/json",
+            "Host": "api-access.pangolin-sdk-toutiao.com",
+            "User-Agent": "Mozilla/5.0 (iPad; CPU OS 13_2_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
+            "Content-Length": "4717",
+            "Accept-Language": "zh-Hans-CN;q=1"
+        };
         const body = "{\"message\":\"2T4KF51KH9JUhj9n77RqbdMShmTnQ\\/klmmXFKxWWdwy1N0zkcdGdu6FtG6psxnH6SJde11iQheCVVwR5Ix475m5BTUPdtnEpkPOWUwbubUrn3tacV2fwkoOmdZPSNjSsmjEEB+YAhw7kOisLnhrz4CJ8Y\\/sm3GU+Hc\\/10weUPCLwWoxdOXTHYIiFbSz9X1yeX0r61GdT9t6kN6gAFif4JqMaQFX1C01LRPFXhhGNp37Z56FRR4riLsJfx+xwq+lWdjOEzxNyK9bMExX1\\/8uqN0N1mo2tupPlp8zVxTEzdhGNTZpCzq5PSmbrExM18LXkSXqmA4idzRHHPS1Ok4Lbi4jSdQrmIUfPu\\/8O8YGCZ6k5c+hOJoLgRxijlCPuXfVZfPAW4S3d9YVTlewnnL99XTMHe6MOWgh32gf2RBKkk5u4VgHYCUfa2ZGAruAROaHP6L71c8KU7nZuWwxyBNfMRgzV4UOFTNh3ZKMlBja5F6tmrkyJIIJ9bzJVuzkDNZ+yScZQoIZswHpbucpUCdH+RC3IrKI6Qhbc\\/qmVUQpQ0mAiVheMpI4zyNzCbNtgIOpULuzHc3Bnt6PHU0bn2nuoHzfkpG\\/H9b24r3BIEtIEyVg6+2S42S+UqWDM9Q8QHZagKzoH9F6bLXBFEF4ig1yHFjPmASGZkjUUmMB86Re\\/Hb6u6cK3XsYZWTax2MtugujkuPdV8LuPS85wjEbNRvugpJ0TPym1feV5pG4Dr8aSY5N41aDIemZdKN9IxFw+KZ\\/2\\/IJofJaYVlTLtfn+55EWNaZNF+gmnU+IvNsdK\\/TxHx+FhyGgdltgTVBdPNM96pLz1E7iW3FBb3IqpFfYVAuGJ56le\\/PoQW6CBT8eKydMxxbCefUAZ7Rx4oab5zL3F7GTW4Z\\/fUxVDDa\\/elUoVNecYi4GHeAxApNlIPdP+2rGHZiRieyGA25SBIfpEufbZ+2mT\\/pC7BXS1IveeqgWLDKdRfnQWE1c3nBUQW1HoVFSNRY0zK299e9ZT1DfTdGiTMPYs3n1PQkG9t4fqDrp1OlHOd40T6steLhKS96qRVRr1a5OisyQc1GWBEnu4Sv1fsQ+UwcuMNX+2LHF08mnRiKv2md7ptzs1u6\\/sxbcGLeietBRf+5eGmMc9jlikg03yAmzBiLFqJLXhsu1Gw9FTXdEzuVzzFQHYFaGlRuU7iJ+7mugf5YDffQzSZp1HJVVUdRqUDTvYog7KtlctkPgsxV+EvxR9N08ZN9AJuRcl0kHjYpgVtQ920SYJDImHsEzt3Hg5gWzS7X1\\/oDXiXKdkY\\/YBDkO1Wp1nC0\\/aW8QnOhf1vm4PviY1bKPonTDnUKmgvUAruVyG1tpO87E2d\\/MwXVFm2yRet9UGE9zeLSI\\/rvtgrmp5oLrcCW6v8TeRkd8GQl7qM3LYyUH8HjajczBHBg1o5hBT9fjegGQf62dwKcFgYYBJhobIEtRZJe7GMeSaMyrIj+hGi9dnzy0ise1O9tnHg9BcoYP1Mc3x4+sJRb3M9PeUQmfjZu7NIERvlXIXll2C8wTOaFptK+nfuU9T9c+wBEx8L4Mbp9IU5Y6yaWZSHG1CPDgSN6rMMbv6cxg+KuL5zKmk03kP+lDOWi7IBvV8sIk0Yn0MzzD27xBHnjFFSUF6OorZclixAZs5hAaHnYofc2dWcNI3Cd1XJaaGcKlp1b9riMCpk3izL+zwA8MEewdPAjacm\\/8pOphO8Kd15rkqQyNxTI5Zd4lhA9iGTFRVQihpfN7cDntm7oeB11x3vobqoy9nfuzy+4YG0OHgWWwNUtqgVce6yVtEHGro3CFYLVCezqe4CRND8jfmZUFcrgwW\\/48YiDad6NnWHNDIfbTVVfCYvP0hZqvP6K9JBEooDHfXgFwfvCGUYrDXKOQyMq5OayK+nkTEvYA9NRC0bCqKoP8yCrKxnzzC6EZqlqOz8NFVeCZjOtzqrRCouYqmdOdAGRRUiOl0n8PGuBgKOuIbjG9R\\/5eVDNmzYgywCj8i3Fhb77HImGRpdgH+JLGPqOzcmwXjg1gd26ZqtqohxdP5LA7rAemcCU8uFpybdLfSWrtfN3blGIhSOns4zuBRbyHhZ93m6s9Irqr0mLr96LG3aQUEqG10aZRaDjiVr8eiKZDX1wgF4vblmexydkHss14qTvwvlz\\/Pm\\/0FnwYRKa6xuVF85hJGRxdg7FIMbomg1Rg22GZRneKk+vA8xJbIDOt0mbvzEtM0ErxbTdrwB03SF+SM0Tmp5yvGu6YNtuwudcGx2hCy8zKA+9ErCEFhC5UrM7Noyw3cpOGon6JicrvuZC4rmMNjHGbV6zrhygum49RxsQEHqM1tGF9VDv5HFR6PuLFg\\/L\\/Sx9DoO9N+f14n47W3NingT6QJnFy\\/Fsb\\/TgcM6BE8HzNHE2d636VvwHLxCNLnl\\/PJPGT8DMMsslfq0mfHzdszhJRQhyhOt57C6gAgjZZFwuT3v2mynE6UTtEVXuRwJNp5wvyPTtnRwHZYL0VYolCB2K+GO5BOH7+vVEx4jL\\/nMtDzBWSLehNSc6akEe004djfkUif626om5yWcmMlBzhY52q+9GPV8IWGMZjKVoof591KvsVmYZGar+XMYpqUAW\\/044SAtPls4N\\/iMJ1WuAzJGY0H4EKcpcF\\/ZMqQitbOrLcqfLhSYtHN24WntoqT6WGmlgYgv2UaV6pzxH+hngbxqHYuG5K2eNAssuMPnGEVkBt3Xrgh\\/ZJhQM0TTzNyw0ptmUdmFh1cXIgGBSKylnPijGdYniIw02hk7SqYWrqWHMxQSJt0cnMQFUwB1GvW3BfwgezAPxMLF4iwK2Wt4vy8Ay0qWVJzBAtNbltLAwrBjd8RAjRqisxrQvJbo7v8\\/apFwThABXj5B1nBuRH+BKdk7p2QTAZpLdQDIx9rRINBkB2ECo3LuOsKeF93TEtQYgfh+5kHzkdyeGyEkkwba6ExhAZVFSPhabADZh1ZLSgTLeIUPDZcTrhs+hE6sclCzGsVXqT1AZeX2vP2vpTAh7IB1RppIH32zqxKWxLtO10GOnvcmnAqmUGsBWIG47hG7jG8dwpA9i\\/E48eWh4Hwlkxp44UMqsi3QwUzBBggBE1CjWgDns0\\/17nPxYHxgK4F7\\/j3weRsbDEX0nftEx\\/EBnw4bHwFcEE8WR7eckb0ybtyeHwVuIcXP61pfGbSIiZa+fZZgzhpsFjnoo48qU6izBaoW0kvm1ecT8nmmKH\\/ADm34iJLduDQ+uIHUfxo6N5NjHyB6M8Dw+q1efUEVA7T0Fmqy8TTspY4AlZOHQedOOyBJ8ifIGgXIBAxbIR79q+sBu2PMBZLFgSIoK3w7bxIxah195TG5aAggZWVcXJlS\\/g4oBl+tQvZRPVYXn+BZN8wT2K5GOge5TEuA1dTLpLTnjIkWIt5l7H\\/5rUy0SkBMNTVSLR\\/dMR4CVDjrLXfIj\\/95IFgTkXwUWtxnr10TWI6eIOlFBjFMZJdHuk4+M8ACHHmKGjB7T+nfueGjUjWAaCOXJYGSWqU5fSLCd20GgnGDW1U8iP1yKHE1jc\\/CJvsLo4LpKptpZPyM5coLx+u8unBB087C5m1E5ULNpErrXb14nWqQGWd7nleKigc\\/uLdyeuKTuDDunRQQSTD1JQvmJgfLtYeULCAqE6XdczJMAhR1if5XzxRDr3FLTgvTNAYK7Uc+F4CExRU7A9Wq+wetpHCZPe+Q+CzLvGa12dBgB3WiaPFfkq4iUneTm6GoVisAU8zW3eHtgC6dj\\/WFGvy\\/B8VyRyVWXZGhDVC0TnnVIERXL+XmYwr9GAhn8U4iWfJvq+jyJZeS\\/zMjDUZepjYVvVkf1JLOZO45yWkepbhI0XA2yfo9ULasMjk32frw1T5wMEfhqJbjWpB7mXfkW9VFgXITB1djUrrm499kuBnFaZh9lQ4jToMd3L6EdGyQECRUvXYQ8QNeUOpHmHQI3NK725AZ8+YIDlaTUgrignaphrqQ7YRpqNTabVlEPygM3ljhS3JXAqn4Y9wG5EFdTiB8nvdoa3SUGVIW68MhKo9WgVr\\/IlafxxMGwBCr4Ov38EVB7MPPH25\\/MFi3v4pnS8NLDKX0+Ob\\/XJuK\\/VY3mqSfVvSOCHDm527qC2SOS4fGBf1J+vSJCvJ26V3v+up1OaA\\/erWOEK8A6PFFmbpZwudx\\/8qwiMI2bOrSYNDzWSjmtQaMnD0VlRmlnIPiNc39bKpv\\/x8\\/R68ldA8vaRpUhy4j93twMyjhvtf1DlU2rKsgllLQASioLPGvbFpIy0u0YHMS1dC1G2Do5OOQspnXLyHuebLLHKs2jwOQrOyioFs5Ke1GqFY0swargrFXqRZN8Vu+pFlUBsRlo8tFqlTmHGdmasHjb79RknjrtKHdcLoxHIkmjODMAxW\\/ZwKGIBkX3au9BFgDGhWbl9\\/SLQOe7fjig+wyrCUG\\/atsPFCfQvrISj8EaUCTqKG0CwacDlMr3\\/BYh\\/XljHR2MBkLeHbtXpLA\\/6ggKX4VIEkhCt38bjUYiNWQczT9KqUDV8s2JcvOZeSvLGiKlVu\\/GBQ4KTHcCjEAfYWy\\/JTX2VcsZJQErfI3pM0l30fEuyqwrWEKVK4jcuRhgJDqkPrLl4cOz4YXWiqdUdCHnj7fkbOYkRw\",\"cypher\":2}";
         const request = {
             url: url,
@@ -74,10 +79,14 @@ function videoreward426() {
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -87,167 +96,193 @@ function videoreward426() {
 
 
 //426阅读
-function read426() {
-    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
-         const headers = {
-    "Accept-Encoding": "gzip, deflate, br",
-    "Cookie": "isg=BJWVwCP9WMjvbHw07CngquuyrpVPkkmkfsWvxRc6UIxbbrdg3-LsdoA8PvRY9WFc; cna=wVmjGXEJsiUCAXAfvZEK/5zJ",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Accept": "*/*",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqireader/4.2.6 (iPad; iOS 13.2.2; Scale/2.00)",
-    "Accept-Language": "zh-Hans-CN;q=1"
-};
-         const body = "_public=skinId%3D999%26idfa%3D021BC905-6AFA-424D-8B50-99F11074780F%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwwan%26umidtoken%3DYRxruFbmacIDADjqvrFJgz0i%26user_id%3D2916901745%26sn%3D2C6C8B4E89B5253B7A6EFE559CF0C08C1229D01C%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3DBA06F6AB9661003A1DA723B28A1AF20643BB3296%26skinVersionPrefix%3D1%26appVer%3D4.2.6.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiQkEwNkY2QUI5NjYxMDAzQTFEQTcyM0IyOEExQUYyMDY0M0JCMzI5NiIsInNuIjoiMkM2QzhCNEU4OUI1MjUzQjdBNkVGRTU1OUNGMEMwOEMxMjI5RDAxQyIsImV4cCI6MTYyOTc3MTE1NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTI1Mjc1Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.PPT_1Wimc2dL141NpVNCweAfe-uJOvy18_UxEwg7VAF-amgti--izqVsPN0QJFuvT5YCojiB8Pn8lvupwboHSQ%26skinColor%3D23B383%26platform%3DiOS%26ver%3D201102%26mod%3DiPad4G%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utdid%3DYRxruFbmacIDADjqvrFJgz0i%26utype%3Dvip%26sdk%3D13.2.2&deliveryId=531&key=sq_app_ad&miniWua=HHnB_xPXK19arARvcrQepQw5tGVMuA1Q9DUHiWCJm9nGcwpspzMwcskQhXo2LQ7esM7LHlgp9UFCSNJIaB/azua2UywuDTc9nzfZGax3GHldNa//kamdwqXBX0bf4bK4u6k6c&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=0FA00ADC614941171F259622F0234BDB&timestamp=1629252811&userId=2916901745&wua=HIVW_gka845tP4apVJpT8T3jvuTCLAlAdR6ZSX2hU/OKCP9NKuytiA6UpqB/DtGEhj5QuiADEypSd4LPac8cp8V7G/F%2BJsiO3yWaNRrkVDywhs1E3oEwWwzwBhdem93cpQj4Tzeh4lDq75qyHoVNw7dKHnAWzRKIjnCAs30ojR0TgFdm89VgM0xjNtFHvdF5yqcEwJkhnYi7D3xNjL5kJ/mF4I8SBoiTEhb0hYK1lh56K1D7b1N0sEXOkozMvbfVfo9X3oRIPhcPo3DKKHsSmNr4iPsk9y4zVLa2yFoswD4Re9t%2Bneo77L%2BBW%2Bxaw1tnmLzm3jec4z%2BIlNrXyAFg0Bh1wuA7xHu0AbTVnrut88Zb28gO2puegDsurUx4y4KlYIcxw";
+function read426()
+{
+    return new Promise((resolve, reject) =>
+    {
+        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
+        const headers = {
+            "Accept-Encoding": "gzip, deflate, br",
+            "Cookie": "isg=BJWVwCP9WMjvbHw07CngquuyrpVPkkmkfsWvxRc6UIxbbrdg3-LsdoA8PvRY9WFc; cna=wVmjGXEJsiUCAXAfvZEK/5zJ",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "*/*",
+            "Host": "ocean.shuqireader.com",
+            "User-Agent": "shuqireader/4.2.6 (iPad; iOS 13.2.2; Scale/2.00)",
+            "Accept-Language": "zh-Hans-CN;q=1"
+        };
+        const body = "_public=skinId%3D999%26idfa%3D021BC905-6AFA-424D-8B50-99F11074780F%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwwan%26umidtoken%3DYRxruFbmacIDADjqvrFJgz0i%26user_id%3D2916901745%26sn%3D2C6C8B4E89B5253B7A6EFE559CF0C08C1229D01C%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3DBA06F6AB9661003A1DA723B28A1AF20643BB3296%26skinVersionPrefix%3D1%26appVer%3D4.2.6.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiQkEwNkY2QUI5NjYxMDAzQTFEQTcyM0IyOEExQUYyMDY0M0JCMzI5NiIsInNuIjoiMkM2QzhCNEU4OUI1MjUzQjdBNkVGRTU1OUNGMEMwOEMxMjI5RDAxQyIsImV4cCI6MTYyOTc3MTE1NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTI1Mjc1Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.PPT_1Wimc2dL141NpVNCweAfe-uJOvy18_UxEwg7VAF-amgti--izqVsPN0QJFuvT5YCojiB8Pn8lvupwboHSQ%26skinColor%3D23B383%26platform%3DiOS%26ver%3D201102%26mod%3DiPad4G%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utdid%3DYRxruFbmacIDADjqvrFJgz0i%26utype%3Dvip%26sdk%3D13.2.2&deliveryId=531&key=sq_app_ad&miniWua=HHnB_xPXK19arARvcrQepQw5tGVMuA1Q9DUHiWCJm9nGcwpspzMwcskQhXo2LQ7esM7LHlgp9UFCSNJIaB/azua2UywuDTc9nzfZGax3GHldNa//kamdwqXBX0bf4bK4u6k6c&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=0FA00ADC614941171F259622F0234BDB&timestamp=1629252811&userId=2916901745&wua=HIVW_gka845tP4apVJpT8T3jvuTCLAlAdR6ZSX2hU/OKCP9NKuytiA6UpqB/DtGEhj5QuiADEypSd4LPac8cp8V7G/F%2BJsiO3yWaNRrkVDywhs1E3oEwWwzwBhdem93cpQj4Tzeh4lDq75qyHoVNw7dKHnAWzRKIjnCAs30ojR0TgFdm89VgM0xjNtFHvdF5yqcEwJkhnYi7D3xNjL5kJ/mF4I8SBoiTEhb0hYK1lh56K1D7b1N0sEXOkozMvbfVfo9X3oRIPhcPo3DKKHsSmNr4iPsk9y4zVLa2yFoswD4Re9t%2Bneo77L%2BBW%2Bxaw1tnmLzm3jec4z%2BIlNrXyAFg0Bh1wuA7xHu0AbTVnrut88Zb28gO2puegDsurUx4y4KlYIcxw";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await read426();
-                         await $.wait(500);
+                        await read426();
+                        await $.wait(500);
                     }
                 }
 
 
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
         })
     })
 }
-  
+
 
 //收取
-function receive() {
-    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive";
-         const headers = {
-    "Origin": "https://render-web.shuqireader.com",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Accept": "application/json, text/plain, */*",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.3.0.0) WindVane/8.6.1 Shuqi (iPhone11,2__shuqi__v4.3.0.0) 1125x2436 Winding(WV_6) WK",
-    "Referer": "https://render-web.shuqireader.com/render/sq-welfare/page/welfare_page_v2/?serviceWorkerOn=1&sdk=14.6&utdid=XblVsgqHUiwDAN7BcQnm2A%2Fp&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2916901745&sn=9FFC2945934B0127160C769D23FE8D9606CB0FAE&umidtoken=bCxLedRLOls1JDV7SC1arg%2BRtgLyo21t&msv=8.0.0&brand=Apple&imei=6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5&skinVersionPrefix=1&appVer=4.3.0.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw&skinColor=23B383&platform=iOS&ver=210107&mod=iPhoneXS&statusBarHeight=44.000000&skinVersion=1&wh=1125x2436&soft_id=21&utype=vip&skinId=999&idfa=00000000-0000-0000-0000-000000000000",
-    "Content-Length": "1229",
-    "Accept-Language": "zh-cn"
-};
-         const body = "src=204&userId=2916901745&platform=1&appVer=4.3.0.0&placeId=111111&timestamp=1629068787&sqSv=1.0&sign=2c2acb044b04498358f5e430d7289311&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26sdk%3D14.6%26utdid%3DXblVsgqHUiwDAN7BcQnm2A%252Fp%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2916901745%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26umidtoken%3DbCxLedRLOls1JDV7SC1arg%252BRtgLyo21t%26msv%3D8.0.0%26brand%3DApple%26imei%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26skinVersionPrefix%3D1%26appVer%3D4.3.0.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw%26skinColor%3D23B383%26platform%3D1%26ver%3D210107%26mod%3DiPhoneXS%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000";
+function receive()
+{
+    return new Promise((resolve, reject) =>
+    {
+        const url = "https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive";
+        const headers = {
+            "Origin": "https://render-web.shuqireader.com",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json, text/plain, */*",
+            "Host": "ocean.shuqireader.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.3.0.0) WindVane/8.6.1 Shuqi (iPhone11,2__shuqi__v4.3.0.0) 1125x2436 Winding(WV_6) WK",
+            "Referer": "https://render-web.shuqireader.com/render/sq-welfare/page/welfare_page_v2/?serviceWorkerOn=1&sdk=14.6&utdid=XblVsgqHUiwDAN7BcQnm2A%2Fp&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2916901745&sn=9FFC2945934B0127160C769D23FE8D9606CB0FAE&umidtoken=bCxLedRLOls1JDV7SC1arg%2BRtgLyo21t&msv=8.0.0&brand=Apple&imei=6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5&skinVersionPrefix=1&appVer=4.3.0.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw&skinColor=23B383&platform=iOS&ver=210107&mod=iPhoneXS&statusBarHeight=44.000000&skinVersion=1&wh=1125x2436&soft_id=21&utype=vip&skinId=999&idfa=00000000-0000-0000-0000-000000000000",
+            "Content-Length": "1229",
+            "Accept-Language": "zh-cn"
+        };
+        const body = "src=204&userId=2916901745&platform=1&appVer=4.3.0.0&placeId=111111&timestamp=1629068787&sqSv=1.0&sign=2c2acb044b04498358f5e430d7289311&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26sdk%3D14.6%26utdid%3DXblVsgqHUiwDAN7BcQnm2A%252Fp%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2916901745%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26umidtoken%3DbCxLedRLOls1JDV7SC1arg%252BRtgLyo21t%26msv%3D8.0.0%26brand%3DApple%26imei%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26skinVersionPrefix%3D1%26appVer%3D4.3.0.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw%26skinColor%3D23B383%26platform%3D1%26ver%3D210107%26mod%3DiPhoneXS%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
         })
     })
 }
-  
+
 
 //分享
-function share() {
-    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward";
-         const headers = {
-    "Origin": "https://render-web.shuqireader.com",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Accept": "application/json, text/plain, */*",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.3.0.0) WindVane/8.6.1 Shuqi (iPhone11,2__shuqi__v4.3.0.0) 1125x2436 Winding(WV_6) WK",
-    "Referer": "https://render-web.shuqireader.com/render/sq-welfare/page/welfare_page_v2/?serviceWorkerOn=1&sdk=14.6&utdid=XblVsgqHUiwDAN7BcQnm2A%2Fp&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2916901745&sn=9FFC2945934B0127160C769D23FE8D9606CB0FAE&umidtoken=bCxLedRLOls1JDV7SC1arg%2BRtgLyo21t&msv=8.0.0&brand=Apple&imei=6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5&skinVersionPrefix=1&appVer=4.3.0.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw&skinColor=23B383&platform=iOS&ver=210107&mod=iPhoneXS&statusBarHeight=44.000000&skinVersion=1&wh=1125x2436&soft_id=21&utype=vip&skinId=999&idfa=00000000-0000-0000-0000-000000000000",
-    "Content-Length": "1867",
-    "Accept-Language": "zh-cn"
-};
-         const body = "actTaskId=304&wua=HIVW_rFCYW%2F75f%2F0UT9GG2FnV2A2NMl18v8cypDXyPzwHoXpHvM9Sj8x9Xaer90X3Ex3xEFnbWBSmpOTP0HMTLFIlOqL8ieZCImaGK6ml%2BdD%2BrnCif2BwON5qd0r0wK9ilMbf3dRIP20XdiGR09pEgcnz%2BIBdBfSFQi1Yvro3jk7%2BC4KEmYX5z%2F97AsNcqlLU3lbM9S54BUslgjjZAbo99vwMihUQ2nNMBBv68WbHgIfoHNVk%2BG78VXGWVe0AirKtUZr7et0fx5yAgBCbHY9AJr4eqTprqzc12xdF8ABdk1%2FjvdmEXlG5gsSyAzKD5FYRCCVDwcXHbYOmVwGSzLFJNaYwDw%3D%3D&ua=&miniWua=HHnB_do1QttZtzGDlGXrbYgiv%2Bq4BdvuNZTvRZZIUolmgFDFfhGjvF0uVJRSdZ4fSZ5inFjxFosy%2BqkiMhmAwQb%2BxaXBLMMQqgMV2PjQgIZeQQAlPUHAcmu0yucFW%2FaxKWHc2&userId=2916901745&umidtoken=bCxLedRLOls1JDV7SC1arg%2BRtgLyo21t&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&platform=1&appVer=4.3.0.0&placeId=111111&timestamp=1629068621&sqSv=1.0&sign=51d6207fa28759325222146e2be4a0a3&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26sdk%3D14.6%26utdid%3DXblVsgqHUiwDAN7BcQnm2A%252Fp%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2916901745%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26umidtoken%3DbCxLedRLOls1JDV7SC1arg%252BRtgLyo21t%26msv%3D8.0.0%26brand%3DApple%26imei%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26skinVersionPrefix%3D1%26appVer%3D4.3.0.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw%26skinColor%3D23B383%26platform%3D1%26ver%3D210107%26mod%3DiPhoneXS%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000";
+function share()
+{
+    return new Promise((resolve, reject) =>
+    {
+        const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward";
+        const headers = {
+            "Origin": "https://render-web.shuqireader.com",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept": "application/json, text/plain, */*",
+            "Host": "ocean.shuqireader.com",
+            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.3.0.0) WindVane/8.6.1 Shuqi (iPhone11,2__shuqi__v4.3.0.0) 1125x2436 Winding(WV_6) WK",
+            "Referer": "https://render-web.shuqireader.com/render/sq-welfare/page/welfare_page_v2/?serviceWorkerOn=1&sdk=14.6&utdid=XblVsgqHUiwDAN7BcQnm2A%2Fp&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2916901745&sn=9FFC2945934B0127160C769D23FE8D9606CB0FAE&umidtoken=bCxLedRLOls1JDV7SC1arg%2BRtgLyo21t&msv=8.0.0&brand=Apple&imei=6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5&skinVersionPrefix=1&appVer=4.3.0.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw&skinColor=23B383&platform=iOS&ver=210107&mod=iPhoneXS&statusBarHeight=44.000000&skinVersion=1&wh=1125x2436&soft_id=21&utype=vip&skinId=999&idfa=00000000-0000-0000-0000-000000000000",
+            "Content-Length": "1867",
+            "Accept-Language": "zh-cn"
+        };
+        const body = "actTaskId=304&wua=HIVW_rFCYW%2F75f%2F0UT9GG2FnV2A2NMl18v8cypDXyPzwHoXpHvM9Sj8x9Xaer90X3Ex3xEFnbWBSmpOTP0HMTLFIlOqL8ieZCImaGK6ml%2BdD%2BrnCif2BwON5qd0r0wK9ilMbf3dRIP20XdiGR09pEgcnz%2BIBdBfSFQi1Yvro3jk7%2BC4KEmYX5z%2F97AsNcqlLU3lbM9S54BUslgjjZAbo99vwMihUQ2nNMBBv68WbHgIfoHNVk%2BG78VXGWVe0AirKtUZr7et0fx5yAgBCbHY9AJr4eqTprqzc12xdF8ABdk1%2FjvdmEXlG5gsSyAzKD5FYRCCVDwcXHbYOmVwGSzLFJNaYwDw%3D%3D&ua=&miniWua=HHnB_do1QttZtzGDlGXrbYgiv%2Bq4BdvuNZTvRZZIUolmgFDFfhGjvF0uVJRSdZ4fSZ5inFjxFosy%2BqkiMhmAwQb%2BxaXBLMMQqgMV2PjQgIZeQQAlPUHAcmu0yucFW%2FaxKWHc2&userId=2916901745&umidtoken=bCxLedRLOls1JDV7SC1arg%2BRtgLyo21t&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&platform=1&appVer=4.3.0.0&placeId=111111&timestamp=1629068621&sqSv=1.0&sign=51d6207fa28759325222146e2be4a0a3&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26sdk%3D14.6%26utdid%3DXblVsgqHUiwDAN7BcQnm2A%252Fp%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2916901745%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26umidtoken%3DbCxLedRLOls1JDV7SC1arg%252BRtgLyo21t%26msv%3D8.0.0%26brand%3DApple%26imei%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26skinVersionPrefix%3D1%26appVer%3D4.3.0.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTU4Njk4NiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTA2ODU4Niwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.AcBAYU38rshb57uGyd6FwFvoZccUs8ysDHDMsUrZij4xtnf8cU54vggPnbsvGVFA5btM4aB3h2mPkaTaJHpBVw%26skinColor%3D23B383%26platform%3D1%26ver%3D210107%26mod%3DiPhoneXS%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
         })
     })
 }
-  
+
 
 //极速阅读
-function jsread() {
-    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.6&ustatus=1&umidtoken=wGRLAd1LOjxByTV7SSyOvpA4qSfDtolT&net_env=wifi&placeid=111111&user_id=2916901745&sn=E92DD36C442DA62AA22EF6B3333F044F331EA5AC&msv=10.0.0&brand=Apple&imei=F4272D0D67994A9AD162B30B05698204BD8445A3&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GNDI3MkQwRDY3OTk0QTlBRDE2MkIzMEIwNTY5ODIwNEJEODQ0NUEzIiwic24iOiJmYXN0X0U5MkREMzZDNDQyREE2MkFBMjJFRjZCMzMzM0YwNDRGMzMxRUE1QUMiLCJleHAiOjE2MjkwMDEzODcsInVzZXJJZCI6IjI5MTY5MDE3NDUiLCJpYXQiOjE2Mjg0ODI5ODcsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.Tm6DmTEVrc_PNRMR-fMouAqqdm9DBIJi_hYurOOaDHZJg2Qxm81N9PxKWggtzrwgkSPgoOJhBxehhLKFFvCMBg&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhoneXS&wh=1125x2436&utype=vip&utdid=YAzuwNlmZUMDAP8Knq70D7M9&idfa=00000000-0000-0000-0000-000000000000";
-         const headers = {
-    "Cookie": "isg=BLy8y1cg8VYBisUd1W4whMJzh15utWDf1ibuiJY9WafvYRzrvsWNbVLBRw8ZMpg3; cna=BXqeGVTd73sCAatTLPUxYOJB",
-    "Accept": "*/*",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.6; Scale/3.00)",
-    "Content-Length": "603",
-    "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
-};
-         const body = "actId=355&miniWua=HHnB_c/ctO11SSNODDkG3RkNbzMkUI8EWCg/PA5SjzH7YwOUBhR9NOI3WOKepUeKY0UGAtKwawndI2MzObr1L3XdWOjNF4k155i8%2BWcrsTNbqHkk2sy3bYyrPU7hMMDK/zgMd&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1629066304&userId=2916901745&wua=ktgi_aLfYfZH9LUibJBQjBTegTnJOd903oB6hZUaJ4lDIQTGmCCNaidE7Q0abSs8D8/SI%2BT/LHAdRQ8Nn6hCo6VExvP4aQk1kDqIzMdFbDOE22TOz6zs9w2cjgkzQ/wKQYdBscVMMkuP7zWnx5ZpyqzZAlr5gTRHxaKKKU5IRNMPzatgeT/erhUaZkwt%2BwOBr9ng4MQJ2SWybvKd3M9Dw0riw3coH0UR6BVLPMf0UgW1cxM9kYzRb7ddDyleCp%2BRoXmczfn1DvsRSJaRFwnAAu8NcgK9iXFaEFsw6f3LUG7nZGVGr67Pe0uDsLt1c%2BiaER7JV";
+function jsread()
+{
+    return new Promise((resolve, reject) =>
+    {
+        const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.6&ustatus=1&umidtoken=wGRLAd1LOjxByTV7SSyOvpA4qSfDtolT&net_env=wifi&placeid=111111&user_id=2916901745&sn=E92DD36C442DA62AA22EF6B3333F044F331EA5AC&msv=10.0.0&brand=Apple&imei=F4272D0D67994A9AD162B30B05698204BD8445A3&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GNDI3MkQwRDY3OTk0QTlBRDE2MkIzMEIwNTY5ODIwNEJEODQ0NUEzIiwic24iOiJmYXN0X0U5MkREMzZDNDQyREE2MkFBMjJFRjZCMzMzM0YwNDRGMzMxRUE1QUMiLCJleHAiOjE2MjkwMDEzODcsInVzZXJJZCI6IjI5MTY5MDE3NDUiLCJpYXQiOjE2Mjg0ODI5ODcsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.Tm6DmTEVrc_PNRMR-fMouAqqdm9DBIJi_hYurOOaDHZJg2Qxm81N9PxKWggtzrwgkSPgoOJhBxehhLKFFvCMBg&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhoneXS&wh=1125x2436&utype=vip&utdid=YAzuwNlmZUMDAP8Knq70D7M9&idfa=00000000-0000-0000-0000-000000000000";
+        const headers = {
+            "Cookie": "isg=BLy8y1cg8VYBisUd1W4whMJzh15utWDf1ibuiJY9WafvYRzrvsWNbVLBRw8ZMpg3; cna=BXqeGVTd73sCAatTLPUxYOJB",
+            "Accept": "*/*",
+            "Connection": "keep-alive",
+            "Content-Type": "application/x-www-form-urlencoded",
+            "Accept-Encoding": "gzip, deflate, br",
+            "Host": "ocean.shuqireader.com",
+            "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.6; Scale/3.00)",
+            "Content-Length": "603",
+            "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
+        };
+        const body = "actId=355&miniWua=HHnB_c/ctO11SSNODDkG3RkNbzMkUI8EWCg/PA5SjzH7YwOUBhR9NOI3WOKepUeKY0UGAtKwawndI2MzObr1L3XdWOjNF4k155i8%2BWcrsTNbqHkk2sy3bYyrPU7hMMDK/zgMd&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1629066304&userId=2916901745&wua=ktgi_aLfYfZH9LUibJBQjBTegTnJOd903oB6hZUaJ4lDIQTGmCCNaidE7Q0abSs8D8/SI%2BT/LHAdRQ8Nn6hCo6VExvP4aQk1kDqIzMdFbDOE22TOz6zs9w2cjgkzQ/wKQYdBscVMMkuP7zWnx5ZpyqzZAlr5gTRHxaKKKU5IRNMPzatgeT/erhUaZkwt%2BwOBr9ng4MQJ2SWybvKd3M9Dw0riw3coH0UR6BVLPMf0UgW1cxM9kYzRb7ddDyleCp%2BRoXmczfn1DvsRSJaRFwnAAu8NcgK9iXFaEFsw6f3LUG7nZGVGr67Pe0uDsLt1c%2BiaER7JV";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async(error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await jsread();
-                         await $.wait(500);
+                        await jsread();
+                        await $.wait(500);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
         })
     })
 }
-  
+
 
 //阅读
-function read() {
-    return new Promise((resolve, reject) => {
+function read()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
         const headers = {
             "Accept-Encoding": "gzip, deflate, br",
@@ -266,20 +301,24 @@ function read() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await read();
-                         await $.wait(500);
+                        await read();
+                        await $.wait(500);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -289,8 +328,10 @@ function read() {
 
 
 //阅读时长
-function timeupload() {
-    return new Promise((resolve, reject) => {
+function timeupload()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://jcollection.shuqireader.com/collection/iosapi/reading/upload";
         const headers = {
             "Accept-Encoding": "gzip, deflate, br",
@@ -309,10 +350,14 @@ function timeupload() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -322,8 +367,10 @@ function timeupload() {
 
 
 //极速分享
-function jsshare() {
-    return new Promise((resolve, reject) => {
+function jsshare()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward";
         const headers = {
             "Origin": "https://render-web.shuqireader.com",
@@ -344,10 +391,14 @@ function jsshare() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -357,8 +408,10 @@ function jsshare() {
 
 
 //极速书城
-function jsshucheng() {
-    return new Promise((resolve, reject) => {
+function jsshucheng()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward?sdk=14.6&ustatus=1&umidtoken=CJFLLxhLOp%2Bu3zV7QyKs806Y%2BvW9YrOA&net_env=wifi&placeid=111111&user_id=2916901745&sn=E92DD36C442DA62AA22EF6B3333F044F331EA5AC&msv=10.0.0&brand=Apple&imei=F4272D0D67994A9AD162B30B05698204BD8445A3&appVer=1.0.5.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9GNDI3MkQwRDY3OTk0QTlBRDE2MkIzMEIwNTY5ODIwNEJEODQ0NUEzIiwic24iOiJmYXN0X0U5MkREMzZDNDQyREE2MkFBMjJFRjZCMzMzM0YwNDRGMzMxRUE1QUMiLCJleHAiOjE2MjkwMDEzODcsInVzZXJJZCI6IjI5MTY5MDE3NDUiLCJpYXQiOjE2Mjg0ODI5ODcsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.Tm6DmTEVrc_PNRMR-fMouAqqdm9DBIJi_hYurOOaDHZJg2Qxm81N9PxKWggtzrwgkSPgoOJhBxehhLKFFvCMBg&statusBarHeight=44.000000&platform=116&ver=210331&mod=iPhoneXS&wh=1125x2436&utype=vip&utdid=YAzuwNlmZUMDAP8Knq70D7M9&idfa=00000000-0000-0000-0000-000000000000";
         const headers = {
             "Cookie": "isg=BOHh2SrJJKggsYjKICUFi094-qn7jlWAS31jv0O28ennqgp8i999UQGgCFgsee24; cna=BXqeGVTd73sCAatTLPUxYOJB",
@@ -378,10 +431,14 @@ function jsshucheng() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -391,8 +448,10 @@ function jsshucheng() {
 
 
 //极速视频
-function jsvideoreward10() {
-    return new Promise((resolve, reject) => {
+function jsvideoreward10()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
         const headers = {
             "Accept-Encoding": "gzip, deflate, br",
@@ -411,20 +470,24 @@ function jsvideoreward10() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await jsvedioreward10();
-                         await $.wait(500);
+                        await jsvedioreward10();
+                        await $.wait(500);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -434,8 +497,10 @@ function jsvideoreward10() {
 
 
 //极速签到视频
-function jsvideoreward20() {
-    return new Promise((resolve, reject) => {
+function jsvideoreward20()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
         const headers = {
             "Accept-Encoding": "gzip, deflate, br",
@@ -454,20 +519,24 @@ function jsvideoreward20() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await jsvedioreward20();
-                         await $.wait(100);
+                        await jsvedioreward20();
+                        await $.wait(100);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -477,8 +546,10 @@ function jsvideoreward20() {
 
 
 //极速签到
-function jsdailysign() {
-    return new Promise((resolve, reject) => {
+function jsdailysign()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction";
         const headers = {
             "Origin": "https://render-web.shuqireader.com",
@@ -498,10 +569,14 @@ function jsdailysign() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -511,8 +586,10 @@ function jsdailysign() {
 
 
 //签到
-function dailysign() {
-    return new Promise((resolve, reject) => {
+function dailysign()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction";
         const headers = {
             "Origin": "https://render-web.shuqireader.com",
@@ -533,10 +610,14 @@ function dailysign() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -546,8 +627,10 @@ function dailysign() {
 
 
 //视频
-function videoreward() {
-    return new Promise((resolve, reject) => {
+function videoreward()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
         const headers = {
             "Cookie": "isg=BM3NNdD9kLRAWDSP2IG93I_O1u1HqgF8r-4-zw9SJGTVBvi41_ozTCLcdBxg3Rk0; cna=gpWWGVA23WQCAatTLPVfwY5n",
@@ -567,20 +650,24 @@ function videoreward() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await vedioreward();
-                         await $.wait(500);
+                        await vedioreward();
+                        await $.wait(500);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -590,8 +677,10 @@ function videoreward() {
 
 
 //抽奖视频
-function videorewarddraw() {
-    return new Promise((resolve, reject) => {
+function videorewarddraw()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
         const headers = {
             "Accept-Encoding": "gzip, deflate, br",
@@ -610,20 +699,24 @@ function videorewarddraw() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt)
                     {
-                         await vediorewarddraw();
-                         await $.wait(500);
+                        await vediorewarddraw();
+                        await $.wait(500);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -633,8 +726,10 @@ function videorewarddraw() {
 
 
 //抽奖
-function drawreward() {
-    return new Promise((resolve, reject) => {
+function drawreward()
+{
+    return new Promise((resolve, reject) =>
+    {
         const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
         const headers = {
             "Origin": "https://render-web.shuqireader.com",
@@ -654,20 +749,24 @@ function drawreward() {
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
-            try {
+        $.post(request, async (error, response, data) =>
+        {
+            try
+            {
                 $.log(data);
                 const result = JSON.parse(data)
-                if(result.status==200)
+                if (result.status == 200)
                 {
 
                     if (result.data.availableNum > 0)
                     {
-                         await drawreward();
-                         await $.wait(100);
+                        await drawreward();
+                        await $.wait(100);
                     }
                 }
-            } catch (e) {
+            }
+            catch (e)
+            {
                 $.log(e)
             }
             resolve();
@@ -681,390 +780,529 @@ function drawreward() {
 
 
 
-function Env(t, e) {
-    class s {
-        constructor(t) {
+function Env(t, e)
+{
+    class s
+    {
+        constructor(t)
+        {
             this.env = t
         }
-        send(t, e = "GET") {
-            t = "string" == typeof t ? {
-                url: t
-            }
-                : t;
+        send(t, e = "GET")
+        {
+            t = "string" == typeof t ?
+                {
+                    url: t
+                } :
+                t;
             let s = this.get;
             return "POST" === e && (s = this.post),
-                new Promise((e, i) => {
-                    s.call(this, t, (t, s, r) => {
+                new Promise((e, i) =>
+                {
+                    s.call(this, t, (t, s, r) =>
+                    {
                         t ? i(t) : e(s)
                     })
                 })
         }
-        get(t) {
+        get(t)
+        {
             return this.send.call(this.env, t)
         }
-        post(t) {
+        post(t)
+        {
             return this.send.call(this.env, t, "POST")
         }
     }
-    return new class {
-        constructor(t, e) {
-            this.name = t,
-                this.http = new s(this),
-                this.data = null,
-                this.dataFile = "box.dat",
-                this.logs = [],
-                this.isMute = !1,
-                this.isNeedRewrite = !1,
-                this.logSeparator = "\n",
-                this.startTime = (new Date).getTime(),
-                Object.assign(this, e),
-                this.log(`\n${this.name}\u811a\u672c,\u5f00\u59cb\u6267\u884c:`)
-        }
-        isNode() {
-            return "undefined" != typeof module && !!module.exports
-        }
-        isQuanX() {
-            return "undefined" != typeof $task
-        }
-        isSurge() {
-            return "undefined" != typeof $httpClient && "undefined" == typeof $loon
-        }
-        isLoon() {
-            return "undefined" != typeof $loon
-        }
-        toObj(t, e = null) {
-            try {
-                return JSON.parse(t)
-            } catch {
-                return e
+    return new class
+        {
+            constructor(t, e)
+            {
+                this.name = t,
+                    this.http = new s(this),
+                    this.data = null,
+                    this.dataFile = "box.dat",
+                    this.logs = [],
+                    this.isMute = !1,
+                    this.isNeedRewrite = !1,
+                    this.logSeparator = "\n",
+                    this.startTime = (new Date)
+                    .getTime(),
+                    Object.assign(this, e),
+                    this.log(`\n${this.name}\u811a\u672c,\u5f00\u59cb\u6267\u884c:`)
             }
-        }
-        toStr(t, e = null) {
-            try {
-                return JSON.stringify(t)
-            } catch {
-                return e
+            isNode()
+            {
+                return "undefined" != typeof module && !!module.exports
             }
-        }
-        getjson(t, e) {
-            let s = e;
-            const i = this.getdata(t);
-            if (i)
-                try {
-                    s = JSON.parse(this.getdata(t))
-                } catch { }
-            return s
-        }
-        setjson(t, e) {
-            try {
-                return this.setdata(JSON.stringify(t), e)
-            } catch {
-                return !1
+            isQuanX()
+            {
+                return "undefined" != typeof $task
             }
-        }
-        getScript(t) {
-            return new Promise(e => {
-                this.get({
-                    url: t
-                }, (t, s, i) => e(i))
-            })
-        }
-        runScript(t, e) {
-            return new Promise(s => {
-                let i = this.getdata("@chavy_boxjs_userCfgs.httpapi");
-                i = i ? i.replace(/\n/g, "").trim() : i;
-                let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
-                r = r ? 1 * r : 20,
-                    r = e && e.timeout ? e.timeout : r;
-                const [o, h] = i.split("@"),
-                    a = {
-                        url: `http://${h}/v1/scripting/evaluate`,
-                        body: {
-                            script_text: t,
-                            mock_type: "cron",
-                            timeout: r
-                        },
-                        headers: {
-                            "X-Key": o,
-                            Accept: "*/*"
-                        }
-                    };
-                this.post(a, (t, e, i) => s(i))
-            }).catch(t => this.logErr(t))
-        }
-        loaddata() {
-            if (!this.isNode())
-                return {}; {
-                this.fs = this.fs ? this.fs : require("fs"),
-                    this.path = this.path ? this.path : require("path");
-                const t = this.path.resolve(this.dataFile),
-                    e = this.path.resolve(process.cwd(), this.dataFile),
-                    s = this.fs.existsSync(t),
-                    i = !s && this.fs.existsSync(e);
-                if (!s && !i)
-                    return {}; {
-                    const i = s ? t : e;
-                    try {
-                        return JSON.parse(this.fs.readFileSync(i))
-                    } catch (t) {
-                        return {}
-                    }
+            isSurge()
+            {
+                return "undefined" != typeof $httpClient && "undefined" == typeof $loon
+            }
+            isLoon()
+            {
+                return "undefined" != typeof $loon
+            }
+            toObj(t, e = null)
+            {
+                try
+                {
+                    return JSON.parse(t)
+                }
+                catch
+                {
+                    return e
                 }
             }
-        }
-        writedata() {
-            if (this.isNode()) {
-                this.fs = this.fs ? this.fs : require("fs"),
-                    this.path = this.path ? this.path : require("path");
-                const t = this.path.resolve(this.dataFile),
-                    e = this.path.resolve(process.cwd(), this.dataFile),
-                    s = this.fs.existsSync(t),
-                    i = !s && this.fs.existsSync(e),
-                    r = JSON.stringify(this.data);
-                s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r)
-            }
-        }
-        lodash_get(t, e, s) {
-            const i = e.replace(/\[(\d+)\]/g, ".$1").split(".");
-            let r = t;
-            for (const t of i)
-                if (r = Object(r)[t], void 0 === r)
-                    return s;
-            return r
-        }
-        lodash_set(t, e, s) {
-            return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString().match(/[^.[\]]+/g) || []), e.slice(0, -1).reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] : {}, t)[e[e.length - 1]] = s, t)
-        }
-        getdata(t) {
-            let e = this.getval(t);
-            if (/^@/.test(t)) {
-                const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t),
-                    r = s ? this.getval(s) : "";
-                if (r)
-                    try {
-                        const t = JSON.parse(r);
-                        e = t ? this.lodash_get(t, i, "") : e
-                    } catch (t) {
-                        e = ""
-                    }
-            }
-            return e
-        }
-        setdata(t, e) {
-            let s = !1;
-            if (/^@/.test(e)) {
-                const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e),
-                    o = this.getval(i),
-                    h = i ? "null" === o ? null : o || "{}" : "{}";
-                try {
-                    const e = JSON.parse(h);
-                    this.lodash_set(e, r, t),
-                        s = this.setval(JSON.stringify(e), i)
-                } catch (e) {
-                    const o = {};
-                    this.lodash_set(o, r, t),
-                        s = this.setval(JSON.stringify(o), i)
+            toStr(t, e = null)
+            {
+                try
+                {
+                    return JSON.stringify(t)
                 }
-            } else
-                s = this.setval(t, e);
-            return s
-        }
-        getval(t) {
-            return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null
-        }
-        setval(t, e) {
-            return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null
-        }
-        initGotEnv(t) {
-            this.got = this.got ? this.got : require("got"),
-                this.cktough = this.cktough ? this.cktough : require("tough-cookie"),
-                this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar,
-                t && (t.headers = t.headers ? t.headers : {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar))
-        }
-        get(t, e = (() => { })) {
-            t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]),
-                this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
-                    "X-Surge-Skip-Scripting": !1
-                })), $httpClient.get(t, (t, s, i) => {
-                    !t && s && (s.body = i, s.statusCode = s.status),
-                        e(t, s, i)
-                })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
-                    hints: !1
-                })), $task.fetch(t).then(t => {
-                    const {
-                        statusCode: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    } = t;
-                    e(null, {
-                        status: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    }, o)
-                }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t).on("redirect", (t, e) => {
-                    try {
-                        if (t.headers["set-cookie"]) {
-                            const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse).toString();
-                            this.ckjar.setCookieSync(s, null),
-                                e.cookieJar = this.ckjar
-                        }
-                    } catch (t) {
-                        this.logErr(t)
+                catch
+                {
+                    return e
+                }
+            }
+            getjson(t, e)
+            {
+                let s = e;
+                const i = this.getdata(t);
+                if (i)
+                    try
+                    {
+                        s = JSON.parse(this.getdata(t))
                     }
-                }).then(t => {
-                    const {
-                        statusCode: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    } = t;
-                    e(null, {
-                        status: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    }, o)
-                }, t => {
-                    const {
-                        message: s,
-                        response: i
-                    } = t;
-                    e(s, i, i && i.body)
-                }))
-        }
-        post(t, e = (() => { })) {
-            if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon())
-                this.isSurge() && this.isNeedRewrite && (t.headers = t.headers || {}, Object.assign(t.headers, {
-                    "X-Surge-Skip-Scripting": !1
-                })), $httpClient.post(t, (t, s, i) => {
-                    !t && s && (s.body = i, s.statusCode = s.status),
-                        e(t, s, i)
-                });
-            else if (this.isQuanX())
-                t.method = "POST", this.isNeedRewrite && (t.opts = t.opts || {}, Object.assign(t.opts, {
-                    hints: !1
-                })), $task.fetch(t).then(t => {
-                    const {
-                        statusCode: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    } = t;
-                    e(null, {
-                        status: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    }, o)
-                }, t => e(t));
-            else if (this.isNode()) {
-                this.initGotEnv(t);
-                const {
-                    url: s,
-                    ...i
-                } = t;
-                this.got.post(s, i).then(t => {
-                    const {
-                        statusCode: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    } = t;
-                    e(null, {
-                        status: s,
-                        statusCode: i,
-                        headers: r,
-                        body: o
-                    }, o)
-                }, t => {
-                    const {
-                        message: s,
-                        response: i
-                    } = t;
-                    e(s, i, i && i.body)
+                catch
+                {}
+                return s
+            }
+            setjson(t, e)
+            {
+                try
+                {
+                    return this.setdata(JSON.stringify(t), e)
+                }
+                catch
+                {
+                    return !1
+                }
+            }
+            getScript(t)
+            {
+                return new Promise(e =>
+                {
+                    this.get(
+                    {
+                        url: t
+                    }, (t, s, i) => e(i))
                 })
             }
-        }
-        time(t) {
-            let e = {
-                "M+": (new Date).getMonth() + 1,
-                "d+": (new Date).getDate(),
-                "H+": (new Date).getHours(),
-                "m+": (new Date).getMinutes(),
-                "s+": (new Date).getSeconds(),
-                "q+": Math.floor(((new Date).getMonth() + 3) / 3),
-                S: (new Date).getMilliseconds()
-            };
-            /(y+)/.test(t) && (t = t.replace(RegExp.$1, ((new Date).getFullYear() + "").substr(4 - RegExp.$1.length)));
-            for (let s in e)
-                new RegExp("(" + s + ")").test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? e[s] : ("00" + e[s]).substr(("" + e[s]).length)));
-            return t
-        }
-        msg(e = t, s = "", i = "", r) {
-            const o = t => {
-                if (!t)
-                    return t;
-                if ("string" == typeof t)
-                    return this.isLoon() ? t : this.isQuanX() ? {
-                        "open-url": t
-                    }
-                        : this.isSurge() ? {
-                            url: t
+            runScript(t, e)
+            {
+                return new Promise(s =>
+                    {
+                        let i = this.getdata("@chavy_boxjs_userCfgs.httpapi");
+                        i = i ? i.replace(/\n/g, "")
+                            .trim() : i;
+                        let r = this.getdata("@chavy_boxjs_userCfgs.httpapi_timeout");
+                        r = r ? 1 * r : 20,
+                            r = e && e.timeout ? e.timeout : r;
+                        const [o, h] = i.split("@"),
+                            a = {
+                                url: `http://${h}/v1/scripting/evaluate`,
+                                body:
+                                {
+                                    script_text: t,
+                                    mock_type: "cron",
+                                    timeout: r
+                                },
+                                headers:
+                                {
+                                    "X-Key": o,
+                                    Accept: "*/*"
+                                }
+                            };
+                        this.post(a, (t, e, i) => s(i))
+                    })
+                    .catch(t => this.logErr(t))
+            }
+            loaddata()
+            {
+                if (!this.isNode())
+                    return {};
+                {
+                    this.fs = this.fs ? this.fs : require("fs"),
+                        this.path = this.path ? this.path : require("path");
+                    const t = this.path.resolve(this.dataFile),
+                        e = this.path.resolve(process.cwd(), this.dataFile),
+                        s = this.fs.existsSync(t),
+                        i = !s && this.fs.existsSync(e);
+                    if (!s && !i)
+                        return {};
+                    {
+                        const i = s ? t : e;
+                        try
+                        {
+                            return JSON.parse(this.fs.readFileSync(i))
                         }
-                            : void 0;
-                if ("object" == typeof t) {
-                    if (this.isLoon()) {
-                        let e = t.openUrl || t.url || t["open-url"],
-                            s = t.mediaUrl || t["media-url"];
-                        return {
-                            openUrl: e,
-                            mediaUrl: s
-                        }
-                    }
-                    if (this.isQuanX()) {
-                        let e = t["open-url"] || t.url || t.openUrl,
-                            s = t["media-url"] || t.mediaUrl;
-                        return {
-                            "open-url": e,
-                            "media-url": s
-                        }
-                    }
-                    if (this.isSurge()) {
-                        let e = t.url || t.openUrl || t["open-url"];
-                        return {
-                            url: e
+                        catch (t)
+                        {
+                            return {}
                         }
                     }
                 }
-            };
-            this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r)));
-            let h = ["", "==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="];
-            h.push(e),
-                s && h.push(s),
-                i && h.push(i),
-                console.log(h.join("\n")),
-                this.logs = this.logs.concat(h)
+            }
+            writedata()
+            {
+                if (this.isNode())
+                {
+                    this.fs = this.fs ? this.fs : require("fs"),
+                        this.path = this.path ? this.path : require("path");
+                    const t = this.path.resolve(this.dataFile),
+                        e = this.path.resolve(process.cwd(), this.dataFile),
+                        s = this.fs.existsSync(t),
+                        i = !s && this.fs.existsSync(e),
+                        r = JSON.stringify(this.data);
+                    s ? this.fs.writeFileSync(t, r) : i ? this.fs.writeFileSync(e, r) : this.fs.writeFileSync(t, r)
+                }
+            }
+            lodash_get(t, e, s)
+            {
+                const i = e.replace(/\[(\d+)\]/g, ".$1")
+                    .split(".");
+                let r = t;
+                for (const t of i)
+                    if (r = Object(r)[t], void 0 === r)
+                        return s;
+                return r
+            }
+            lodash_set(t, e, s)
+            {
+                return Object(t) !== t ? t : (Array.isArray(e) || (e = e.toString()
+                        .match(/[^.[\]]+/g) || []), e.slice(0, -1)
+                    .reduce((t, s, i) => Object(t[s]) === t[s] ? t[s] : t[s] = Math.abs(e[i + 1]) >> 0 == +e[i + 1] ? [] :
+                    {}, t)[e[e.length - 1]] = s, t)
+            }
+            getdata(t)
+            {
+                let e = this.getval(t);
+                if (/^@/.test(t))
+                {
+                    const [, s, i] = /^@(.*?)\.(.*?)$/.exec(t),
+                        r = s ? this.getval(s) : "";
+                    if (r)
+                        try
+                        {
+                            const t = JSON.parse(r);
+                            e = t ? this.lodash_get(t, i, "") : e
+                        }
+                    catch (t)
+                    {
+                        e = ""
+                    }
+                }
+                return e
+            }
+            setdata(t, e)
+            {
+                let s = !1;
+                if (/^@/.test(e))
+                {
+                    const [, i, r] = /^@(.*?)\.(.*?)$/.exec(e),
+                        o = this.getval(i),
+                        h = i ? "null" === o ? null : o || "{}" : "{}";
+                    try
+                    {
+                        const e = JSON.parse(h);
+                        this.lodash_set(e, r, t),
+                            s = this.setval(JSON.stringify(e), i)
+                    }
+                    catch (e)
+                    {
+                        const o = {};
+                        this.lodash_set(o, r, t),
+                            s = this.setval(JSON.stringify(o), i)
+                    }
+                }
+                else
+                    s = this.setval(t, e);
+                return s
+            }
+            getval(t)
+            {
+                return this.isSurge() || this.isLoon() ? $persistentStore.read(t) : this.isQuanX() ? $prefs.valueForKey(t) : this.isNode() ? (this.data = this.loaddata(), this.data[t]) : this.data && this.data[t] || null
+            }
+            setval(t, e)
+            {
+                return this.isSurge() || this.isLoon() ? $persistentStore.write(t, e) : this.isQuanX() ? $prefs.setValueForKey(t, e) : this.isNode() ? (this.data = this.loaddata(), this.data[e] = t, this.writedata(), !0) : this.data && this.data[e] || null
+            }
+            initGotEnv(t)
+            {
+                this.got = this.got ? this.got : require("got"),
+                    this.cktough = this.cktough ? this.cktough : require("tough-cookie"),
+                    this.ckjar = this.ckjar ? this.ckjar : new this.cktough.CookieJar,
+                    t && (t.headers = t.headers ? t.headers :
+                    {}, void 0 === t.headers.Cookie && void 0 === t.cookieJar && (t.cookieJar = this.ckjar))
+            }
+            get(t, e = (() =>
+            {}))
+            {
+                t.headers && (delete t.headers["Content-Type"], delete t.headers["Content-Length"]),
+                    this.isSurge() || this.isLoon() ? (this.isSurge() && this.isNeedRewrite && (t.headers = t.headers ||
+                    {}, Object.assign(t.headers,
+                    {
+                        "X-Surge-Skip-Scripting": !1
+                    })), $httpClient.get(t, (t, s, i) =>
+                    {
+                        !t && s && (s.body = i, s.statusCode = s.status),
+                            e(t, s, i)
+                    })) : this.isQuanX() ? (this.isNeedRewrite && (t.opts = t.opts ||
+                        {}, Object.assign(t.opts,
+                        {
+                            hints: !1
+                        })), $task.fetch(t)
+                        .then(t =>
+                        {
+                            const
+                            {
+                                statusCode: s,
+                                statusCode: i,
+                                headers: r,
+                                body: o
+                            } = t;
+                            e(null,
+                            {
+                                status: s,
+                                statusCode: i,
+                                headers: r,
+                                body: o
+                            }, o)
+                        }, t => e(t))) : this.isNode() && (this.initGotEnv(t), this.got(t)
+                        .on("redirect", (t, e) =>
+                        {
+                            try
+                            {
+                                if (t.headers["set-cookie"])
+                                {
+                                    const s = t.headers["set-cookie"].map(this.cktough.Cookie.parse)
+                                        .toString();
+                                    this.ckjar.setCookieSync(s, null),
+                                        e.cookieJar = this.ckjar
+                                }
+                            }
+                            catch (t)
+                            {
+                                this.logErr(t)
+                            }
+                        })
+                        .then(t =>
+                        {
+                            const
+                            {
+                                statusCode: s,
+                                statusCode: i,
+                                headers: r,
+                                body: o
+                            } = t;
+                            e(null,
+                            {
+                                status: s,
+                                statusCode: i,
+                                headers: r,
+                                body: o
+                            }, o)
+                        }, t =>
+                        {
+                            const
+                            {
+                                message: s,
+                                response: i
+                            } = t;
+                            e(s, i, i && i.body)
+                        }))
+            }
+            post(t, e = (() =>
+            {}))
+            {
+                if (t.body && t.headers && !t.headers["Content-Type"] && (t.headers["Content-Type"] = "application/x-www-form-urlencoded"), t.headers && delete t.headers["Content-Length"], this.isSurge() || this.isLoon())
+                    this.isSurge() && this.isNeedRewrite && (t.headers = t.headers ||
+                    {}, Object.assign(t.headers,
+                    {
+                        "X-Surge-Skip-Scripting": !1
+                    })), $httpClient.post(t, (t, s, i) =>
+                    {
+                        !t && s && (s.body = i, s.statusCode = s.status),
+                            e(t, s, i)
+                    });
+                else if (this.isQuanX())
+                    t.method = "POST", this.isNeedRewrite && (t.opts = t.opts ||
+                    {}, Object.assign(t.opts,
+                    {
+                        hints: !1
+                    })), $task.fetch(t)
+                    .then(t =>
+                    {
+                        const
+                        {
+                            statusCode: s,
+                            statusCode: i,
+                            headers: r,
+                            body: o
+                        } = t;
+                        e(null,
+                        {
+                            status: s,
+                            statusCode: i,
+                            headers: r,
+                            body: o
+                        }, o)
+                    }, t => e(t));
+                else if (this.isNode())
+                {
+                    this.initGotEnv(t);
+                    const
+                    {
+                        url: s,
+                        ...i
+                    } = t;
+                    this.got.post(s, i)
+                        .then(t =>
+                        {
+                            const
+                            {
+                                statusCode: s,
+                                statusCode: i,
+                                headers: r,
+                                body: o
+                            } = t;
+                            e(null,
+                            {
+                                status: s,
+                                statusCode: i,
+                                headers: r,
+                                body: o
+                            }, o)
+                        }, t =>
+                        {
+                            const
+                            {
+                                message: s,
+                                response: i
+                            } = t;
+                            e(s, i, i && i.body)
+                        })
+                }
+            }
+            time(t)
+            {
+                let e = {
+                    "M+": (new Date)
+                        .getMonth() + 1,
+                    "d+": (new Date)
+                        .getDate(),
+                    "H+": (new Date)
+                        .getHours(),
+                    "m+": (new Date)
+                        .getMinutes(),
+                    "s+": (new Date)
+                        .getSeconds(),
+                    "q+": Math.floor(((new Date)
+                        .getMonth() + 3) / 3),
+                    S: (new Date)
+                        .getMilliseconds()
+                };
+                /(y+)/.test(t) && (t = t.replace(RegExp.$1, ((new Date)
+                        .getFullYear() + "")
+                    .substr(4 - RegExp.$1.length)));
+                for (let s in e)
+                    new RegExp("(" + s + ")")
+                    .test(t) && (t = t.replace(RegExp.$1, 1 == RegExp.$1.length ? e[s] : ("00" + e[s])
+                        .substr(("" + e[s])
+                            .length)));
+                return t
+            }
+            msg(e = t, s = "", i = "", r)
+            {
+                const o = t =>
+                {
+                    if (!t)
+                        return t;
+                    if ("string" == typeof t)
+                        return this.isLoon() ? t : this.isQuanX() ?
+                            {
+                                "open-url": t
+                            } :
+                            this.isSurge() ?
+                            {
+                                url: t
+                            } :
+                            void 0;
+                    if ("object" == typeof t)
+                    {
+                        if (this.isLoon())
+                        {
+                            let e = t.openUrl || t.url || t["open-url"],
+                                s = t.mediaUrl || t["media-url"];
+                            return {
+                                openUrl: e,
+                                mediaUrl: s
+                            }
+                        }
+                        if (this.isQuanX())
+                        {
+                            let e = t["open-url"] || t.url || t.openUrl,
+                                s = t["media-url"] || t.mediaUrl;
+                            return {
+                                "open-url": e,
+                                "media-url": s
+                            }
+                        }
+                        if (this.isSurge())
+                        {
+                            let e = t.url || t.openUrl || t["open-url"];
+                            return {
+                                url: e
+                            }
+                        }
+                    }
+                };
+                this.isMute || (this.isSurge() || this.isLoon() ? $notification.post(e, s, i, o(r)) : this.isQuanX() && $notify(e, s, i, o(r)));
+                let h = ["", "==============\ud83d\udce3\u7cfb\u7edf\u901a\u77e5\ud83d\udce3=============="];
+                h.push(e),
+                    s && h.push(s),
+                    i && h.push(i),
+                    console.log(h.join("\n")),
+                    this.logs = this.logs.concat(h)
+            }
+            log(...t)
+            {
+                t.length > 0 && (this.logs = [...this.logs, ...t]),
+                    console.log(t.join(this.logSeparator))
+            }
+            logErr(t, e)
+            {
+                const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
+                s ? this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t.stack) : this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t)
+            }
+            wait(t)
+            {
+                return new Promise(e => setTimeout(e, t))
+            }
+            done(t = {})
+            {
+                const e = (new Date)
+                    .getTime(),
+                    s = (e - this.startTime) / 1e3;
+                this.log("", `${this.name}\u811a\u672c, \u6267\u884c\u7ed3\u675f! \u7528\u65f6${s}\u79d2`),
+                    this.log(),
+                    (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
+            }
         }
-        log(...t) {
-            t.length > 0 && (this.logs = [...this.logs, ...t]),
-                console.log(t.join(this.logSeparator))
-        }
-        logErr(t, e) {
-            const s = !this.isSurge() && !this.isQuanX() && !this.isLoon();
-            s ? this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t.stack) : this.log("", `\u2757\ufe0f${this.name}, \u9519\u8bef!`, t)
-        }
-        wait(t) {
-            return new Promise(e => setTimeout(e, t))
-        }
-        done(t = {}) {
-            const e = (new Date).getTime(),
-                s = (e - this.startTime) / 1e3;
-            this.log("", `${this.name}\u811a\u672c, \u6267\u884c\u7ed3\u675f! \u7528\u65f6${s}\u79d2`),
-                this.log(),
-                (this.isSurge() || this.isQuanX() || this.isLoon()) && $done(t)
-        }
-    }
         (t, e)
 }
