@@ -17,38 +17,68 @@ const $ = Env(jobname)
 
 async function all()
 {
+    
+    //签到 阅读 收取 视频 抽奖 分享   
     //nodejs运行
+    
+    //签到https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction
     await dailysign();
     await $.wait(1000);
+    
+    //视频https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery   
     await videoreward();
     await $.wait(1000);
+    
+    //抽奖视频https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery
     await videorewarddraw();
     await $.wait(1000);
+    
+    //抽奖https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw    
     await drawreward();
     await $.wait(1000);
+    
+    //阅读https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery
     await read();
     await $.wait(1000);
+    
+    //分享https://ocean.shuqireader.com/api/activity/v1/task/reward
     await share();
     await $.wait(1000);
+    
+    //收取https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive
     await receive();
     await $.wait(1000);
+    
+    //极速签到https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction
     await jsdailysign();
     await $.wait(1000);
+    
+    //极速签到视频https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery
     await jsvideoreward20();
     await $.wait(1000);
-    await  jsvideoreward10();
+    
+    //极速视频https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery
+    await jsvideoreward10();
     await $.wait(1000);
-    await  jsshucheng();
+    
+    //极速书城https://ocean.shuqireader.com/api/activity/v1/task/reward
+    await jsshucheng();
     await $.wait(1000);
+    
+    //极速分享https://ocean.shuqireader.com/api/activity/v1/task/reward
     await jsshare();
     await $.wait(1000);
+    
+    //极速阅读https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery
     await jsread()
     await $.wait(1000);
+    
     for(let i=0;i<10;i++)
     {
         await videoreward426();
         await $.wait(1000);
     }
+    
     await $.wait(1000);
     await read426();
 
