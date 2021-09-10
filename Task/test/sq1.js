@@ -429,7 +429,7 @@ function jsread() {
 
 
 
-/*
+
 
 function read() {
     return new Promise((resolve, reject) => {
@@ -639,7 +639,7 @@ function drawreward() {
     })
 }
 
-*/
+
 
 
 function Env(t, e) {
