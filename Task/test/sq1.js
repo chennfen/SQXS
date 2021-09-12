@@ -17,8 +17,9 @@ const $ = Env(jobname)
 async function all() {
 //nodejs运行
 //任务顺序
-//签到，视频，视频426，分享，阅读
-//极速版签到，签到视频，视频，书城，分享，阅读，收取
+//签到，视频426，分享
+//极速版签到，视频，书城，分享，阅读，收取
+//tips: 书旗426分享鉴权错误 极速105签到视频非法请求
     await dailysign();
     await $.wait(1000);
 
@@ -31,13 +32,10 @@ async function all() {
     await share();
 
     await $.wait(1000);
-    await read();
-
-    await $.wait(1000);
     await jsdailysign();
 
     await $.wait(1000);
-    await jsvideoreward20();
+    //await jsvideoreward20();
 
     await $.wait(1000);
     //await jsvideoreward10();
@@ -311,19 +309,18 @@ function jsshare() {
 
 //1
 function jsvideoreward20() {
-     return new Promise((resolve, reject) => {
+    return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
          const headers = {
-    "Accept": "*/*",
     "Accept-Encoding": "gzip, deflate, br",
+    "Accept": "*/*",
     "Connection": "keep-alive",
     "Content-Type": "application/x-www-form-urlencoded",
     "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.3; Scale/2.00)",
-    "Content-Length": "1757",
+    "User-Agent": "shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/2.00)",
     "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
 };
-         const body = "_public=idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26net_env%3D4g%26umidtoken%3DFypLOQJLOjuy6zV70OlGqZy6L/qc0wPM%26placeid%3D111111%26user_id%3D2032723913%26sn%3D6D0BAA0BDD6E7797B9C3DF914A1BB96AC562DDEC%26msv%3D10.0.0%26brand%3DApple%26imei%3D227F80890B767D337CFDD98EC7E2CAFD2E93FCEF%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF8yMjdGODA4OTBCNzY3RDMzN0NGREQ5OEVDN0UyQ0FGRDJFOTNGQ0VGIiwic24iOiJmYXN0XzZEMEJBQTBCREQ2RTc3OTdCOUMzREY5MTRBMUJCOTZBQzU2MkRERUMiLCJleHAiOjE2MzE4MDMxNjMsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2MzEyODQ3NjMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.2o2lUkADEPHqWAfk7P1y0idQD-K8m_3a-zFL0l1s2pZCyYnEjJ9xdHbWTlgMRG4AM26srPnzIIj2fymZ223BxA%26statusBarHeight%3D20.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone8%26wh%3D750x1334%26utype%3Dvip%26utdid%3DYTtsdxbeZFYDAKRn2sNXOyit%26sdk%3D14.3&deliveryId=980&key=sq_app_ad&miniWua=HHnB_H8sYyyIoItYg98FmSoVel94FReoMyDHqDiiCtfx0Q2OhaSE2CuxUcd6MFureoD/C73p5oReIXp/0rf8DOqjCz0Q%2BSVh0c%2BMqlVcKRVZT2xsFh3Qv2KlKw3GQkDUefGxgk6B%2BLoRB9ydUPQNOitlPpQ%3D%3D&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=8489541B29E5AB3875FB3E6547E8349F&timestamp=1631287997&userId=2032723913&user_id=2032723913&wua=ktgi_NNDozjzAblUP8/Qx9SZ49UeQQYE%2Bc9BAqZNFIUdw1NXbLJu5krl%2BkZ5t0QA8gfDHzDuOquozwS5UjcGr/ee56SryovOaE5uAazu%2BjAMbjqSB9O4OoAUGJY2bycTMVqq2P4KjCQ9KKaLoGP7KVBOOP/ALO9Im%2Bc2TcBsqLenbNwokaLAxUuZK4E7Zc9%2BErYD5Ffs%2BXf%2B93QnjyzJcyXN/c9iOWCVXw4h9XtL2CoWiiAVjtRLiJJC3aQVzlPCxgrlq2Pv8aQ3SQNw6yAZqio6c%2B97q8ujY4Ql6g6F%2BGimJzjPKQyfnYvDDgevSYujyuTTiJy8hkhunumMKt6IxpBF1f5XBNOQPPNayR53cG0M3N1G5RFdAPf7h7NLMZRsMP0ulhn9M5kA%2BTsdCk6ardtms3Q%3D%3D";
+         const body = "_public=idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26net_env%3Dwifi%26umidtoken%3Dn8hLRnJLOoy3BTV715HY5oC4YhJ%2BaMcb%26placeid%3D111111%26user_id%3D2032723913%26sn%3D6D0BAA0BDD6E7797B9C3DF914A1BB96AC562DDEC%26msv%3D10.0.0%26brand%3DApple%26imei%3D227F80890B767D337CFDD98EC7E2CAFD2E93FCEF%26appVer%3D1.0.4.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF8yMjdGODA4OTBCNzY3RDMzN0NGREQ5OEVDN0UyQ0FGRDJFOTNGQ0VGIiwic24iOiJmYXN0XzZEMEJBQTBCREQ2RTc3OTdCOUMzREY5MTRBMUJCOTZBQzU2MkRERUMiLCJleHAiOjE2MzE4MDMxNjMsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2MzEyODQ3NjMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.2o2lUkADEPHqWAfk7P1y0idQD-K8m_3a-zFL0l1s2pZCyYnEjJ9xdHbWTlgMRG4AM26srPnzIIj2fymZ223BxA%26statusBarHeight%3D20.000000%26platform%3D116%26ver%3D210309%26mod%3DiPhone8%26wh%3D750x1334%26utype%3Dvip%26utdid%3DYTtsdxbeZFYDAKRn2sNXOyit%26sdk%3D14.3&deliveryId=980&key=sq_app_ad&miniWua=HHnB_nq6XKSBcNOE4aozofH6Po3nFmjJJqYsiB/6NVD2%2BEKmZA30naCRYwMFpcV8yB2CGGgEydp1weGPXqDLIsc90gepiTl0qP1sTIPmlKNhkJlVvHr3CcZ7dB1nGIJRL893d0GR%2BJOK6y/nFTeuHYOPwEg%3D%3D&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=FA6F605EB4578AE85985FA62B2F2B2C8&timestamp=1631406982&userId=2032723913&user_id=2032723913&wua=ktgi_Rm6JbRWAtoGJqpznOPyDWXWbYA%2BNVF4lYiRo1UhgTcOoUPMEhpCS%2Bikh8Wy7jOzUUywZwM/CBgH1lUSqaoJXXARTMNLqKfJcfLYR8E6cL8QvUcJFvumHAnGZiQ20ZuKe6UACqkVdFG7x8c6wjn3/kqO/Uqd8QHd6yHiGchEzjtevExGCaMcRuD9H%2BYjy32SIoRZDxNqeqbfFN0YtZVZkSjzZINR2aC4ROISOlnpnlF1oPMrwCTT9BNKLK91fThvx9/apXg022VqlFEIIPaVgvQuj8FjC0qz7aQe4RzI6f1REbXUBxAUcbt94%2B1mZALQn63tOm%2BfiKmiF9Q4crRcVRfv1JavH3oguJK1jTGuNnBpWvUqz5EqGsmzmkaPi3IwY3qkee2m%2Bg2Hcwl8ECiNHrw%3D%3D";
         const request = {
             url: url,
             headers: headers,
