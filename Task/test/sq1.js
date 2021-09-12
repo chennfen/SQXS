@@ -15,42 +15,46 @@ const $ = Env(jobname)
     })
 
 async function all() {
-    //nodejs运行
+//nodejs运行
+//任务顺序
+//签到，视频，视频426，分享，阅读
+//极速版签到，签到视频，视频，书城，分享，阅读，收取
     await dailysign();
     await $.wait(1000);
 
     for (let i = 0; i < 10; i++) {
-        //await vedioreward();
+        await videoreward426();
         await $.wait(1000);
-        //await vediorewarddraw();
-        await $.wait(1000);
-        //await drawreward();
     }
-    await $.wait(1000);
-    await read();
+
     await $.wait(1000);
     await share();
+
     await $.wait(1000);
-    await receive();
+    await read();
+
     await $.wait(1000);
     await jsdailysign();
+
     await $.wait(1000);
-    await jsvedioreward20();
+    await jsvideoreward20();
+
     await $.wait(1000);
-    //await jsvedioreward10();
+    //await jsvideoreward10();
+
     await $.wait(1000);
     await jsshucheng();
+
     await $.wait(1000);
     await jsshare();
+
     await $.wait(1000);
     await jsread()
+
     await $.wait(1000);
-    for (let i = 0; i < 10; i++) {
-        await vedioreward426();
-        await $.wait(1000);
-    }
-    await $.wait(1000);
-    //await read426();
+    await receive();
+
+
 
 }
 
@@ -90,10 +94,10 @@ function dailysign() {
         })
     })
 }
-
+  
 //1
-function vedioreward426() {
-    return new Promise((resolve, reject) => {
+function videoreward426() {
+          return new Promise((resolve, reject) => {
          const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
          const headers = {
     "Accept": "*/*",
@@ -102,10 +106,10 @@ function vedioreward426() {
     "Content-Type": "application/json",
     "Host": "api-access.pangolin-sdk-toutiao.com",
     "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-    "Content-Length": "4940",
+    "Content-Length": "5047",
     "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
 };
-         const body = "{\"message\":\"2AA1yjsXuGnED5VZflSOVixB5IH2oJ7NPfnorcEKARch7e0ZfGPpdVwP4t6M4pKtNEZEZGuQjH5NmUxNy+tz\\/4Xd\\/z7\\/Xvu0RQnhXEQslZeLx\\/lh4ZB+UoMTs422piwc9gHYs4uWAHUD51AYWk356fz1sCHE\\/BpMTNQxG06TeHVXfTdU8S1Mj4JC8dJhpDhONqNIUOjDg0E+3e7Q3wKDsSA94tZfsHdvmiyE1R4o5HeCvVIr1yGeSTfaT8pwepyNBaw0Kdh6Vj\\/zJpLPrxJyyou\\/7I4VJbiKy85la38WVO362dxJSxfUtg7L4\\/8X5OblUxlM1SP5nDwbsCu13JUYWjqwu4PSqvyMJ26zAFsDQzTEvf8+8I9bufqBP0CiP2wybQXW9\\/LvejdScn67IzqwiBhiJ0dUf4ylFmgVweWy86P0C8LwALvgUQDKfUevZ1ZSQnkmQ3g50XrgGIPRTdgWMDnGxqzoydikMwI+52YgCWOPzx7Mb5jvxri3lc14Bf28BQMlIN56rof5G6Y7JxxCa8FElQkyXLVhVM+JYzCrhqtIpva1EXLvoztZ6atnPe3q8RoUqVm\\/aGySj1VdsrvwZTI4\\/GecTNId9BwpyzOnV0EEoKUrGsQpMr5mj+kPt7MCUrRQPSad9XMH5EkSdqSoKa5lgHnoegLupZ9+QmdMX3uxPF1ohRa5UkyEwJwx\\/NHwQ+LSJlp+XQXzpBiQEhR0YzJHIyIc9HpP1qjpypJIC0eCbMzPnivcbXg5uFEdNGtqncGjp70xcbnDUaHG9ZkPd6V\\/9rVG+qKHS0+u3I\\/dRXwAHtfnxFvnpLWaasUxfH3x+DZ1\\/b1Iqd\\/IXM16U5yxk2p74stACpeZVBMMf57l1K23g024YBvpo2lQhGDy2TPSbS2mAwhKi640loLOYREfSC37yMzfGvwilHlkFZWoRx3P5RZOdEHTON9WGq2GagFl2K1KAP\\/AaxHANxBPn0FyvFz8FVvZgwzqW5uviP+O3ALe9GhSGpr9lj3WMeLfuYCw\\/kuyfOippHTl78yJlh2ocEJG+voyg8TWDEoQ7w+4SFubFdseqXJLeZCtmLzgtFgBWfHppSVck0KfvoMkxff8YqLxB1c1Mw7JlDDUWh9ynLXfBf4BKG6sL3QRxu6CgS3KH0aj5zyuWqtW1UrT0y3mQryNpk6nxdABx0WqbH9xeDWoxSi+A4Pr27t604qr6t\\/iATHCL769UicyAJIVA5e8SGDLeKoK+rrSFT06yeqa1Mxn1o\\/QTOMicCNod++jZ+QUgrTwA6JidfdfVIjxXo91axgdADbbLhnBTcV8ahaJnYKtdIm65b2gax3UchIHSovOI54E6WN5Dhe7ZHtPjHy0rvbqm9z+lVIw9eGElGBaIWWpmkIP0bUckvlNosT4kGHA0UWBdsvrlThTwamo6vQdWcTYLr92zgGIQDo3X0juQ6MekMw1fxYzgBYccWobB0piyoEEEjXIsKZkdIG2omYV4t9p5I9P5txEl7P9NxbH6bdnVGvBFkKYrqnleUNaIEf3zw46dQbXqH3eN6BZZ3R2qtT6C5FD6bBIsOYsyNEF\\/SMRaHASaDJIpGmcaI\\/QvHBHuiTcyJAGleze69yo6xACgW6HZXzyZ5s\\/vgXP9123NKtw2VQS3yJKlmdOc59z\\/2h4cThxUOJYcL34ogvV0VterX2oUfdtDrU1uf1C8Nzg35pug00+HEhKDpRBvNWXFnD4aci3c593oJMtOEKbW4AQcX+Ng+l0sUupUYI3Ei6Zl+781Ef\\/zTu2qgflUIL3X06wUpLWAz4lRn5Z8r3DcOZGuvDs9u3ZI7pAWz3oChjbaLeRKHIJxm5DdnE8A0bsyTx0K7NRsMnTy+F8IVbXCl\\/+343wn7rWzpu6y+Nh4Fet1TKHIfnMes\\/8YHwYhWS9Z8DXxVIGA2\\/pyO98lUZsurliCCQAQPiiwp6D7h+z2F70rq0gyA+7HZSwxQoAfaH7YmaQWRVffN1Vtm2ZRjIk4PXMk8isOTbm0UEOzFNgLGEkDDsCFgGgSLTa3WjnnetuIsvYztweAHD3\\/ULSttrm6QFndxKrrqUSDVUeFlkO4Gd2zmHsohanxE7ZaGMsUt4eiY53c+DCxGiKnOeXAckKaauxl2cKEKhsygklHi0foBc7Tr0CPHYQW0zSdTdOy7UGmIwSLn6lqosj+r4+lw2ZkC1lsyM+J8BWqUqgnS9Qaj6mZrEHorQ4UEWBEfCQV2d\\/fCyaCvbM6L5+DifE4OKH\\/AwsSFeTlIM93Npn6WlXtrZMrtiOlfacUfQz5eTriKmC8CupnP3oQU14eBGl2SSEH1I5UZ15GTWew\\/Y5CplqsqMwK8GkCabjPeAMELp2yx2qEltSBb+F7Y6q3t1naTX1tYMiGqFY6zpxowv5ZFaWK4uBpAnO6V+WWxFs+1znYqa7vHPT4zKL7V+WQXZcBUHz8yrhn3J45s0xIbXzPv83JW9NAipLlpa44eSs++l1ymQzUrbUNG8KK1Rx6f+FYQdUZmrqg+M2d4+rYcG3JVQeMTcyJVg24qA9WwVzJHxUciFaU28yrX\\/cW2Eo8UFuzjHtZQDwbFQH5ku3ZX0mxmAkpvvwVmqTfxaM\\/8mokBc5wV6q92Uc36cIzmaw1+YK8YqluXzCsz29pNwd2XuNMNLKF709mCXCsl+SR4YZGbHYLeuviTX1bUwROSpOYRK8rCyYySDbd390hugS+wuQDUluhqsN62Z9\\/mhRQP5LyzYWiUN3Tr\\/lBLcCI2IuWwu9Ol6w\\/6UXuRFFQNgzhiegDAQRpmL8kctKzsn7Qw7QvDmGLbuZbAGWngrYmDO5KeikavM+NcQZtBQHRQupgruhwy+PnPU\\/GH1QYOwvKqLNJ+yFUabf34IyUpkl9WdAiP55O7SKElx7q8NtUT\\/c4T8QWnUHAA6CJYJ66DjRf\\/aytqbEG7epRbDF9ld+\\/hvdvW0RReRCOfbeNH7KMfz8lGs+GxpZ2uKHi\\/Nv5zsZLknR8C795aO5g4\\/pOdTMaqj6XwzCy0d0ietTELWUZQjqxSQeMd5RYeSmvYlYC8aN+3CaXkUNeUpm6R2YvO1VivI\\/2nq07\\/xwxJkhpfyW1aTfNFx1AkDVDZwGSFjuVBv2W2anMw8w23lXJAmKBdOASaTuukqep90NfNHpntNNpQqnmFYpWkizvzsjE5B8+Bb3BmzzZrTIo4SQWyMeb5HngHghrp1pbJu+d2Ph+3k8M4FwCfOpGnq\\/d0bHuuQKle2cw3EI3dng2YpWt2AxlPPNVLn7N4nw5b8M0scgiQyGNhfHvc\\/qgvy3UIR2GvC2B43FL4G4HOovXUzg62mvAniYOh0GQjwQ0AaqV\\/lXYSwXyM9hWKI3b0OaiKRuG1\\/1IEEbAwN0qbdZnoxptGDEQDKzE+2c2gY8BR7XR6JMhHCtgOIHqJZMW\\/zZ9HgXhUkbjtl5D0mflZZ6GUMVAHBg2JFoL2Wd8uAxj11LuTm\\/dhAMfuMTnSzIL55Tvuop0b0UgYIrG6vKJzG\\/FCp2aHRtuYYqo8LEIF4HUP3orfXCj1tLfaXm\\/h+N4TK8vOn\\/Uuat7ZidA2K7OCiGWkH5KyeOxANvnQm2nsPlKlX7dH0P+YpDwosrKcu+m4U9hYAmakdD\\/egfvhMsLKTjsNbn06f0ccWLJJtnCLuuH7Qs2aoK622RZazqOQMwCvCQTN9Gf\\/e\\/h\\/en2KQazchowVzT9Yag40iuUbjUitEnxXI\\/PBR2dTAhiz6kNV1i4W7eKedqcZJfNyYMV+fXPfOs44nvViKJPBPkXahP8\\/x6Ji8TuTjEOYqwFynS4rv4kAFzKVmOw8Mcsujdx\\/Q4FASLgIZ5uaUmzuuHZYSVEh2zeBPQya9uUsGSnl93KrLsbTkESqL+QABisGlE+u9oHp0gKjGoGt7eqHrzEpa44UMkXuSGnyHNgqmdm31GT5vELjY8pi+UfTKf2yGjKFpZOiuIRmm9iAxKtMngU+V32ij85vF1LsK3eb8SQHffBJdn4bdFiRiYOEYyECsmzjjSvqMV3HUq3CJIVx1ppE8\\/NeLx7aiyQyyy+tq4QS\\/rQF2\\/VSJFL9xk0rAogrHHPUu9XwmvWfMSjY8kSxy+Q63gNs+Q9RVg0kAFs+NaAevMVA975EA\\/CZg8vXOYZoWt9VN8BEVcHCS2+IBiysCzs\\/7XjzRGzFvWKaN1W4KLTWv8zKvOsbCAVeLNhEr7XIlciMXKAj5+\\/GicK2MTiRBJ7RnPVGOF5Z8FNZ616MfrBGBmjIRBxbiAyTdt6vrjuMDfW5RFd8NglwFPaLjBZn\\/qERTLYob41CCqqQzRygyq6ISVZTYnWW8dKbqrL98q5\\/KukeHz\\/N6YjxrqHuy2VCJLEhYwUwJEaH0hcYtIjN7QpDkphijWJlUlEd\\/l6RXcpmazU69ZhGLjVc2XEODGMeuUyNqYGCPgTliV2wGdjq8QU+EwPdPqXc8ibjL1vqnqmnlDXl5D4aw5+MI7BdGYQp1cNvlVJlh+hRgfadPyv4px1xm4BirKRZjyH5J+O\\/gw1p9+WnXgDOb5Kz1ISxZYLPJhAbQJ2SOfMCIYt3dlzrUJmBiqQRwVb2w02XRNOU2x71dC7oRBCPGIB2S5SeIIoz6hum7a0QVSgYx6uZDqagx2XRy8tFofRwOgariewYQJtgSVOpoxifvu5PGUY2GXbrDwZja95cX4guLw9VWY5UPkUet4Mct3Dj28rHqw7T7k8t5wRoLuCyKQmBJyoNDUU5FdTfiaKf62\\/CMeTCMcR3nvdW6I4\\/MsApvMeTwjpOYFWeZUiI0Z7oNaF7rbjvMkLzScKWBN0Wlg6znJT9X8OIh2PRyBhpViDUb6PDg==\",\"cypher\":2}";
+         const body = "{\"message\":\"2vD5GxLwbAWZ931zK48Px1a6fIm4IU6FvBE9use8u18OH1x2SJoXltjnXDCTVNye7oS3OYAgROGC22+RXWJYTyWIbjctpVDk1uLwcu8Pk3\\/b2ct5rC2Q1N+xZKLN7sj\\/vehgWNGQvnutQepvcsaXd2mZk9LozpmnpMhHEuZsMgegJf1aSRaEMJAFb0VJpSqM1G7ui3yrR9Yu8l6qidBhlobUzgF+iVD8c2t42yMjkjIMDLmurNqZQ6ixkB0A+deb5UjkDmPrSWWzzYH6ESW+0X1zbeYrZ4APYkH5NcbnlsijQov+mPxXB84sPd1bZus7OSj8QBjOQfxmZEZQY7hxHtpXh9Xx8rmeT+McZwyFIwbrBDRZQSd5NMulQQDxmGYHSbPW6TYselVOoxVkonvn0XtqInnLEh0r8igXLFXXsDDLHdVG2clDtT0JJtaczSkw7iQvoGi8Dfhf5dyLSBCiIZM4pEa6s13shcemyej2HCspBol\\/cggtrlL4D2s7nTuG+1DdXS9r03WQaJUovWfOJyPH6mApvs6H61FOv3bgiEM3+3Fu+FGM4B4E6gCXry6ZHzNO30WdzrkdJ7qGP0c0oIfAoypqAVbl6piDvkbTuooCfRRLcqTjKmTw9+y1SrDUK9PmziIzwYUFQtVfxSBXxoJcqP6HzgQ4MWgjb36nT1oR0gDYnrvGmCXHRy4wx6QdZh8IqIgEOdV1yFHXS2XGa0ifauItV9vijkMMqTynsfDXSQi+gUVt98U6Q9B\\/USF8hTvYQkkqYpVAfgH74eV0KAEWfS8XH7V7rl9QOIQpuKHKIDDuRwSWE2vK5OcgrCcpjECWT+QnRg56Nf9InVDs2vc6iLOI\\/RdomlZUKIoH0PxpIMXTNVKeXtP2W6AhLJyzcs5vc3nzcodnl5PDM7uQvmIQqki3ZeQNTnI0A85eGDPKVU2Q469NJqzHcJ3IjAEWROzMXA+I6S7hGhQQ2LaJs01r5o8sO71vqC8\\/enuJona7tGKCbBRKdnyc76\\/39ztOku\\/iDezz\\/wtTBBtfosAjRwK6YJBmQlBWNnWMpso11JXsfYE1rTXMYuiAFT8e+c\\/9I\\/s21YCgjzsG0DK8fV+Iicxh4UOFH6I2mHufyJVDfLF7AUxAZXlwfuc6dLG4uXbs+9DJbOgo8jX0G8dYulolWTDe\\/aiJnQmnxl8mOa\\/iNQuTUWnxi45irZOExEKvdCJMg7E00z6mTnzrIVVH6ITVZWUP+k24PqsRSB+puJDbFzO7rDELqUov6ZZ1oOZY1MOFVq93T+Pg8rm\\/s3IEG4fchmUWjVktZuu0YfpYQtMygIeXsaKDQwgudtmMhBXOBLhteVdLOQf5DWYITuStu4LxwmP\\/tpEHWWWEeZ9XpLjVVjzJqX2sGd5jDzEq66\\/pxnGN4m72Zp0E7nBAyBNcugtQqpZWygYeqnjSRIaizhuvuYgQckEkUgxkSTxLQXthuaxVUPlDzA1N2DJDjtWtxGb2EAzt6AVrTXBD+FZK5rbmWFYtrIcNgs4n13JNoDHgBkQ\\/cz4\\/c+WOiZfpAZQocGumX2tlayPJ4YCiTr+O06SQdPuEXRvQxN5flBHXWwfKoTRR6VceQeg85TttV\\/gLTi21SgbZNAEw+VnyrAOxg8xdEFeLWgVQP5GY+krezzYm9MvYg\\/WZgE4k6bVjo8f7PosVN5zCi31ET6U6fjl685fH91A1T5Z5EVD8+lrVdNpaP2cJMOcogGaW2Ww2QAwd8rBScCwpT07drHcayVRYMyagB3NjMBubBsW+tFHhHutqRXdcCYIwQOHBFhB66mO3Z2JVlnVh2hSYALaCtNgGh+4of4heOnSX2kljd5ZoscToU5bOKrENRBZ48IhP\\/c\\/7hvbG3oVMF5szQV3HAV9O4qKyqk17ZE\\/ZiFBgKgzRcsRkdG5lNwrni1eaRIg+PxQDmw9Rp6GPJ+Rimmz8i10yd5PgKCgFoFeWkifVXR2byD5ZpG2Y4pQJrMWk3629PWn7nIYp4fwH+k+oqrhRknUID+dq\\/Hp+wRfLj9q3XPA\\/E777IVxgj08YuXupQGL8uWwCrxtlXjne8YdZn6ml0BABU1v7MXerfhf8HtmynjHLQlhhQj80KsvNSqf1yOeD9hidNUDTJAaN6vlXiqvQ7S6EQ7nL6B5bVeBPBRipECwuPqiwvCLOP3SOFNs\\/GzgsfPfGoKrLvJE59KnG3pKAjENcZeCwEljCHRE6Mz44W3CpTtE9+WMCuLyARRVmfIsa3pLBuoyzdyLSu9pDrpkeNkgTLqf7AXCzCBZaDM6zCLmmnq1cOJ003Jx3m0sjwEkwuX4hZmUjorDrikpN6m+Ve+eyuYKwDwgLXdJ8FPtjGJwB4\\/1I9Gq3\\/3HWNMgFasw+vbt1PDGDEn2IyYBdyOkKXmbY8aI5MG8n4ZlUxMWMZ3WujlInAvHKkkzeZaZSAfQT+\\/B3VuuEWSay1RI73fFDQdH1dJPXyliUAToq36NL+hq0CVCPhLLpWG\\/LafgzzUSIMBvc9hOk+0TeNLX49UL4zqOm+csGhRUXMMSTHouFlTLWRHE7e3rndorH+rthx81Aa5Y14czZidxKGAZxbqBRuJfV2wCQrIE5TvO5\\/DUPpnFWEWXX0Cp4fg5UY2PimHpLhajucrGlZMR0+aOD0H+K6379HHBU2CMNoPX8MVNSSKAipjcGWD6w4RRtB7GKi2sQAHDviuCOQs0F8HsGA514m6B4bIwFqIrty772gmtVb7QIQE\\/MRKZnxQa8TYty8KSWKtOK3GzmTcYbo7tNA4usVIAmrQMyecLJj3eP0b8ItFfRy9nRRlQaaI0yYqCxCsXZ7yq1Nv\\/NOW4RotfRPQNO08ZM\\/QYYUo4cA5i5pUb7Boe\\/Hi2xy6GC9BnzkzJRrK5Ri+W7BXvGOiw0WC94zSdFszp0NOLOCOYMH0oOLIQGDnudrD0a1WQOFrAU1sx3Z59PPIUlg07zdlF8SWFzNPu1cVaR5IemUC\\/JnF8h9S3eibINmqtWbds\\/PHw3mLBSgZ9JgAP5\\/Qi5ZRxRsA4ATXWIENhrCe2hPKrUMBJswPkFHgjC\\/Q1442\\/dbuRb6ZXyQQzwX8q7I\\/WdDwqejsd\\/f3Ruv9Yu8AFPLVcyx7BQ98WM\\/MamuQFTB2m2iITEjAOqKe7VEMUccUeXmYgYdfqDE+cZotF8t1zI543eKaX4DQ0cg+Z+qAXlTWrzJ5WsoUQPrKNmNrzR9ksehfwN+9B9aCNuuMy\\/O79Hj2nZY0Mxohtnvg5j6ierIONaZQ5ndrKjvYAQv4\\/rWqo0J+qVm20WgVQrN4OFiT0WmzJWxd\\/5iBDT\\/K3XjqBD+d1cP0QQOWJqWgZXD4XUfw8S+Rk9DNmdu3yMKmkYJRh5TQxpUqsJ8DxWa74NcA4\\/fPOQuJOw5gxxx3Vl9sXRhg7J1jRXESBxtn8iZ7tNzWqNPO8mC6\\/uEopxrihCA5\\/Lc0\\/olIEaGQPCf9zi2xdI5DJyU1eGQi+037t3i8MNwV84ikTRe2aKm6yuUmBY0BxUjBFPTVTEcNMmsUTitjc8tQymqyX1NvoPQLXyy9n8Udo1HTQp\\/n8knIJx9hV8uno8XpmF5azxGEMo0sRbp3Uk3TgwRkexMpvH9mRtCvnQ+\\/Xwi92ZEYQa79kXOeZejeTZ2J4fT59nrp3f67i2aYSsHwwweKctY6FqzyyYQpdlUZAWMIRs4xs7wyv\\/ckjlWysNLIp1gz5KoQ\\/8hmDEhEAKAXvlXUGLY59f6SLO6WGWWEuEVekOofZCNCucSaJdrR6sstdkt8l8DXNA4pEriLEgQCwV\\/AfipnqkztSCoeMZ3M8iP4SazxAEScjH4+\\/1RcIEgNoR7YyuxuGwWBdGRMSwLsb9TkasewW\\/bl\\/qnexJVFJYtegON41+Mk\\/Sr\\/EqHWje7aq5TTVH9Wup9R3pKqrSF2rDzq9TjKKLbO0UjB\\/\\/q5JnE7Yuz0xs8qDgGeAprmbIYjc5yL9z9xHWmNqUny8hDDpQ0dgZLNh\\/UNKAuHa6vSdPRdtPMSGLuzuYeAxiLm\\/aIfUcx79qqbZ5zDk8Vfj0yfDXipKPsWzOJ7vwf6Q1OKc0WPJogiq6HkhYVQMQcSX86Ir49FZAqHeTc0wwxx9+LvT9gO5zH823nsCP+VCzNQn+JiVNvmYCX3y8od6jy7WbAUvPONPu5FiMUehaqQBxe1Zp8ny3UfLk8PytkOlq6r1N22146IFqQ6ToVAR68oZmgtiX+HFqVwcfZLb17mhVabsFc\\/i0W1wvwuLEoo\\/5NV7WKpDY5\\/m8C9KWqYvuowPUUgkQ91vcDslBcIanMMHPB2F\\/RcZarQc+g1kcUmU\\/5l3E9IaXmS06C94+3gmJAnfDAenCvFlEoxYEQS1eE\\/30OSaYvPRvtf+RkjSWzfyyg6RHNxpgCl3KhspR6eF\\/i9sl1f4MqE4hHnvc16LzPf4bt9Q4cBhkcXkRxciBLfq2pTf4uG1kqbBBJjv5cICraAVbH1p4DQn\\/\\/bvcHX8wCSvz3HSJ7RQAATJCywM5Y4SQyEbfTIJ9gJ58ItCsTLouj3ugpk5SGtem2AS8UdzEPZ7u9XvITRlQPOi7Ti1wsdpvmDsdVknifH9Ln6XWTIlCrFHefHRHG7PtQQzBQ07oYhbOoP80+iOT3MuV08H3MhMqmtCOU7wqw1enHxUrk\\/r4TqcjdJNoGE7Awzq8hAB4KE+BEvOC+ccSNANZRm4kXK56HnGbz7stXeBmLnFb0nH3t97mOCy5\\/hlvgGj03MjoSjjz3UDeulpJ2TreeJB7I3KEdYW9WRuOqmd0nR6iPZzdEvxUaty3MswUH7IPZcwSQ4LYSAWRywFoRMAsmTRoX\\/yZkH9s1eBp+e6nCV0EiyZzHtYLR9NqXDbnxZpp85YWRpwuynHcn5AoXh8sPVHc9CnVxwmm19Rlo5mNTSucC2CeqSlFcWS+UAJfh0nvmQSXtIqgo\",\"cypher\":2}";
         const request = {
             url: url,
             headers: headers,
@@ -159,21 +163,21 @@ function share() {
 }
 
 //1
-function read426() {
-   return new Promise((resolve, reject) => {
+function read() {
+    return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
          const headers = {
-    "Cookie": "isg=BIiIdVi1fZAXH5BAS_UEXXISU_KaMew76SyDikI55IO5HSOH6kHgyo5fkXNtNqQT; cna=L3SnGUcRg30CAXL+AL9gnRyj",
+    "Cookie": "isg=BJqaNSJOr6iCpyMCLNN3sTgS4US8yx6lt_bRfKQTDC26Fz1RjFu4t3914WWL3JY9; cna=UObCGauxYk0CAX0hoUvvX82/",
     "Accept": "*/*",
     "Connection": "keep-alive",
     "Content-Type": "application/x-www-form-urlencoded",
     "Accept-Encoding": "gzip, deflate, br",
     "Host": "ocean.shuqireader.com",
     "User-Agent": "shuqireader/4.2.6 (iPhone; iOS 14.3; Scale/2.00)",
-    "Content-Length": "1838",
+    "Content-Length": "1798",
     "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
 };
-         const body = "_public=skinId%3D999%26idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DYG%2B52Xxg5lYDAGLrDZD2l9sq%26user_id%3D2032723913%26sn%3DDF018E7E75A621F69E57BDE9F510AAB8DA839FCF%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3D0A3F122D956A2BDCA11CCBBFCAEDABDBDFFAB0F9%26skinVersionPrefix%3D1%26appVer%3D4.2.6.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiMEEzRjEyMkQ5NTZBMkJEQ0ExMUNDQkJGQ0FFREFCREJERkZBQjBGOSIsInNuIjoiREYwMThFN0U3NUE2MjFGNjlFNTdCREU5RjUxMEFBQjhEQTgzOUZDRiIsImV4cCI6MTYzMTgwMTkyOSwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTI4MzUyOSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.Zn4j5xIZESQMj78nqPaTiT0LHdjA8acBcu-IUPt3SnuSVa0E2z1O0BcEB41CCn0O4rpSj0nnlol8Fm1mNuPbNA%26skinColor%3D23B383%26platform%3DiOS%26ver%3D201102%26mod%3DiPhone8%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utdid%3DYG%2B52Xxg5lYDAGLrDZD2l9sq%26utype%3Dvip%26sdk%3D14.3&deliveryId=531&key=sq_app_ad&miniWua=HHnB_XFvUyD75CMp0UX500uK7w27m3JGTJ5GvhHOX46GAJ5vMlMJDjOfqy4ftoH/fRDhkS7SgNdzJKX1KCwXNygLZF0Z5tGjJhzHNQAzTiO85ZODUg%2BNrGvPZiPUt%2BuPCdiKlZ/EeMngKhGHiGXD/INWYiQ%3D%3D&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=98B2C6BA8AD908EA06E977EF2D6A70AF&timestamp=1631283649&userId=2032723913&wua=HIVW_F2CW5frcURffZrgy1KjuKvx38f94rq/kmOTmDVWRtEQ1Ewy5xSErzrblM87ku/sfWVdrZCBvuxo77VXqZKrN7dJvOvoWsNDZ0Nt/H4KwroY/e34IJiXGb0Pd5I44tjQtku83AheXKUL/WHxd3gXDWEShv6Wuwh2xKwXQm/BlhlQjm%2BYmOjr0gmFyQs67ipFoeZjINFLemDNKGPGUYeDb6OCsAb5bXt7S7pS1lcw3FSP86cp/vPBoKCq8A7kfCnRpH0gVo/8uJ4d%2BgmGwwo8Xwqe4P6E342p1Ks0CHTTEHg0PjLgBrIMTOhU4SLb4LRX2pCv3rCIWOL70khx/M8fbyGpJAvVKtVzMIaTijJj2IFLERPf6ViCH7HFMILPsbhUDMFLZbVGy%2BuekqPYn1SHvyw%3D%3D";
+         const body = "_public=skinId%3D999%26idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3D07dLW55LOnME0DV70//51sd3FywJseDq%26user_id%3D2032723913%26sn%3D3B4AE5B91557DDB8EECFA581A3577E291AA70274%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3DE7378C38E217FA98DA7FB182F94665DC8435F406%26skinVersionPrefix%3D1%26appVer%3D4.2.6.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiRTczNzhDMzhFMjE3RkE5OERBN0ZCMTgyRjk0NjY1REM4NDM1RjQwNiIsInNuIjoiM0I0QUU1QjkxNTU3RERCOEVFQ0ZBNTgxQTM1NzdFMjkxQUE3MDI3NCIsImV4cCI6MTYzMTkyMjg4MiwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTQwNDQ4Miwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.geuaco-kjbx8ReAiGEvDG3QWTPsfULKQCxn5xIPmE5QGRH4S-HnKmRBtWZRHUx1FWgBXR-UMN4GmyD0kqzDoQg%26skinColor%3D23B383%26platform%3DiOS%26ver%3D201102%26mod%3DiPhone8%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utdid%3DYTv4Tu4esRIDAEbG6LYJUmVQ%26utype%3Dvip%26sdk%3D14.3&deliveryId=531&key=sq_app_ad&miniWua=HHnB_3llOhpy0%2Bpxk/rx2GI28VPycJC306GHAgWB5x2aapREebX583H/LPhJObkc7MFVlUXoUvIX9Rk41zUobDM7tuIfIirbhQ%2BRRBktD9VEdO/b2ieYae6SOpmIk93XzfvUm&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=EC25960AB9857627C9C378270C3190C5&timestamp=1631404621&userId=2032723913&wua=HIVW_s/HP/Fv3K/V6lTtFF3gmIXhNeyDnVni5wUG5ke3%2BOeUCwo8Ovbu%2BXT5cWkC/867AnLXLISRD0ONpIF0cfXlalSyHQ%2BM4cxaMgcNLIkqDQnbRdlaNqKjSDGkgieLqb1udYCP8Wm4OtcRcXe6EHsLPodptUKzvSnkrYVBkOqa9qjgb0vUk%2BNFRfB1u7rRTyBC7sjNfqQ09B7DOoad19tR28RhFppPWZY/P18IRUH3%2B6dJ/jP/BJFa/nNyNlfrvwQUZZu4AXuAfMdkMUNYKsXViwmNP0K7ECEFSFqOPHuuH6EDd%2BYIu%2BeVgyFlaomSU2R8xyoDwN5hDIxdifEDHv9wj1SJYb%2BVKVzB2w9mUH/r66AaHT9t6rnK66KZHQ%2Bzm1YTP";
         const request = {
             url: url,
             headers: headers,
@@ -187,12 +191,10 @@ function read426() {
                 if (result.status == 200) {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt) {
-                        await read426();
+                        await read();
                         await $.wait(500);
                     }
                 }
-
-
             } catch (e) {
                 $.log(e)
             }
@@ -201,39 +203,7 @@ function read426() {
     })
 }
 
-//1
-function receive() {
-     return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive";
-         const headers = {
-    "Origin": "https://render-web.shuqireader.com",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Accept": "application/json, text/plain, */*",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.3.6.0) WindVane/8.6.1 Shuqi (iPhone10,1__shuqi__v4.3.6.0) 750x1334 Winding(WV_2) WK",
-    "Referer": "https://render-web.shuqireader.com/render/sq-welfare/page/welfare_page_v2/?serviceWorkerOn=1&stopPullRefresh=1&upf=20559&from=ShuqiTab&sdk=14.3&utdid=YG%2B52Xxg5lYDAGLrDZD2l9sq&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2032723913&sn=DF018E7E75A621F69E57BDE9F510AAB8DA839FCF&umidtoken=YG%2B52Xxg5lYDAGLrDZD2l9sq&msv=8.0.0&brand=Apple&imei=0A3F122D956A2BDCA11CCBBFCAEDABDBDFFAB0F9&skinVersionPrefix=1&appVer=4.3.6.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiMEEzRjEyMkQ5NTZBMkJEQ0ExMUNDQkJGQ0FFREFCREJERkZBQjBGOSIsInNuIjoiREYwMThFN0U3NUE2MjFGNjlFNTdCREU5RjUxMEFBQjhEQTgzOUZDRiIsImV4cCI6MTYzMTgwMTkyOSwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTI4MzUyOSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.Zn4j5xIZESQMj78nqPaTiT0LHdjA8acBcu-IUPt3SnuSVa0E2z1O0BcEB41CCn0O4rpSj0nnlol8Fm1mNuPbNA&skinColor=23B383&platform=iOS&ver=210301&mod=iPhone8&statusBarHeight=20.000000&skinVersion=1&wh=750x1334&soft_id=21&utype=vip&skinId=999&idfa=B69897E1-9858-46B8-9463-4A461DB9CF98",
-    "Content-Length": "1270",
-    "Accept-Language": "zh-cn"
-};
-         const body = "src=&userId=2032723913&platform=1&appVer=4.3.6.0&placeId=111111&timestamp=1631284497&sqSv=1.0&sign=d4553b95bb9d15f549fb1247b4571745&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26stopPullRefresh%3D1%26upf%3D20559%26from%3DShuqiTab%26sdk%3D14.3%26utdid%3DYG%252B52Xxg5lYDAGLrDZD2l9sq%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2032723913%26sn%3DDF018E7E75A621F69E57BDE9F510AAB8DA839FCF%26umidtoken%3DYG%252B52Xxg5lYDAGLrDZD2l9sq%26msv%3D8.0.0%26brand%3DApple%26imei%3D0A3F122D956A2BDCA11CCBBFCAEDABDBDFFAB0F9%26skinVersionPrefix%3D1%26appVer%3D4.3.6.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiMEEzRjEyMkQ5NTZBMkJEQ0ExMUNDQkJGQ0FFREFCREJERkZBQjBGOSIsInNuIjoiREYwMThFN0U3NUE2MjFGNjlFNTdCREU5RjUxMEFBQjhEQTgzOUZDRiIsImV4cCI6MTYzMTgwMTkyOSwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTI4MzUyOSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.Zn4j5xIZESQMj78nqPaTiT0LHdjA8acBcu-IUPt3SnuSVa0E2z1O0BcEB41CCn0O4rpSj0nnlol8Fm1mNuPbNA%26skinColor%3D23B383%26platform%3D1%26ver%3D210301%26mod%3DiPhone8%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98";
-        const request = {
-            url: url,
-            headers: headers,
-            body: body
-        };
 
-        $.post(request, async (error, response, data) => {
-            try {
-                $.log(data);
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        })
-    })
-}
 
 
 //1
@@ -340,8 +310,8 @@ function jsshare() {
 
 
 //1
-function jsvedioreward20() {
-    return new Promise((resolve, reject) => {
+function jsvideoreward20() {
+     return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
          const headers = {
     "Accept": "*/*",
@@ -349,11 +319,11 @@ function jsvedioreward20() {
     "Connection": "keep-alive",
     "Content-Type": "application/x-www-form-urlencoded",
     "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/2.00)",
-    "Content-Length": "1721",
+    "User-Agent": "shuqifast/1.0.5 (iPhone; iOS 14.3; Scale/2.00)",
+    "Content-Length": "1757",
     "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
 };
-         const body = "_public=idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26net_env%3D4g%26umidtoken%3DOXNLxI5LOi0hKTV70PfosZTPJLbwWMaW%26placeid%3D111111%26user_id%3D2032723913%26sn%3D6D0BAA0BDD6E7797B9C3DF914A1BB96AC562DDEC%26msv%3D10.0.0%26brand%3DApple%26imei%3D227F80890B767D337CFDD98EC7E2CAFD2E93FCEF%26appVer%3D1.0.4.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF8yMjdGODA4OTBCNzY3RDMzN0NGREQ5OEVDN0UyQ0FGRDJFOTNGQ0VGIiwic24iOiJmYXN0XzZEMEJBQTBCREQ2RTc3OTdCOUMzREY5MTRBMUJCOTZBQzU2MkRERUMiLCJleHAiOjE2MzE4MDMxNjMsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2MzEyODQ3NjMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.2o2lUkADEPHqWAfk7P1y0idQD-K8m_3a-zFL0l1s2pZCyYnEjJ9xdHbWTlgMRG4AM26srPnzIIj2fymZ223BxA%26statusBarHeight%3D20.000000%26platform%3D116%26ver%3D210309%26mod%3DiPhone8%26wh%3D750x1334%26utype%3Dvip%26utdid%3DYTtsdxbeZFYDAKRn2sNXOyit%26sdk%3D14.3&deliveryId=980&key=sq_app_ad&miniWua=HHnB_th4r%2BBA6WLKwaysGoZWvK/CuL5NlQtT0YoTn2HWdQjL0uWQ6xNgRViZUgZPyflT09/Rxj75GIg8TJEdkG4%2BRAvP6OinOiOjrupv4o/xX8ZoPctXVCa/4hTTBIkWnehAAl7f53ckk6AUxC1qULBBWCA%3D%3D&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=F5FF99FD491B33BABFB8F2A9198D425F&timestamp=1631285460&userId=2032723913&user_id=2032723913&wua=ktgi_fUeX47%2BLpqR5TJgRWHdXq98W38ntyP/HHstek3eBzRRvd1DcFkq7EPM/ApaDV%2Bm0nycPxS1GCZcVdF6SPEGdI8eNwemmMKMsN%2BiTJ%2BId59UB2Hd7khT0qP9Vw2JQPz9MFUZGka3O8E1lMu4UHDhGy6CWAyR4AmIKx15G2UcGWz5HTu1tIaBpZjT1wFl1qujFYWMDd1eBnvQ1tlqjE11gR877NKrRm03rGR74%2BZoDnbiQtpJACP%2BpX4ugJwuTeMUaSAZJ/p28pVGma4CY5cGkeWvh/GzVOcwF9gQ6/KJzMYwONRTQ7vvSzcSRT9QymlJgyfh/sDo%2B0jiwUC4g6yXjzM0tizS2L5YX72ocIMtgxaXcWXcAEHXDycGIIy/9XNAL";
+         const body = "_public=idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26net_env%3D4g%26umidtoken%3DFypLOQJLOjuy6zV70OlGqZy6L/qc0wPM%26placeid%3D111111%26user_id%3D2032723913%26sn%3D6D0BAA0BDD6E7797B9C3DF914A1BB96AC562DDEC%26msv%3D10.0.0%26brand%3DApple%26imei%3D227F80890B767D337CFDD98EC7E2CAFD2E93FCEF%26appVer%3D1.0.5.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF8yMjdGODA4OTBCNzY3RDMzN0NGREQ5OEVDN0UyQ0FGRDJFOTNGQ0VGIiwic24iOiJmYXN0XzZEMEJBQTBCREQ2RTc3OTdCOUMzREY5MTRBMUJCOTZBQzU2MkRERUMiLCJleHAiOjE2MzE4MDMxNjMsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2MzEyODQ3NjMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.2o2lUkADEPHqWAfk7P1y0idQD-K8m_3a-zFL0l1s2pZCyYnEjJ9xdHbWTlgMRG4AM26srPnzIIj2fymZ223BxA%26statusBarHeight%3D20.000000%26platform%3D116%26ver%3D210331%26mod%3DiPhone8%26wh%3D750x1334%26utype%3Dvip%26utdid%3DYTtsdxbeZFYDAKRn2sNXOyit%26sdk%3D14.3&deliveryId=980&key=sq_app_ad&miniWua=HHnB_H8sYyyIoItYg98FmSoVel94FReoMyDHqDiiCtfx0Q2OhaSE2CuxUcd6MFureoD/C73p5oReIXp/0rf8DOqjCz0Q%2BSVh0c%2BMqlVcKRVZT2xsFh3Qv2KlKw3GQkDUefGxgk6B%2BLoRB9ydUPQNOitlPpQ%3D%3D&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=8489541B29E5AB3875FB3E6547E8349F&timestamp=1631287997&userId=2032723913&user_id=2032723913&wua=ktgi_NNDozjzAblUP8/Qx9SZ49UeQQYE%2Bc9BAqZNFIUdw1NXbLJu5krl%2BkZ5t0QA8gfDHzDuOquozwS5UjcGr/ee56SryovOaE5uAazu%2BjAMbjqSB9O4OoAUGJY2bycTMVqq2P4KjCQ9KKaLoGP7KVBOOP/ALO9Im%2Bc2TcBsqLenbNwokaLAxUuZK4E7Zc9%2BErYD5Ffs%2BXf%2B93QnjyzJcyXN/c9iOWCVXw4h9XtL2CoWiiAVjtRLiJJC3aQVzlPCxgrlq2Pv8aQ3SQNw6yAZqio6c%2B97q8ujY4Ql6g6F%2BGimJzjPKQyfnYvDDgevSYujyuTTiJy8hkhunumMKt6IxpBF1f5XBNOQPPNayR53cG0M3N1G5RFdAPf7h7NLMZRsMP0ulhn9M5kA%2BTsdCk6ardtms3Q%3D%3D";
         const request = {
             url: url,
             headers: headers,
@@ -367,7 +337,7 @@ function jsvedioreward20() {
                 if (result.status == 200) {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt) {
-                        await jsvedioreward20();
+                        await jsvideoreward20();
                         await $.wait(500);
                     }
                 }
@@ -421,30 +391,23 @@ function jsread() {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-function read() {
-    return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/readpage/pendant/lottery";
-        const headers = {
-            "Accept-Encoding": "gzip, deflate, br",
-            "Cookie": "isg=BDIyVn-9h1VRsrtp7nV3yEDjiXwUwzZdhviC__wLa-Xtj_aJ5FO0byale60z5K71; cna=DrCfGa6NT3ACAatTLPVy9s0J",
-            "Connection": "keep-alive",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "*/*",
-            "Host": "ocean.shuqireader.com",
-            "User-Agent": "shuqireader/4.3.0 (iPhone; iOS 14.6; Scale/3.00)",
-            "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
-        };
-        const body = "_public=skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26umidtoken%3DXblVsgqHUiwDAN7BcQnm2A/p%26user_id%3D2916901745%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26placeid%3D111111%26msv%3D8.0.0%26brand%3DApple%26imei%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26skinVersionPrefix%3D1%26appVer%3D4.3.0.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTUzMDkxMCwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTAxMjUxMCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.XflxZv-XcfSRCM8xOPe9cTov51UPtAsEGN8uNnu59Gl-GykDa9PiD6hLSmBft0gUKXmJZ-jUuql5wFtceuB8zw%26skinColor%3D23B383%26platform%3DiOS%26ver%3D210107%26mod%3DiPhoneXS%26statusBarHeight%3D44.000000%26skinVersion%3D1%26wh%3D1125x2436%26soft_id%3D21%26utdid%3DXblVsgqHUiwDAN7BcQnm2A/p%26utype%3Dvip%26sdk%3D14.6&deliveryId=707&key=sq_app_ad&miniWua=HHnB_U3vcrUclZBGI8xgdUJ8toyc%2Bcu3V7L6584b4LJIqAo9rKD4xOidudtaDEkcZkA34sDtTnXBwQcsP06dfIT%2BwJny1aqZ4O0U9X4YOywUGltpZN1pnlmCAZT/aayksQ%2BsR&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=678&sign=D68E7080F23E0123C177D2F090C22836&timestamp=1629014445&userId=2916901745&wua=HIVW_5GYaKaLjxLSXInwlxv92LU3UYSySyk5Zb1vIqiSKppZ3k/5ybmHegQJtI6SFnGMca6CRW8KEDuZTBpJG3oWo9wQTHmeBIvTt1/3VesMgxwl/6ump9ia7jvKwqSpZjY7Hq5JON%2Bzk/QhpAfitngKoSxhPKHLDAzpbRZTU06Vs7egZTirraGpMjB9685eeUXqfQt%2BAo%2BaRqFym8u40CdVOPOALEMLGQGGCmQFS9VolpMGFfhS4Iw4vELFzXblrumStKtxJZPnJw7EJ7px/sw9POkjSsxGRc2IEwjcocqaYJ2ueMxvhZzim/Cvk8v2wOFKbIewXvqnvtCG/mnPdf8grdg%3D%3D";
+//1
+function receive() {
+     return new Promise((resolve, reject) => {
+         const url = "https://ocean.shuqireader.com/api/prizecenter/xapi/prize/manual/receive";
+         const headers = {
+    "Origin": "https://render-web.shuqireader.com",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Connection": "keep-alive",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept": "application/json, text/plain, */*",
+    "Host": "ocean.shuqireader.com",
+    "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 AliApp(shuqi/4.3.6.0) WindVane/8.6.1 Shuqi (iPhone10,1__shuqi__v4.3.6.0) 750x1334 Winding(WV_2) WK",
+    "Referer": "https://render-web.shuqireader.com/render/sq-welfare/page/welfare_page_v2/?serviceWorkerOn=1&stopPullRefresh=1&upf=20559&from=ShuqiTab&sdk=14.3&utdid=YG%2B52Xxg5lYDAGLrDZD2l9sq&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2032723913&sn=DF018E7E75A621F69E57BDE9F510AAB8DA839FCF&umidtoken=YG%2B52Xxg5lYDAGLrDZD2l9sq&msv=8.0.0&brand=Apple&imei=0A3F122D956A2BDCA11CCBBFCAEDABDBDFFAB0F9&skinVersionPrefix=1&appVer=4.3.6.0&skinActiveColor=0F9970&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiMEEzRjEyMkQ5NTZBMkJEQ0ExMUNDQkJGQ0FFREFCREJERkZBQjBGOSIsInNuIjoiREYwMThFN0U3NUE2MjFGNjlFNTdCREU5RjUxMEFBQjhEQTgzOUZDRiIsImV4cCI6MTYzMTgwMTkyOSwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTI4MzUyOSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.Zn4j5xIZESQMj78nqPaTiT0LHdjA8acBcu-IUPt3SnuSVa0E2z1O0BcEB41CCn0O4rpSj0nnlol8Fm1mNuPbNA&skinColor=23B383&platform=iOS&ver=210301&mod=iPhone8&statusBarHeight=20.000000&skinVersion=1&wh=750x1334&soft_id=21&utype=vip&skinId=999&idfa=B69897E1-9858-46B8-9463-4A461DB9CF98",
+    "Content-Length": "1270",
+    "Accept-Language": "zh-cn"
+};
+         const body = "src=&userId=2032723913&platform=1&appVer=4.3.6.0&placeId=111111&timestamp=1631284497&sqSv=1.0&sign=d4553b95bb9d15f549fb1247b4571745&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26stopPullRefresh%3D1%26upf%3D20559%26from%3DShuqiTab%26sdk%3D14.3%26utdid%3DYG%252B52Xxg5lYDAGLrDZD2l9sq%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2032723913%26sn%3DDF018E7E75A621F69E57BDE9F510AAB8DA839FCF%26umidtoken%3DYG%252B52Xxg5lYDAGLrDZD2l9sq%26msv%3D8.0.0%26brand%3DApple%26imei%3D0A3F122D956A2BDCA11CCBBFCAEDABDBDFFAB0F9%26skinVersionPrefix%3D1%26appVer%3D4.3.6.0%26skinActiveColor%3D0F9970%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiMEEzRjEyMkQ5NTZBMkJEQ0ExMUNDQkJGQ0FFREFCREJERkZBQjBGOSIsInNuIjoiREYwMThFN0U3NUE2MjFGNjlFNTdCREU5RjUxMEFBQjhEQTgzOUZDRiIsImV4cCI6MTYzMTgwMTkyOSwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTI4MzUyOSwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.Zn4j5xIZESQMj78nqPaTiT0LHdjA8acBcu-IUPt3SnuSVa0E2z1O0BcEB41CCn0O4rpSj0nnlol8Fm1mNuPbNA%26skinColor%3D23B383%26platform%3D1%26ver%3D210301%26mod%3DiPhone8%26statusBarHeight%3D20.000000%26skinVersion%3D1%26wh%3D750x1334%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98";
         const request = {
             url: url,
             headers: headers,
@@ -454,14 +417,6 @@ function read() {
         $.post(request, async (error, response, data) => {
             try {
                 $.log(data);
-                const result = JSON.parse(data)
-                if (result.status == 200) {
-
-                    if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt) {
-                        await read();
-                        await $.wait(500);
-                    }
-                }
             } catch (e) {
                 $.log(e)
             }
@@ -471,27 +426,29 @@ function read() {
 }
 
 
+//1
 function timeupload() {
     return new Promise((resolve, reject) => {
-        const url = "https://jcollection.shuqireader.com/collection/iosapi/reading/upload";
-        const headers = {
-            "Accept-Encoding": "gzip, deflate, br",
-            "Cookie": "isg=BBgYkueLzeNc6OFnwPftXvbB40KqAXyLn_CVz1IJV9MG7Y7X-hHiGkGHIaNdZjRj; cna=DrCfGa6NT3ACAatTLPVy9s0J",
-            "Connection": "keep-alive",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "*/*",
-            "Host": "jcollection.shuqireader.com",
-            "User-Agent": "shuqireader/4.3.0 (iPhone; iOS 14.6; Scale/3.00)",
-            "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
-        };
-        const body = "_public=skinId%253D999%2526idfa%253D00000000-0000-0000-0000-000000000000%2526ustatus%253D1%2526first_placeid%253D111111%2526net_env%253Dwifi%2526umidtoken%253DbCxLedRLOls1JDV7SC1arg%252BRtgLyo21t%2526user_id%253D2916901745%2526sn%253D9FFC2945934B0127160C769D23FE8D9606CB0FAE%2526placeid%253D111111%2526msv%253D8.0.0%2526brand%253DApple%2526imei%253D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%2526skinVersionPrefix%253D1%2526appVer%253D4.3.0.0%2526skinActiveColor%253D0F9970%2526manufacturer%253DApple%2526session%253DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTUzNDc2MiwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTAxNjM2Miwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.pQFbLw8WrDYjlNnOeO7kfBHqW7-LZyZjZ-Mwk03SWaYrfQ2QspcF26DKI4wsmDChqyHv3SJ_GxVlhObZu1Yvsw%2526skinColor%253D23B383%2526platform%253DiOS%2526ver%253D210107%2526mod%253DiPhoneXS%2526statusBarHeight%253D44.000000%2526skinVersion%253D1%2526wh%253D1125x2436%2526soft_id%253D21%2526utdid%253DXblVsgqHUiwDAN7BcQnm2A%252Fp%2526utype%253Dvip%2526sdk%253D14.6&key=and_log&readingList=%5B%7B%22startTime%22%3A1629016791%2C%22readObjType%22%3A1%2C%22attr%22%3A2%2C%22readObjId%22%3A%227370011%22%2C%22readChapterId%22%3A938736%2C%22readingLen%22%3A6%7D%5D&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&sign=67E3DB2C6F946BEF9D018989F4B3AEFC&timestamp=1629016797&user_id=2916901745";
+         const url = "https://jcollection.shuqireader.com/collection/iosapi/reading/upload";
+         const headers = {
+    "Cookie": "isg=BJqaNSJOr6iCpyMCLNN3sTgS4US8yx6lt_bRfKQTDC26Fz1RjFu4t3914WWL3JY9; cna=UObCGauxYk0CAX0hoUvvX82/",
+    "Accept": "*/*",
+    "Connection": "keep-alive",
+    "Content-Type": "application/x-www-form-urlencoded",
+    "Accept-Encoding": "gzip, deflate, br",
+    "Host": "jcollection.shuqireader.com",
+    "User-Agent": "shuqireader/4.2.6 (iPhone; iOS 14.3; Scale/2.00)",
+    "Content-Length": "1462",
+    "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
+};
+         const body = "_public=skinId%253D999%2526idfa%253DB69897E1-9858-46B8-9463-4A461DB9CF98%2526ustatus%253D1%2526first_placeid%253D111111%2526net_env%253Dwifi%2526umidtoken%253D07dLW55LOnME0DV70%252F%252F51sd3FywJseDq%2526user_id%253D2032723913%2526sn%253D3B4AE5B91557DDB8EECFA581A3577E291AA70274%2526placeid%253D111111%2526msv%253D8.0.0%2526brand%253DApple%2526imei%253DE7378C38E217FA98DA7FB182F94665DC8435F406%2526skinVersionPrefix%253D1%2526appVer%253D4.2.6.0%2526skinActiveColor%253D0F9970%2526manufacturer%253DApple%2526session%253DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiRTczNzhDMzhFMjE3RkE5OERBN0ZCMTgyRjk0NjY1REM4NDM1RjQwNiIsInNuIjoiM0I0QUU1QjkxNTU3RERCOEVFQ0ZBNTgxQTM1NzdFMjkxQUE3MDI3NCIsImV4cCI6MTYzMTkyMjg4MiwidXNlcklkIjoiMjAzMjcyMzkxMyIsImlhdCI6MTYzMTQwNDQ4Miwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.geuaco-kjbx8ReAiGEvDG3QWTPsfULKQCxn5xIPmE5QGRH4S-HnKmRBtWZRHUx1FWgBXR-UMN4GmyD0kqzDoQg%2526skinColor%253D23B383%2526platform%253DiOS%2526ver%253D201102%2526mod%253DiPhone8%2526statusBarHeight%253D20.000000%2526skinVersion%253D1%2526wh%253D750x1334%2526soft_id%253D21%2526utdid%253DYTv4Tu4esRIDAEbG6LYJUmVQ%2526utype%253Dvip%2526sdk%253D14.3&key=and_log&readingList=%5B%7B%22startTime%22%3A1631404604%2C%22readObjType%22%3A1%2C%22attr%22%3A2%2C%22readObjId%22%3A%228408905%22%2C%22readingLen%22%3A21%7D%5D&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&sign=60FCA562C704A585D4E52332AFD3C941&timestamp=1631404625&user_id=2032723913";
         const request = {
             url: url,
             headers: headers,
             body: body
         };
 
-        $.post(request, async (error, response, data) => {
+        $.post(request, async(error, response, data) => {
             try {
                 $.log(data);
             } catch (e) {
@@ -501,9 +458,9 @@ function timeupload() {
         })
     })
 }
+  
 
-
-function jsvedioreward10() {
+function jsvideoreward10() {
     return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
          const headers = {
@@ -530,7 +487,7 @@ function jsvedioreward10() {
                 if (result.status == 200) {
 
                     if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt) {
-                        await jsvedioreward10();
+                        await jsvideoreward10();
                         await $.wait(500);
                     }
                 }
@@ -541,104 +498,6 @@ function jsvedioreward10() {
         })
     })
 }
-
-
-function vedioreward() {
-    return new Promise((resolve, reject) => {
-        const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
-        const headers = {
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept": "*/*",
-            "Connection": "keep-alive",
-            "Content-Type": "application/json",
-            "Host": "api-access.pangolin-sdk-toutiao.com",
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-            "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
-        };
-        const body = "{\"message\":\"2bZ0lmlRrgswoqrpFX8+qvvWu17D6dWpIFEX7YtXJisqA150Egopda2XXQVncsOSMLJuFHweuapowARas3uqNdTHBf9p\\/wY7SDVMuIt\\/ibqIfGEXdiwKrOVGXMaUmYP7asVr2KRka6rHevJfHtObxu2JRWFpMcSiLeKipFPq\\/0ENg6SgcILzH7uXBIwv3EVucv\\/kPciEmOvQc4Jk58XoUlWqz6my2IsdkJeQDeXlfU\\/naD6QUBf6\\/YmWNiMvJOodnIkdHKKTFHF783H1448Rag3IRvxbCQ2FVxxRCNNnf\\/lXMZPNAwuU0d6QJG3yu1D22gy6bnS3goSbvtqKuZVbHXkhEFiCHrgPFRh3f92T5qP5Lw2xXXGZLiAAVoogQvYYWUClZgRPTA0xfsX+SK3ULuwsRhPBb\\/eVVHnWOKCg++2p6E\\/8Q3FoAf1u\\/B1T7oKoR2VkQ+7sfgk4F8K3Xg0rduP6l1xa4f8+I5mL\\/QaVdBvHm4a9XpBPJLSWWDFxckoSKcvoSPACPAEOVqu1LVVCtX1LIiJ4cXQgL3r1S1cYEs6byXJvemToe3GDfVoG4DzNMPwPNloHXFtv8vcC+6kFwq+vraY4eX5gzODHuDQ9V2gu26jK9XWGSsXXPw5R3tXdXg9o\\/jp+WUTDRGvFMy2GKMqaNZp5wXdHuSOyJFNUtBB0TPKwRAZUeZ097uHntKRPz4Ehb6P\\/JGNCvMDas5qZtMC6hSHQZj6jQris16eHLbYtwsgkK1sPF53WKZ6VJdYrhZj9N\\/4n+IBbOZOumbA9CvOJJXQ2KeflbsUm3lOOjl+Ua9\\/9Vdn5f2Rh0MTsDI94hQ7dWsqyIjE2rbkUvPsgWNc4qYhFUgaO7tnZ6EzGJfRyw8AASE5AuGcONjCeoq5nkso2d5xDGfOQKVZz3s1xYiF7LsNoRsyLKXrQnBvdKloAfX5V\\/Gvz26IBlSBeyNnE8dQtT0N03X2qjzEOCgCDGyiibV\\/DGjcer6T\\/G6XdWaUrnG+zBs+PYiQ1\\/6On4K0yFkYsEqj53WmX6ar5N6ihrxg76nU08sjrnfOi6GCUHOBNqONJzqOifPWgn83zpxkVtPPFfcVrZdQfgY2bP+lA+tlrBcNSY2IEEVFx8nqH0HzTXmkw+s+cw9Wi85TZ\\/qP6n0TvF8sjuZ4cogVJuOJcNvqDyNYbo9LOpXDoHRslUNRZCY7yn5QQ1csArZNLqqsuTjCYGqVNLNWoqH8yxCeof4a3kLn6Axn06rDEYavoqnznd\\/NIE8ESe89RP+M4+mwwbkPbt5E9+wV1ZOfwb6iAUKH+c4yPzaHVwqbPoQwDpKWOTcOyuW2MN1EfXCdW4ws9ejdPmnFEgX\\/e1HcLIpiGRWlGmpQmYbfoWgyu\\/uo5U0AN2xxPXV4X09FSLwIdaUfsf8pHMENZpt9c11V95xiBKRaT8+W1gfbFu7ERRIWaD8sJOx3k59oXUvQ2tl+pZ5P6p5SaJhj9GTM7+dNV7PR1eHF4PE3qXlyi15K+gZiX8p2YnNYwgRO\\/xpaEyPsUAEXiH\\/i2MmYZyCZGUtqSr\\/bJQPHZTFCJ3CfbucOGBdSc09rSRyH5TnVzZz0\\/IDptEigYf+nFGrbk0FVlbpGE93Ie2TFkCxARMjVsZdxpdNhiIqmVAJiDTW5v0wpmRd66sYbrMbEdj28rUGsF\\/cTRNFPDPQ\\/2WRyIeYP1mWubUFGwh1zXCwuI1GkQRfj5r80l6Fga\\/1yNFBGVijc7XbPK9dsyyYbQXFl3VA9Q9Xadic\\/9lIKfbJ796ZbYIW0htwjFPIHcRzoMBNmKMLknqYuf1qT1UtIjSzCqAMyCpQ87Hapz9Nk9QiG+X2y7gYmmMRTeEwQo2RjHphtQiImao4wzWMx2MeX7pyw928O1P6V8ta7c9TQUBKUTuo2kENJ0cxOJxl8ZwKmNDs7VByj4Ynhb7+nhvGrykCAkLOhqhhyBXWe+zj8XZF+f1IKRJe\\/y+oo9uU1qtN5a4WYBcHNaTHPbYP6yE4+NbroeL2r5uI5YRhY3+7Y4tMWT82knjFRckh895hLJevl6jYk\\/aruquUAz94E0mTQi1K1XaUE1fVgpSoRu54FW2AlFeHBniS39CwBCE5pnk2JgsUZErJxlixetQ7AUQ6\\/90aDEpV4s8fnjHhslE3IsuLdpV6ya5lluAwm8euJ085tPsTs8uO9WS5FlbSQh9Rk6NiS\\/cM+\\/uH\\/YOt0B2yMo7lgceK4zlXPGlRCVpfnyB1KjbVbET1WY8DGrCngtgdFeiim6ggbgdIVgE2WYnzfzZ747etd+\\/vAnX3t8+xDWmF9ZYwkadTDDSAGiPrryJDt+cS5B1afOxWXNBMVHAvq6cIMk81ZuIMJK88x39vIRM6YvBb5reCrvTw8iuKBo31v44tOXMRSHBqDJgLDuZDkTuqGC75nIrakKjD27B\\/Nq8HVv3UBkVdWmnOy6tLrfypNC1cMTIW84bijRdzjDWeAsdHBMFn\\/QHY8BYcIoEsqd8Wu0y3IL7qDoHbXK1CvvfXeJDLYRwaAyyk4VTiArbeGyPTAkZz0hRK8fMv\\/Bg7AUm2i557VbhRTrgFI1KUHVEP9C+aZbHOObEG+A\\/wf+G3CRnXwNSazROKEjnhD3PP7xWAWTRqEMZc76GZ6YEy3aat34j\\/85SlTh3h4JPsh\\/0uQp59IcO5tdhfZ5ZapMx1ZYScQw4f9LdztN4WEiXkEdYUOce2Q56MrEeP\\/NptOWyne0uzDR7qqx1B0Ndr0te\\/CnzaBSEx0p+DQNsusTkQZ1CadpRo5ZPD5ZCLb\\/\\/gg5BaJj1ndTcqaNUzp9mL6Xate0lbHbMYjPlJX4btnZ8VPSS3ditz3q1Xt5c20gne7piSyxv7p8rc\\/mmSjQjvEpOeZEXkwPa9ZdSdr2xZ94YAY9BTt9mT\\/ypXWub7s32SXfFe5ffLC\\/7PI6N7JCtjjUvpGdfQRuJlbs\\/kjT\\/jb+TksfAQPgSjNtRDgy+g\\/Ue7AhVAiEVITDEFnGfi10HfeXZ8T0Y982nUqiJSe\\/+R\\/x8YvmFs+OZY+6yKyNGzoOZN83sI\\/aFrnr1hcZPwWIWAka0+i8b37l66LLNsV+GvQ1mHZY5wAsJASiCqIJCfCSC39bhXU6S8dU9U1O2w9rYJ13QOsQ5ZyYTYv6EqooiT4Rh7sya92WCpmeqjgvA+gsW32uBanc\\/M\\/o+jJSoQ5ZbBL7ONNUs28n\\/eKC4dZ4KiNaX0IOHDX7yuV06zYbXgyoBhQFm+uAy7UJ78EjC8ZkWtFwVZVucwB0rxdWngOv81IydobWI+5\\/dWR1pLByzaCPqnmnHX4bRFYIlvC4cqjN20kfVxUzwTRQ+4BZlDu6lO4JX6E96koqJi5osOFBKjNTZMHzluP\\/FafRSC7IsGwXzGM9wx7TX\\/1j+Q\\/kkPLm1ul20grTdNr5mfXfQieN428urwW2Z5ExjnAUDVshd0uxIHaie2lLM\\/tMEpup16pWPKeo9Kn5eHsp+cGQouwz99m1IaqJywnLChpBELX\\/oZGVC0Ogrq68iO77qaYKqv4effHBd7LzSceJ715lEwJI7bFpMHOg5D4S6xaHGMD3I8BeHXw3WRcSy1NscrB46r6VSTV7rzIKj6Gm9IM9fng56eYiQdSVouXehoHoXAn9fnutY2eJi9QpCrmiAqV7TTO9nl\\/LI9U64MW2xJevyyUyGQr\\/adXQpeYVgccQ5V91tubiyND5kl8gzMpvj2gUdVwID48QFYnpP+\\/Je5uO1zrSnwJBp1U6Oc8E8Acc9ZzqxKyiNxGXLLcWJBFb4qA0Npmel4QMxjTmMXE2z9ooTKdZ8KfUuGUFL0nrv7O3JJ522ohLViLTO+EtAnuyv3EwbBStTdDg07JzG6Q6D8IO14D+QyZh31tjwTncLpzJBqcuYBZxqlqQ0h1UIcThng3Xt4+lc1PYU2Aq6xJFV4APwoyQECuxiyVOFUs8xpAJOqw43Vf6TcUk4F1eB8Tmz8XwfD10Y9hGeaVToKwsht+oAw0vc4lvzVZt2wPVhhejK\\/2DYn0H41\\/TVfgzgU56IeOKrFMgVHqisSnxjgX1sKqBeYAr5AwyDtNx5dAT52HUBWdYEtJaM+RiGvsLaaOQR9ng+uIDC26YDplw\\/63jK81+ptSBJyU4b1J1kdzrzrY5TEoe0SGjgZUeKOIUHDDDxA66+Lt67FfpuBPHhF\\/8XvvpsvraBIkua2OV8\\/XNk+is6f5nFr0e4Ug2Wwms5yjLLxMUdcJXnnw0yd8qujsDrbzQB3zH0advwd02VbALQSI935eoyLOYrYHJMzLyGGFLM9LtERcBsGaSTHVluaxTpb8UWVnAoy1d1nAqBbJUL4ZDmbaIrgVLgY1r14ZQoeioKL2ZJzxWbIcOzEhaxK3eZv0OIPGAFzOaFg1oDoe8UhQAU83oIBzSKsN7kmt+KnazgMypng3HT+ZcJy+jDhBBDsqinXg+V3h5pSQsoyaBPj0QqaHG8IzfHvY\\/SozZSeWMkLd7gEF6zgDiVtaYPO1BMiXOQGivcwduO2tK0DYqOU72gQ+enF+PzmzHrmFx8\\/YXI9J7Q8G3zfn3A6Y2w4+ululr8i1qvrsHw6NBEucUnFHDSnA+zyO98aBE5ye6XfxMRXTt99cvh04uMPrw7\\/awl4bL25WY1eIdcp60xuaH+wiocnWBlyGz9P4AeWQQ81vwalbkz5gBrz7P7U\\/+kRJvnewHJIaDPs9wnGw==\",\"cypher\":2}";
-        const request = {
-            url: url,
-            headers: headers,
-            body: body
-        };
-
-        $.post(request, async (error, response, data) => {
-            try {
-                $.log(data);
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        })
-    })
-}
-
-
-
-function vediorewarddraw() {
-    return new Promise((resolve, reject) => {
-        const url = "https://api-access.pangolin-sdk-toutiao.com/api/ad/union/sdk/reward_video/reward/";
-        const headers = {
-            "Accept-Encoding": "gzip, deflate, br",
-            "Accept": "*/*",
-            "Connection": "keep-alive",
-            "Content-Type": "application/json",
-            "Host": "api-access.pangolin-sdk-toutiao.com",
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-            "Accept-Language": "zh-Hans-US;q=1, zh-Hant-HK;q=0.9, hi-US;q=0.8, en-US;q=0.7"
-        };
-        const body = "{\"message\":\"2uv3ebdXXFKiXnKva+iBawMt9UGGPhtQXpTxGzK+eJnpoQQ4cFravHWNzOgEvzytd+2IMQ8iFF2wmXIO2nrV6LolWNuMy54XR6URewzOnJj\\/11NDMrjsGIe3whrVRmFxQk5TbP9\\/6LukXB9+KchHKr6xvN\\/xBh0aiH8gg30x4VIP87tsviZozre1WwXZRof1fzUnoQQv40SKDMUKFWTyNF3sUAZtJiUReeyHnL3UorwInJF9J19qnFoyytyh0mPnV5VnC4QJ+AzXLRG3mClKgy0d\\/pJPGys7etkNxMwJ\\/VGgAxF\\/SrRmZqexVXc2lQEyF+5cf+iwsqy1Wa4cf1mheIGzCoqoTwWjuXYYKGmCPsxqPqssFuhxQhTrqMuvrQcmuVUCBV3r2BWPS9tdccnJBhg+RirbqJkZkDEVpPh606Xe4EQXHBKFSb7XeE2Rd9U0qFM\\/qL+T2pW3ZT9U+uYcIEdawbeHs9WNQSyegCmV5v5pS\\/aF9+yJfiKrOIXv5u5XLW5IK5\\/Ep+2aPIy99t66Uskp1cvPcns5spYOISWQsg1Mpe8A1C2oPuu16d15zEKv6L6oR+j+ePhoji9VfMWkxLh4Ez1+N6U4miC66dZxM94iYf5jUJX6JRPFIAaOxV\\/YffJdZr1pkdPj\\/zDqJPQ+eh+gzctfUeIAzgHaeB43ndVs8ykPIZV5VxM8+s7bYguSnSQgzVUtyd0YKuhXLJsxHWU2boOGI3DZqHE4kdvFbi2jtEvKyvkrXryAKcVEhVRZr0CyfPcdKd4pZRZNXCDJBqcZV03KCj0LPKxknh5zW21xj7peOqHSeeOacz69izYDy37EuozWstv0cc1v7LHRwwqGeAg5W8VO+LZoMC+CB3zM22uAQ3QDql90\\/Ovpf1PR+W28YTu5lPs5hqzq8FdtXkj1wVN8nlGmrVfxxu82uvd+VJ6zRfjJ+D4HdElJPnvRhVw5jRsUM4E\\/wOWTWkTfWf5A5KXcQYgs5Mo3Ch5YkhaN2t+5Rf+E0l6fgIqhc89frE2TA7Tnxq3CuraPwbFuD3tDI91rm2yAP4s1EIBi4CANcLXd5qYN4ymxHLb8vEDWxO2GLPjmMyAHP0er9lhnL8lWwoYd4gQ2kTaexSedTW0z7vz6ue5Wz4SDgVB6lpfRQr2pdb1Ks9nx6JK1rus+a5CykI7fQu4tfyeTQSDk5YYlWHTutZO+JB1h8UoUznpM2vC9CQrgXAyFYcSfDNGItylg3wa7a9W5yX\\/kUaZLDXKLJJYdl43NnV2Et+kTwsz75vAQLOn+u88xAS4W6PMUXycF2j69rtwWkHtMwUodvaZb5qrlFBz2is2k00g1wwtbeOfUiDkGlqwtY+Bkp44IOWNRD8kBAGA2diDNI6IZGV6k2oPbzvJpqWf7yjXW5a59w1MPM7zCPuCzJfbZHzf\\/tskqgYGr1DsVpMg\\/tBech2YyB+yULCUfdnIF3khjHgbUuefwiXRcNvZdBCb4WeKcNR\\/fj6mtmJAUToYPpEsPrKoqCBH2kBJeouVO0w0Z30nLFfH4rFAZLpVr48dsfSo07Vdfn2jdPxsXrjo6d8PMBmoirfqWPN3LW2tXM36WWYwMRVRqsv4juh\\/zftxkRD5UlyU2nymGwpyVyTmnSiyHEsgR7deDdYWvg5cm9Q1ovEMbj3NQbebkZvbR+xTAqGsndUIGzAy9MzYkOfSifMqIS4W4acsFitL9qUmHtAfqxURbyTiFsRnBK0KNtQzuvM7rFzds6bgmOccRSLRON7LCY7+Yb8MX2rfYvAaW244wWRCcb79gzzSdghvTQksK1Sx+8tA3FTUkugHC\\/kAxq4EHa3aDMqxgh2bb\\/N\\/qQ1x4f6sf3vr2Rius\\/zFqjqjP1Hxlc6AJ8ts3X+4jqDfUgWv2o3KycSYT7qzucoCLiKNbAxusCCmAt6fDM8mWdseGaZHQvgkGSIhTduhipWaKP0ef6MVzXJif61eTAO3yeZs+qtUsktFo+QAjdym3OdRZUphJVDhjbc2fiyEUglS9Eua6MGLWAk3vn2Hvv4hdLrAx0MuRef7L7CxWLszyVxHIQVrE0Mej+To6MiEer2Lf5sTM1Gq6KON2jeFcrqqB\\/pu\\/jw2\\/QaGW\\/Kn3pstYEWIiAZR1bg\\/TRo121juadjuoFxQfnZnwE13J8ljyIzhPDlVy65vkDPcc6XS7OnNknd\\/9HvLTiJpRtZWbs7HHzaviWkQtl+ZzmIUv5Fr3Cu3KIFbDNgSVX6Zwai94PfE2ePApeCerLPVmX8OwFE58uV5oEPghT9fB8UzEJRsV4dD2OR26wDU5nKE064CLTDEZRkWq+Om+WkJ\\/gunfZmx+ffndV0ZEyz7ONWMcG1TVJovtTnc88GOjL2z+ZO2RKcq1FDhkk160nCM\\/Py\\/WaPzmcbW0YRlVlkywQmn4ZbZ8yYYXJll1+Rv4FYlrZMPzPoj0kvMOUo5zpR6ieKIKa5yo+g4r8g70H2NCBbtaA8TocSbhwNwYjG\\/\\/aVGN9avSHh9YzVgxAlG8qfbEDsX9VAetYU+awuXtLxvFf2J6VbzpvhumFi4PRSGqmZ4gqw2L+zc39rVtiNwm2CpdHlf\\/M1BIXYtVPpuwjP0TotpiLMfoIctMOBef\\/sZtXUTmKnGEB4nJJUIKkJR6hVCIqELwl8yk9O\\/Pml0G\\/HhqskNngq0qKhDeGRAmW5jNTF6GbrpOxwSUYv\\/30zZWUi\\/GxdsZqPmXOSfzfoiuWmzhkbT7iplLsSWoT\\/sLFVZQKR\\/5WkprQ6b1hWNAYGFb2gqAezRzONxq644kiascMIbCIwjvCEMXSw9Q2UM7pmjJCm50Zs6u1ryPjcPVBN74qvtTpXjNiA6c1WI8\\/QO3y\\/VjCd29d8mSbQpn\\/AgbDL7GeerOK\\/FphOvbVbnhfCiI1k3Fesw3N091uolh\\/khzP\\/sHlHTykDI7co\\/UW6z+3A7H1+RproggNhJzdpmGXxrdFgPCz61iDG3N7tJPEQ\\/NHoCFiL9TEWT\\/mWS7GKsnauqCMYdMRMqockwYZ4rbdEycVBdKs5PVX06iaVikWnvs3\\/bod+38NjmhE83AjgXabyebslIx8pvb6uqCO3M26WaJhd3XBnG0V04v9aknFY1mZ0JD9649bLceRLHVxlaWlT\\/C\\/UC1oU8ATcRI6Vsz3pezyEELWgPl9rkixWVsaoTFaCnZi7KdkR9FqN5vfn0BNJbkzzH30EK6gfzfsnFIcJrRxWF9SEaJp28Ek+WngUtVpHJk6x6oHkVma1\\/myjSluzZTyPbIBeUiTJRoJqTlQ7BIjICCj4ilg2pGiZAzOIJ9\\/sN6M96lVcJu4huPPeSvCvYW8SEvqlE2mDfYAc5eUeJ+3HdZqmKDwKjZYNYpum3GSR272KZKs9IXMUqGN+LH3GlIOoFh9feA88\\/Nlj1BM25gEY8iO9fvfNmy4ZZqPFEfeN1Lowfd+Gph3yemiCO3PAA5+9PYir7Bn9KQ5afgXQA9qCrmxETLMd0+vKOrc3lPfFC7SsUXdFhHjjE1cfvzbbOGbvE7z8NxjPpU4RhHGuEzGoMwdHMl6aSRzZn2EpA4IgIIGT0DtMO9rITJW+VooeqdcJal+YhTBoFX\\/ZqGLSt5nRw86qqWCDOq3+fT8y5m3rLbXtNllG8X81BXvhm35MxPQ6WM3h4RrJgFWmCN7NXKYzcnN2LmANlDh17vFuzMlqxnW65WeTQ++YEgOas5ihzo9gKJo7PWm2ORbCjoIi6HYgThiYIkH\\/A+DJUp0Ti+iSptH8FLwiHsHXHGWu4AwQl1w1SAcdHLyUyC235m6e1roXY4bAvsfss9MRvaPoEvoRME1P+djGe4aD\\/FgG7CjJ3RvaQx2aVqnOLcVxn9ffOkleS4motnEhZvaxdCtRdQZ0f3HS6DfEzFP79t\\/eQOPTXZHlZAnNlRrqusCF1ztWQ0zBhXweeqP6Tp\\/5VmvsD8ocshJmf26iU9uk+fPZ4wTYT8Z3bPnX3b4iCbpU8kiNALU3rI9E3RFwPT+5Mf+KLgnaceppS6\\/imDhh\\/4SuiPrx+e2cwZQuRn5Roh3VOtLxwhkIeVgoqXagp9Nld+Dc3vxXtIE6U2JY+5vIVvr7iMVrww0vLG1iLUN7Hk2pT8Gh3hW65\\/t6E8nziTRz5VeZj+xpYtI6\\/\\/0Q+AKnypdryJyLzQjfZCanGECqyf3hcVHm37qBR+KZESDYVjppUgFz8oD4Fe7YMfz4N4O18BcUt31+W5sPpKQw9b+k9dhxVGx\\/EyUmt5LY4k607DAAhuKRZCJ8pJW48bDfh6sMmydolsLP+NkUsZph\\/wTWLJJM+AiX5QaXvtL6jlyO4O4DItAch0FCZHkJDkDGOuP3bbIEdvyvROSYngghMN0kThmGVZzCwfFOg5E9pJe8HaX\\/yOgw1w4FdgRmQ3r54dzb\\/biFK\\/JiH0hZa1lM18KDmN85ne+FTueqIGe+iCturmvJL9WfkcY2WZ\\/GoDsrzPEeBaEkc906ybpZDpltjUGrwUs+6zkedWNM4LOJAaBdsBCOrvt9Rq2b\\/MVI9koh+dSynhCdzIkYVL8LhbpGrvKwcEeZrANGYg8XqTSSIDdGtlKRalRrzAySs3S8b77KyawH+baH64eLYghWYJDFX8R6SwQaP9e\",\"cypher\":2}";
-        const request = {
-            url: url,
-            headers: headers,
-            body: body
-        };
-
-        $.post(request, async (error, response, data) => {
-            try {
-                $.log(data);
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        })
-    })
-}
-
-
-
-function drawreward() {
-    return new Promise((resolve, reject) => {
-        const url = "https://ocean.shuqireader.com/api/activity/activity/v1/lottery/draw?asac=2A20C07RJ9F51AOEFSNHDR";
-        const headers = {
-            "Origin": "https://render-web.shuqireader.com",
-            "Accept-Encoding": "gzip, deflate, br",
-            "Connection": "keep-alive",
-            "Content-Type": "application/x-www-form-urlencoded",
-            "Accept": "application/json, text/plain, */*",
-            "Host": "ocean.shuqireader.com",
-            "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_6 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 Leto(JSBridgeVersion/3.0) AliApp(shuqi/4.4.8.0) WindVane/8.6.1 Shuqi (iPhone11,2__shuqi__v4.4.8.0) 1125x2436 Winding(WV_29) WK",
-            "Referer": "https://render-web.shuqireader.com/render/wx-activity/page/lottery_page_red_package_rain/?serviceWorkerOn=1&asac=2A20C07RJ9F51AOEFSNHDR&spm=a2oun.page_render_sq_welfare_welfare_page_v2.%E6%8B%9B%E8%B4%A2%E7%8C%AB.turntable_in_0&sdk=14.6&utdid=XblVsgqHUiwDAN7BcQnm2A%2Fp&ustatus=1&first_placeid=111111&net_env=wifi&placeid=111111&user_id=2916901745&sn=9FFC2945934B0127160C769D23FE8D9606CB0FAE&umidtoken=sexLoWNLOqLnEjV7RCUGcO68DNG%2Bz6if&msv=8.0.0&brand=Apple&skinVersionPrefix=1&isTeenMode=0&appVer=4.4.8.0&personalized=1&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTUyOTg1MCwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTAxMTQ1MCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.m7JoGGvNpHsmlq1HvAechgvZI1jbUPXTT4B5YhSBvCAsFru7IaIeyYRLbEoxcc9LReAM6f6haj8jLw0tbKf1Dg&skinColor=23B383&platform=iOS&sqiOSUniqDeviceId=6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5&mod=iPhoneXS&ver=210802&skinVersion=1&skinActiveColor=0F9970&statusBarHeight=44.000000&wh=1125x2436&soft_id=21&utype=vip&skinId=999&idfa=00000000-0000-0000-0000-000000000000",
-            "Accept-Language": "zh-cn"
-        };
-        const body = "wua=HIVW_TB8cyKJuhWjB2xlQurypI5kuvo%2F9AD711q3jpJQCWsJNv4fq7zpFB1wtzj5oyVV06fN7qncBgRyAiZ%2Bq34MNU1q2hO6Ybas%2BaH9laokU2sLg6itc9c%2BB642cbshDYUOQTvv1JosGC2scvgd0Q30DR3N3ZvTRx2M9AbfWcTGz%2Fa6BNhLrDakmYc%2FleyEDs838jt1OCA3PNoJJvfgt9tYlmu94wFjuoKdwAzIGlJU7ksaPbA%2Fyz7BLv%2FLxJS5pikvxr0Q4qrGqJFD85O3XCnupN0D1%2BE54zVXC%2Fgg6Pe5bIQs%3D&ua=&userId=2916901745&umidtoken=sexLoWNLOqLnEjV7RCUGcO68DNG%2Bz6if&secureDeviceType=ios&secureAppName=wenxue-activity-proxy&asac=2A20C07RJ9F51AOEFSNHDR&timestamp=1629011857&activityId=311&lotteryNum=1&sessionId=1&useGoldcoinType=0&sqSv=1.0&sign=b3243867382bdca486cef64931b847b8&key=sq_h5_gateway&_public=serviceWorkerOn%3D1%26asac%3D2A20C07RJ9F51AOEFSNHDR%26spm%3Da2oun.page_render_sq_welfare_welfare_page_v2.%25E6%258B%259B%25E8%25B4%25A2%25E7%258C%25AB.turntable_in_0%26sdk%3D14.6%26utdid%3DXblVsgqHUiwDAN7BcQnm2A%252Fp%26ustatus%3D1%26first_placeid%3D111111%26net_env%3Dwifi%26placeid%3D111111%26user_id%3D2916901745%26sn%3D9FFC2945934B0127160C769D23FE8D9606CB0FAE%26umidtoken%3DsexLoWNLOqLnEjV7RCUGcO68DNG%252Bz6if%26msv%3D8.0.0%26brand%3DApple%26skinVersionPrefix%3D1%26isTeenMode%3D0%26appVer%3D4.4.8.0%26personalized%3D1%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyOTE2OTAxNzQ1IiwidXRkaWQiOiIiLCJpbWVpIjoiNkMxOEFGRkQyNTYyQ0Q1MEQwMTVFQzI4OUVEMkZDQUZENjE0MkFGNSIsInNuIjoiOUZGQzI5NDU5MzRCMDEyNzE2MEM3NjlEMjNGRThEOTYwNkNCMEZBRSIsImV4cCI6MTYyOTUyOTg1MCwidXNlcklkIjoiMjkxNjkwMTc0NSIsImlhdCI6MTYyOTAxMTQ1MCwib2FpZCI6IiIsInBsYXRmb3JtIjoiaU9TIn0.m7JoGGvNpHsmlq1HvAechgvZI1jbUPXTT4B5YhSBvCAsFru7IaIeyYRLbEoxcc9LReAM6f6haj8jLw0tbKf1Dg%26skinColor%3D23B383%26platform%3D1%26sqiOSUniqDeviceId%3D6C18AFFD2562CD50D015EC289ED2FCAFD6142AF5%26mod%3DiPhoneXS%26ver%3D210802%26skinVersion%3D1%26skinActiveColor%3D0F9970%26statusBarHeight%3D44.000000%26wh%3D1125x2436%26soft_id%3D21%26utype%3Dvip%26skinId%3D999%26idfa%3D00000000-0000-0000-0000-000000000000";
-        const request = {
-            url: url,
-            headers: headers,
-            body: body
-        };
-
-        $.post(request, async (error, response, data) => {
-            try {
-                $.log(data);
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        })
-    })
-}
-
 
 
 
