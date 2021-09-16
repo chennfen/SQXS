@@ -15,8 +15,8 @@ const $ = Env(jobname)
 async function all() {
 //nodejs运行
 //任务顺序
-//签到，视频426，分享
-//极速版签到，书城，分享，阅读，收取
+//签到，视频426，
+//极速版签到，阅读
     
     await dailysign();
     await $.wait(1000);
