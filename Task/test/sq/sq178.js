@@ -33,13 +33,13 @@ async function all() {
     await jsdailysign();
 
     await $.wait(1000);
-    //await jsshucheng();
+    await jsshucheng();
 
     await $.wait(1000);
     //await jsshare();
 
     await $.wait(1000);
-    //await jsread()
+    await jsread()
 
     await $.wait(1000);
     //await receive();
@@ -193,7 +193,7 @@ function share() {
 //111
 function jsshucheng() {
     return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward?sdk=14.3&ustatus=1&umidtoken=YT1NqcEwK0kDAI%2BGL48c7Szp&net_env=wifi&placeid=111111&user_id=2126444763&sn=2C5A6C6F79EDEE477A8EE92D86B6FEC191D7782A&msv=10.0.0&brand=Apple&imei=C380A3F4FFAB32B625BC8EDA1FCD9ED4413D31C1&appVer=1.0.4.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMTI2NDQ0NzYzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9DMzgwQTNGNEZGQUIzMkI2MjVCQzhFREExRkNEOUVENDQxM0QzMUMxIiwic24iOiJmYXN0XzJDNUE2QzZGNzlFREVFNDc3QThFRTkyRDg2QjZGRUMxOTFENzc4MkEiLCJleHAiOjE2MzE5MjU5NjQsInVzZXJJZCI6IjIxMjY0NDQ3NjMiLCJpYXQiOjE2MzE0MDc1NjQsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.YgxrpaC60lAvT7_kqJgiRrGgHLakhW-Sx5UlRAUU3aNo8Sh_XyWieLh7xPNQig-BQo_LDj1HB22zDxtqj6n-4A&statusBarHeight=20.000000&platform=116&ver=210309&mod=iPhone8&wh=750x1334&utype=vip&utdid=YT1NqcEwK0kDAI%2BGL48c7Szp&idfa=B69897E1-9858-46B8-9463-4A461DB9CF98";
+         const url = "https://ocean.shuqireader.com/api/activity/v1/task/reward?sdk=14.3&ustatus=1&umidtoken=I9ZLo8pLOmhBKTV77VrP1lC5AlmRlrlq&net_env=4g&placeid=111111&user_id=2044136133&sn=CCE87A06F2B1F47D663903C8C171FA7603DCB676&msv=10.0.0&brand=Apple&imei=DC6A889762EA396DE9133B0A31269B9E97EB1706&appVer=1.0.4.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDQ0MTM2MTMzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9EQzZBODg5NzYyRUEzOTZERTkxMzNCMEEzMTI2OUI5RTk3RUIxNzA2Iiwic24iOiJmYXN0X0NDRTg3QTA2RjJCMUY0N0Q2NjM5MDNDOEMxNzFGQTc2MDNEQ0I2NzYiLCJleHAiOjE2MzE4NTU3MDIsInVzZXJJZCI6IjIwNDQxMzYxMzMiLCJpYXQiOjE2MzEzMzczMDIsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.9YkaPXdjbWRkWeqGVIjnDyz9l_vWzN9jF2H7xdJBOAschGR8uW5XCv0KbMGGGQLD0_8wBY1JGt1163vCl9apvQ&statusBarHeight=20.000000&platform=116&ver=210309&mod=iPhone8&wh=750x1334&utype=vip&utdid=YTw4563%2BWfwDAKlLqcf78uF%2F&idfa=B69897E1-9858-46B8-9463-4A461DB9CF98";
          const headers = {
     "Accept": "*/*",
     "Accept-Encoding": "gzip, deflate, br",
@@ -204,7 +204,7 @@ function jsshucheng() {
     "Content-Length": "100",
     "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
 };
-         const body = "actTaskId=344&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&userId=2126444763";
+         const body = "actTaskId=344&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&resEncryptType=-1&userId=2044136133";
         const request = {
             url: url,
             headers: headers,
@@ -262,7 +262,7 @@ function jsshucheng() {
 //111
 function jsread() {
    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.3&ustatus=1&umidtoken=mFZLl7NLOsVYtjV709NHREz%2FPkqEakXR&net_env=4g&placeid=111111&user_id=2044136133&sn=CCE87A06F2B1F47D663903C8C171FA7603DCB676&msv=10.0.0&brand=Apple&imei=DC6A889762EA396DE9133B0A31269B9E97EB1706&appVer=1.0.4.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDQ0MTM2MTMzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9EQzZBODg5NzYyRUEzOTZERTkxMzNCMEEzMTI2OUI5RTk3RUIxNzA2Iiwic24iOiJmYXN0X0NDRTg3QTA2RjJCMUY0N0Q2NjM5MDNDOEMxNzFGQTc2MDNEQ0I2NzYiLCJleHAiOjE2MzE4NTU3MDIsInVzZXJJZCI6IjIwNDQxMzYxMzMiLCJpYXQiOjE2MzEzMzczMDIsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.9YkaPXdjbWRkWeqGVIjnDyz9l_vWzN9jF2H7xdJBOAschGR8uW5XCv0KbMGGGQLD0_8wBY1JGt1163vCl9apvQ&statusBarHeight=20.000000&platform=116&ver=210309&mod=iPhone8&wh=750x1334&utype=vip&utdid=YTw4563%2BWfwDAKlLqcf78uF%2F&idfa=B69897E1-9858-46B8-9463-4A461DB9CF98";
+         const url = "https://ocean.shuqireader.com/api/activity/v1/activity/pendant/lottery?sdk=14.3&ustatus=1&umidtoken=I9ZLo8pLOmhBKTV77VrP1lC5AlmRlrlq&net_env=4g&placeid=111111&user_id=2044136133&sn=CCE87A06F2B1F47D663903C8C171FA7603DCB676&msv=10.0.0&brand=Apple&imei=DC6A889762EA396DE9133B0A31269B9E97EB1706&appVer=1.0.4.0&manufacturer=Apple&session=eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDQ0MTM2MTMzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF9EQzZBODg5NzYyRUEzOTZERTkxMzNCMEEzMTI2OUI5RTk3RUIxNzA2Iiwic24iOiJmYXN0X0NDRTg3QTA2RjJCMUY0N0Q2NjM5MDNDOEMxNzFGQTc2MDNEQ0I2NzYiLCJleHAiOjE2MzE4NTU3MDIsInVzZXJJZCI6IjIwNDQxMzYxMzMiLCJpYXQiOjE2MzEzMzczMDIsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.9YkaPXdjbWRkWeqGVIjnDyz9l_vWzN9jF2H7xdJBOAschGR8uW5XCv0KbMGGGQLD0_8wBY1JGt1163vCl9apvQ&statusBarHeight=20.000000&platform=116&ver=210309&mod=iPhone8&wh=750x1334&utype=vip&utdid=YTw4563%2BWfwDAKlLqcf78uF%2F&idfa=B69897E1-9858-46B8-9463-4A461DB9CF98";
          const headers = {
     "Accept": "*/*",
     "Accept-Encoding": "gzip, deflate, br",
@@ -270,10 +270,10 @@ function jsread() {
     "Content-Type": "application/x-www-form-urlencoded",
     "Host": "ocean.shuqireader.com",
     "User-Agent": "shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/2.00)",
-    "Content-Length": "737",
+    "Content-Length": "731",
     "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
 };
-         const body = "actId=355&miniWua=HHnB_PX06qBUryuqzc/plaiwAC9YzasTd6TCZXC6YffGObbbsH0g0qM6yDYrD2Ln%2Bx8zcJfXVS5zkrmJQJ/gv2EIM2rSV%2B8sRjLJLzJCY1IGtWiz2nc/6SHoF5cCnJTlbgFC%2BFyVbFxl2YrD/dZwH3APADg%3D%3D&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1631769009&userId=2044136133&wua=ktgi_Hnq3jCHNafNLUq84W7/X%2BBt3plQN/gOaI6YnB6TckkWRHDFoTjQb76y8rgn4QbWQguPT/qbyA1IqAs27T3isskjFx3DyjGh7XC383KkNhJgsXN17HL0hZ2rgdD2ZEbnRDo4tPoeY3t%2BXnP7%2BpSFdx9BHeZoij/PBX2rSKwsGbeBLmsLW4jAUw1SxIYB0s77I3BlDJPBy9BvrH2dHH1bJYy6n3fq5sQZ39TUKSAhrs/rYWUJFw78cA9pz1wf/qQUuqY8YaC%2BqKTnSwBTGffcDqyzRUhZpxqAed3VCxzA2%2BOJz3HSokjmo%2BbHzn2iUfOk7qUS4uflNFl7YoevUZt2Lol91H32fSONESBWXKcRzX1DZ7q%2BmYCA5QRynZLciMPaj1V1ITZNrMi43%2BSZC%2Bbze7A%3D%3D";
+         const body = "actId=355&miniWua=HHnB_ifEixbMaLN4Aqf3sWPRUDc/kAL8torIiARRb7FWydXnuq2enQwRyqq%2B4VwQYe8Se3qMScBi7F1KQ9XSzEh5SBbcsNMYgykPeOv%2B/TP8pM5Tv2boZuXWnRGaoo7cK8CeJl62tvxWJSlpfoPqv3eMmYw%3D%3D&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&timestamp=1632237697&userId=2044136133&wua=ktgi_2ZJ%2BoSMyw/f74m9GXWVQ1ig1Xcx6gZHX%2BaCB2Vah2bAdINz/r/UKDLAXtgHCNRzruCScX2iqk0HZHZvL5v768Yx9RDKiLEc0d2tchwK/I3u%2BiQ/iNOoDADnWqotZHhnqKE8giWFN59mgMIjdvM7YjDidksXkmSh27YSIe97IwrW6bgf4Ag8h932JvDtSY/CuvtzyzJZ1dZdU3ZBiWs%2Be%2Bls3ZnOKWpPcIHdOVg5yESW3MyNHHnZRPwUBzT6ESx6YoB1SJQk3pSGxd07rPP3z8dwcv4FnKLhH%2B/h1htC8bVaLBl0MEfA26YFsvLdAyTQGl%2BPxC/nF9/IAZ4tK/QJj9r1AFaZenpIM6nXAw5Mzo8dMqZqFgbdLEiCdit3PEnS3HbSd0fLSQR/43lyZ8oz13w%3D%3D";
         const request = {
             url: url,
             headers: headers,
@@ -326,86 +326,6 @@ function receive() {
         $.post(request, async (error, response, data) => {
             try {
                 $.log(data);
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        })
-    })
-}
-
-
-
-
-function jsvideoreward20() {
-    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
-         const headers = {
-    "Accept-Encoding": "gzip, deflate, br",
-    "Accept": "*/*",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/2.00)",
-    "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
-};
-         const body = "_public=idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26net_env%3Dwifi%26umidtoken%3Dn8hLRnJLOoy3BTV715HY5oC4YhJ%2BaMcb%26placeid%3D111111%26user_id%3D2032723913%26sn%3D6D0BAA0BDD6E7797B9C3DF914A1BB96AC562DDEC%26msv%3D10.0.0%26brand%3DApple%26imei%3D227F80890B767D337CFDD98EC7E2CAFD2E93FCEF%26appVer%3D1.0.4.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF8yMjdGODA4OTBCNzY3RDMzN0NGREQ5OEVDN0UyQ0FGRDJFOTNGQ0VGIiwic24iOiJmYXN0XzZEMEJBQTBCREQ2RTc3OTdCOUMzREY5MTRBMUJCOTZBQzU2MkRERUMiLCJleHAiOjE2MzE4MDMxNjMsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2MzEyODQ3NjMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.2o2lUkADEPHqWAfk7P1y0idQD-K8m_3a-zFL0l1s2pZCyYnEjJ9xdHbWTlgMRG4AM26srPnzIIj2fymZ223BxA%26statusBarHeight%3D20.000000%26platform%3D116%26ver%3D210309%26mod%3DiPhone8%26wh%3D750x1334%26utype%3Dvip%26utdid%3DYTtsdxbeZFYDAKRn2sNXOyit%26sdk%3D14.3&deliveryId=980&key=sq_app_ad&miniWua=HHnB_nq6XKSBcNOE4aozofH6Po3nFmjJJqYsiB/6NVD2%2BEKmZA30naCRYwMFpcV8yB2CGGgEydp1weGPXqDLIsc90gepiTl0qP1sTIPmlKNhkJlVvHr3CcZ7dB1nGIJRL893d0GR%2BJOK6y/nFTeuHYOPwEg%3D%3D&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=FA6F605EB4578AE85985FA62B2F2B2C8&timestamp=1631406982&userId=2032723913&user_id=2032723913&wua=ktgi_Rm6JbRWAtoGJqpznOPyDWXWbYA%2BNVF4lYiRo1UhgTcOoUPMEhpCS%2Bikh8Wy7jOzUUywZwM/CBgH1lUSqaoJXXARTMNLqKfJcfLYR8E6cL8QvUcJFvumHAnGZiQ20ZuKe6UACqkVdFG7x8c6wjn3/kqO/Uqd8QHd6yHiGchEzjtevExGCaMcRuD9H%2BYjy32SIoRZDxNqeqbfFN0YtZVZkSjzZINR2aC4ROISOlnpnlF1oPMrwCTT9BNKLK91fThvx9/apXg022VqlFEIIPaVgvQuj8FjC0qz7aQe4RzI6f1REbXUBxAUcbt94%2B1mZALQn63tOm%2BfiKmiF9Q4crRcVRfv1JavH3oguJK1jTGuNnBpWvUqz5EqGsmzmkaPi3IwY3qkee2m%2Bg2Hcwl8ECiNHrw%3D%3D";
-        const request = {
-            url: url,
-            headers: headers,
-            body: body
-        };
-
-        $.post(request, async (error, response, data) => {
-            try {
-                $.log(data);
-                const result = JSON.parse(data)
-                if (result.status == 200) {
-
-                    if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt) {
-                        await jsvideoreward20();
-                        await $.wait(500);
-                    }
-                }
-            } catch (e) {
-                $.log(e)
-            }
-            resolve();
-        })
-    })
-}  
-
-function jsvideoreward10() {
-    return new Promise((resolve, reject) => {
-         const url = "https://ocean.shuqireader.com/api/ad/v1/api/prize/lottery";
-         const headers = {
-    "Accept": "*/*",
-    "Accept-Encoding": "gzip, deflate, br",
-    "Connection": "keep-alive",
-    "Content-Type": "application/x-www-form-urlencoded",
-    "Host": "ocean.shuqireader.com",
-    "User-Agent": "shuqifast/1.0.4 (iPhone; iOS 14.3; Scale/2.00)",
-    "Content-Length": "1721",
-    "Accept-Language": "zh-Hans-CN;q=1, en-CN;q=0.9"
-};
-         const body = "_public=idfa%3DB69897E1-9858-46B8-9463-4A461DB9CF98%26ustatus%3D1%26net_env%3D4g%26umidtoken%3DOXNLxI5LOi0hKTV70PfosZTPJLbwWMaW%26placeid%3D111111%26user_id%3D2032723913%26sn%3D6D0BAA0BDD6E7797B9C3DF914A1BB96AC562DDEC%26msv%3D10.0.0%26brand%3DApple%26imei%3D227F80890B767D337CFDD98EC7E2CAFD2E93FCEF%26appVer%3D1.0.4.0%26manufacturer%3DApple%26session%3DeyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMDMyNzIzOTEzIiwidXRkaWQiOiIiLCJpbWVpIjoiZmFzdF8yMjdGODA4OTBCNzY3RDMzN0NGREQ5OEVDN0UyQ0FGRDJFOTNGQ0VGIiwic24iOiJmYXN0XzZEMEJBQTBCREQ2RTc3OTdCOUMzREY5MTRBMUJCOTZBQzU2MkRERUMiLCJleHAiOjE2MzE4MDMxNjMsInVzZXJJZCI6IjIwMzI3MjM5MTMiLCJpYXQiOjE2MzEyODQ3NjMsIm9haWQiOiIiLCJwbGF0Zm9ybSI6IjExNiJ9.2o2lUkADEPHqWAfk7P1y0idQD-K8m_3a-zFL0l1s2pZCyYnEjJ9xdHbWTlgMRG4AM26srPnzIIj2fymZ223BxA%26statusBarHeight%3D20.000000%26platform%3D116%26ver%3D210309%26mod%3DiPhone8%26wh%3D750x1334%26utype%3Dvip%26utdid%3DYTtsdxbeZFYDAKRn2sNXOyit%26sdk%3D14.3&deliveryId=980&key=sq_app_ad&miniWua=HHnB_th4r%2BBA6WLKwaysGoZWvK/CuL5NlQtT0YoTn2HWdQjL0uWQ6xNgRViZUgZPyflT09/Rxj75GIg8TJEdkG4%2BRAvP6OinOiOjrupv4o/xX8ZoPctXVCa/4hTTBIkWnehAAl7f53ckk6AUxC1qULBBWCA%3D%3D&platform=116&reqEncryptParam=%3A&reqEncryptType=-1&requestSrc=shuqi&resEncryptType=-1&resourceId=717&sign=F5FF99FD491B33BABFB8F2A9198D425F&timestamp=1631285460&userId=2032723913&user_id=2032723913&wua=ktgi_fUeX47%2BLpqR5TJgRWHdXq98W38ntyP/HHstek3eBzRRvd1DcFkq7EPM/ApaDV%2Bm0nycPxS1GCZcVdF6SPEGdI8eNwemmMKMsN%2BiTJ%2BId59UB2Hd7khT0qP9Vw2JQPz9MFUZGka3O8E1lMu4UHDhGy6CWAyR4AmIKx15G2UcGWz5HTu1tIaBpZjT1wFl1qujFYWMDd1eBnvQ1tlqjE11gR877NKrRm03rGR74%2BZoDnbiQtpJACP%2BpX4ugJwuTeMUaSAZJ/p28pVGma4CY5cGkeWvh/GzVOcwF9gQ6/KJzMYwONRTQ7vvSzcSRT9QymlJgyfh/sDo%2B0jiwUC4g6yXjzM0tizS2L5YX72ocIMtgxaXcWXcAEHXDycGIIy/9XNAL";
-        const request = {
-            url: url,
-            headers: headers,
-            body: body
-        };
-
-        $.post(request, async (error, response, data) => {
-            try {
-                $.log(data);
-                const result = JSON.parse(data)
-                if (result.status == 200) {
-
-                    if (result.data.chanceCurrentCnt < result.data.chanceMaxCnt) {
-                        await jsvideoreward10();
-                        await $.wait(500);
-                    }
-                }
             } catch (e) {
                 $.log(e)
             }
