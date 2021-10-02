@@ -43,6 +43,7 @@ async function all() {
 
 
 //1
+function dailysign() {
    return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction";
          const headers = {
@@ -77,6 +78,7 @@ async function all() {
 
 
 //1
+function jsdailysign() {
   return new Promise((resolve, reject) => {
          const url = "https://ocean.shuqireader.com/api/activity/xapi/signin/v5/signInAction";
          const headers = {
