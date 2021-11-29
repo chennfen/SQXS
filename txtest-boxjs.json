@@ -7,7 +7,7 @@
     "apps": [{
             "id": "txstock",
             "name": "自选股&微证券",
-            "keys": ["TxStockWxHeader", "TxStockAppUrl", "TxStockAppHeader", "TxStockWxHeader2", "TxStockAppUrl2", "TxStockAppHeader2"],
+            "keys": ["TxStockWxHeader", "TxStockAppUrl", "TxStockAppHeader"],
             "author": "@leafxcy",
             "settings": [{
                     "id": "TxStockCash",
