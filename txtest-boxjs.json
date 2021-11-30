@@ -51,8 +51,8 @@
                     "id": "TxStockHelpOrder",
                     "name": "互助顺序",
                     "val": "0",
-                    "type": "number",
-                    "desc": "顺序填入要帮助的用户，#隔开，0代表不帮助 默认0"
+                    "type": "text",
+                    "desc": "顺序填入要帮助的用户，#隔开，0代表不帮助 默认0；号1助力号2，号2助力号1：2#1"
                 }
             ],
             "repo": "https://raw.githubusercontent.com/leafxcy/JavaScript/main/txstock.js",
