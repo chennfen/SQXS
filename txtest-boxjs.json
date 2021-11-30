@@ -3,8 +3,25 @@
     "name": "zhangwei 脚本订阅",
     "author": "@Zhangwei",
     "icon": "https://raw.githubusercontent.com/zsl119/3/main/3C33A620-C52D-4C1C-9E5A-A7160D0A65AF.jpeg",
-    "repo": "https://github.com/zsl119",
+    "repo": "https://github.com/leafxcy/JavaScript",
     "apps": [{
+            "id": "daw",
+            "name": "都爱玩",
+            "keys": ["dawToken"],
+            "author": "@leafxcy",
+            "settings": [{
+                    "id": "dawNotify",
+                    "name": "通知控制",
+                    "val": "1",
+                    "type": "number",
+                    "desc": "1通知，0不通知，默认1"
+                }
+            ],
+            "repo": "https://raw.githubusercontent.com/leafxcy/JavaScript/main/daw.js",
+            "icons": ["https://raw.githubusercontent.com/YaphetS0903/JStest/main/image/YaphetS.jpg", "https://raw.githubusercontent.com/YaphetS0903/JStest/main/image/YaphetS.jpg"],
+            "script": "https://raw.githubusercontent.com/leafxcy/JavaScript/main/daw.js"
+        },
+        {
             "id": "txstock",
             "name": "自选股&微证券",
             "keys": ["TxStockWxHeader", "TxStockAppUrl", "TxStockAppHeader"],
