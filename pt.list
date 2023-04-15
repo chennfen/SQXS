@@ -1,26 +1,26 @@
-payload:
-# > pt
-DOMAIN-KEYWORD,m-team
-DOMAIN-KEYWORD,leaguehd.com
-DOMAIN-KEYWORD,lemonhd
-DOMAIN-KEYWORD,pterclub
-DOMAIN-KEYWORD,audiences
-DOMAIN-KEYWORD,btschool
-DOMAIN-KEYWORD,keepfrds
-DOMAIN-KEYWORD,hddolby
-DOMAIN-KEYWORD,hdchina
-DOMAIN-KEYWORD,hdhome
-DOMAIN-KEYWORD,soulvoice
-DOMAIN-KEYWORD,hdsky
-DOMAIN-KEYWORD,sharkpt
-DOMAIN-KEYWORD,totheglory
-DOMAIN-KEYWORD,pttime
-DOMAIN-KEYWORD,hdtime
-DOMAIN-KEYWORD,htpt
-DOMAIN-KEYWORD,beitai
-DOMAIN-KEYWORD,dmhy
-DOMAIN-KEYWORD,piggo
-DOMAIN-KEYWORD,nicept
-DOMAIN-KEYWORD,hdatmos  
-DOMAIN-KEYWORD,gainbound
-DOMAIN-KEYWORD,nginx2.azurewebsites.net 
+  # > pt
+  - DOMAIN-KEYWORD,m-team.cc
+  - DOMAIN-KEYWORD,leaguehd.com
+  - DOMAIN-KEYWORD,lemonhd.com
+  - DOMAIN-KEYWORD,pterclub.com
+  - DOMAIN-KEYWORD,chdbits.co
+  - DOMAIN-KEYWORD,audiences.me
+  - DOMAIN-KEYWORD,btschool.club
+  - DOMAIN-KEYWORD,keepfrds.com
+  - DOMAIN-KEYWORD,hddolby.com
+  - DOMAIN-KEYWORD,hdchina.org
+  - DOMAIN-KEYWORD,hdhome.org
+  - DOMAIN-KEYWORD,soulvoice.club
+  - DOMAIN-KEYWORD,hdsky.me
+  - DOMAIN-KEYWORD,sharkpt.net
+  - DOMAIN-KEYWORD,totheglory.im
+  - DOMAIN-KEYWORD,pttime.org
+  - DOMAIN-KEYWORD,hdtime.org
+  - DOMAIN-KEYWORD,htpt.cc
+  - DOMAIN-KEYWORD,beitai.pt
+  - DOMAIN-KEYWORD,dmhy.best
+  - DOMAIN-KEYWORD,piggo.me
+  - DOMAIN-KEYWORD,nicept.net
+  - DOMAIN-KEYWORD,hdatmos.club
+  - DOMAIN-KEYWORD,gainbound.net
+  - DOMAIN-KEYWORD,nginx2.azurewebsites.net
