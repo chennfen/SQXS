@@ -1,27 +1,26 @@
-payload:
-  # > pt
-  - DOMAIN-SUFFIX,m-team.cc
-  - DOMAIN-SUFFIX,pterclub.com
-  - DOMAIN-SUFFIX,chdbits.xyz
-  - DOMAIN-SUFFIX,ptchdbits.co
-  - DOMAIN-SUFFIX,audiences.me
-  - DOMAIN-SUFFIX,btschool.club
-  - DOMAIN-SUFFIX,cinefiles.info
-  - DOMAIN-SUFFIX,ourbits.club
-  - DOMAIN-SUFFIX,keepfrds.com
-  - DOMAIN-SUFFIX,hddolby.com
-  - DOMAIN-SUFFIX,hdchina.org
-  - DOMAIN-SUFFIX,hdhome.org
-  - DOMAIN-SUFFIX,soulvoice.club
-  - DOMAIN-SUFFIX,hdsky.me
-  - DOMAIN-SUFFIX,totheglory.im
-  - DOMAIN-SUFFIX,pttime.org
-  - DOMAIN-SUFFIX,hdtime.org
-  - DOMAIN-SUFFIX,htpt.cc
-  - DOMAIN-SUFFIX,beitai.pt
-  - DOMAIN-SUFFIX,daydream.dmhy.best
-  - DOMAIN-SUFFIX,tracker.piggo.me
-  - DOMAIN-SUFFIX,nicept.net
-  - DOMAIN-SUFFIX,hdatmos.club
-  - DOMAIN-SUFFIX,nginx2.azurewebsites.net
-  - DOMAIN-SUFFIX,leaves.red
+# > pt
+DOMAIN-SUFFIX,m-team.cc,DIRECT
+DOMAIN-SUFFIX,pterclub.com,DIRECT
+DOMAIN-SUFFIX,chdbits.xyz,DIRECT
+DOMAIN-SUFFIX,ptchdbits.co,DIRECT
+DOMAIN-SUFFIX,audiences.me,DIRECT
+DOMAIN-SUFFIX,btschool.club,DIRECT
+DOMAIN-SUFFIX,cinefiles.info,DIRECT
+DOMAIN-SUFFIX,ourbits.club,DIRECT
+DOMAIN-SUFFIX,keepfrds.com,DIRECT
+DOMAIN-SUFFIX,hddolby.com,DIRECT
+DOMAIN-SUFFIX,hdchina.org,DIRECT
+DOMAIN-SUFFIX,hdhome.org,DIRECT
+DOMAIN-SUFFIX,soulvoice.club,DIRECT
+DOMAIN-SUFFIX,hdsky.me,DIRECT
+DOMAIN-SUFFIX,totheglory.im,DIRECT
+DOMAIN-SUFFIX,pttime.org,DIRECT
+DOMAIN-SUFFIX,hdtime.org,DIRECT
+DOMAIN-SUFFIX,htpt.cc,DIRECT
+DOMAIN-SUFFIX,beitai.pt,DIRECT
+DOMAIN-SUFFIX,daydream.dmhy.best,DIRECT
+DOMAIN-SUFFIX,piggo.me,DIRECT
+DOMAIN-SUFFIX,nicept.net,DIRECT
+DOMAIN-SUFFIX,hdatmos.club,DIRECT
+DOMAIN-SUFFIX,nginx2.azurewebsites.net,DIRECT
+DOMAIN-SUFFIX,leaves.red,DIRECT
